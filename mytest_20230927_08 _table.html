@@ -3,58 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table</title>
+    <title>Table 9 宮格</title>
     <style>
-        /* element */
-        h1{
-            color: red;
-        }
-
-        /* #id */
-        #testID{
-            color: green;
-        }
-
-        /* .class */
-        .testClass{
-            color: aqua;
-
-        }
-
-        table ,tr,td {
-            border: 2px red solid;
+        table{
+            /* width: 100%; */
+            text-align: center;
+            font-size: 40px;
             border-collapse: collapse;
         }
+        table , tr , td {
+            color: red;
+            border: 1px solid black;
 
-        table{
-            width: 80%;
+        }
+        td{
+            width: 300px;
+            /* width: 30%; */
+            background-color: lightblue;
+            width: 100px;
+            height: 100px;
+            
+        }
+
+        .s1 > td{
+            color: red;
+        }
+        .s2 > td{
+            color: green;
+        }
+        .s3 > td{
+            color: blue;
         }
 
     </style>
 </head>
 <body>
-    <h1>Table</h1>
-    <h2 testID>test</h2>
-    <h3 class="testClass">test id h3</h3>
-    <!-- 外框 -->
-    <table width ='90%'>
-       <tr>
+    <h3>table 9 宮格</h3>
+    <table >
+       <tr class="s1">
             <td>1</td>
             <td>2</td>
             <td>3</td>
        </tr>
-       <tr>
+       <tr class="s2">
             <td>4</td>
             <td>5</td>
             <td>6</td>
         </tr>
-        <tr>
+        <tr class="s3">
             <td>7</td>
             <td>8</td>
             <td>9</td>
         </tr>
-
-
     </table>
+    <br><br><hr>
+    <h3>table 9 宮格合併colspan</h3>
+    <table >
+        <tr class="s1">
+             <td colspan="2">1</td>
+             <!-- <td>2</td> -->
+             <td>3</td>
+        </tr>
+        <tr class="s2">
+             <td>4</td>
+             <td>5</td>
+             <td>6</td>
+         </tr>
+         <tr class="s3">
+             <td>7</td>
+             <td>8</td>
+             <td>9</td>
+         </tr>
+     </table>
+     <br><br><hr>
+    <h3>table 9 宮格合併rowspan</h3>
+    <table >
+        <tr class="s1">
+             <td rowspan="3">1</td>
+             <td>2</td>
+             <td>3</td>
+        </tr>
+        <tr class="s2">
+             <!-- <td>4</td> -->
+             <td>5</td>
+             <td>6</td>
+         </tr>
+         <tr class="s3">
+             <!-- <td>7</td> -->
+             <td>8</td>
+             <td>9</td>
+         </tr>
+     </table>
 </body>
 </html>
