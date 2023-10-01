@@ -1,132 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        table , tr , td {
-            border: 1px solid black;
-            border-collapse: collapse;
-            text-align: center;   
-            background-color: red;
-                    
+         .container1 {
+             /* text-align: center; */
+            /* margin: auto; */
+            /* background-color: black; */
+            /* width: 50%; */
+        }
+        .container2{
+            background-color: yellow;
         }
 
-        td {
-            width: 70px;
-            height: 70px;
+        table,tr,td {
+            margin: auto;
+            border-collapse: collapse;
+            /* border: 3px lightgray solid ; */
+
+        }
+
+        .th1{
+            font-size: 15px;
+            background: lightsteelblue;
+            border-right:2px black;
+            height: 40px;
             font-weight: bold;
-            color: white;
+            /* border: 2px lightgray solid ;
+            border-collapse: collapse; */
+        }
+
+        tr {
+            
+            /* border: 1px gray; */
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 15px;
+            font-family: "sans-serif"; 
+            background-color: lemonchiffon;
+            
+            /* font-weight: bold; */
+        }
+
+     
+
+        .td1{
+             font-size: 10px;
+             width: 20%;
+             font-weight: bold;
+             
+             
+             
+            /* color: aliceblue; */
+        }
+
+
+        .merge1{
+
+            background:#ccdbdc;
+        }
+
+
+        .contan{
+            /* font-weight: bold; */
         }
 
         h3 {
             text-align: center;
-            font-size: 45px;
-            color: navy;
+            font-size: 30px;
+            color: lightseagreen;
             text-decoration: underline;
+        }
+
+        .line_s{
+            border-right:2px solid gray;
+            border-left:2px solid lightslategray;
             
         }
-
-        .container{
-            /* text-align: center; */
-            margin: auto;
-            /* background-color: red; */
-            width: 50%;
+        .line_l{
+            border-bottom:2px solid lightslategray;
+            border-top:2px solid lightslategray;
         }
 
-        table{
-            /* margin: auto; */
-        }
     </style>
 </head>
+
 <body>
-    <h3>功課表</h3>
-    <div class="container">
-        <table>
-            <tr>
-                <td>01</td>
-                <td>02</td>
-                <td>03</td>
-                <td>04</td>
-                <td>05</td>
-                <td>06</td>
+    <h3>功課表自我練習</h3>
+    <div class="container1">
+        <table class="line_s line_l">
+            <tr class="th1">
+                <td class="line_s line_l">節數</td>
+                <td class="line_s line_l">一</td>
+                <td class="line_s line_l">二</td>
+                <td class="line_s line_l">三</td>
+                <td class="line_s line_l">四</td>
+                <td class="line_s line_l">五</td>
             </tr>
             <tr>
-                <td>11</td>
-                <td>12</td>
-                <td>13</td>
-                <td>14</td>
-                <td>15</td>
-                <td>16</td>
+                <td class="td1 line_s line_l ">早自習 <br> 07:50~08:30</td>
+                <td class="merge1 line_l" colspan="5"></td>
+                <!-- <td>13</td> -->
+                <!-- <td>14</td> -->
+                <!-- <td>15</td> -->
+                <!-- <td>16</td> -->
             </tr>
             <tr>
-                <td>21</td>
-                <td>22</td>
-                <td>23</td>
-                <td>24</td>
-                <td>25</td>
-                <td>26</td>
+                <td class="td1 line_s line_l">第一節 <br> 08:40~09:20</td>
+                <td class="contan line_s line_l" rowspan="2">國語 <br> 劉展華</td>
+                <td class="contan line_s line_l" colspan="3">數學 <br> 劉展華</td>
+                <!-- <td>24</td> -->
+                <!-- <td>25</td> -->
+                <td class="contan" >國語 <br> 劉展華</td>
             </tr>
             <tr>
-                <td>31</td>
-                <td>32</td>
-                <td>33</td>
-                <td>34</td>
-                <td>35</td>
-                <td>36</td>
+                <td class="td1 line_s line_l"> 第二節 <br> 09:30~10:10 </td>
+                <!-- <td>32</td> -->
+                <td class="contan line_s line_l" >自然 <br>黃新民</td>
+                <td class="contan line_s line_l" >音樂 <br>萬巧如</td>
+                <td class="contan line_s line_l" >國語 <br>劉展華</td>
+                <td class="contan line_s line_l" >彈性 <br>劉展華</td>
             </tr>
             <tr>
-                <td>41</td>
-                <td>42</td>
-                <td>43</td>
-                <td>44</td>
-                <td>45</td>
-                <td>46</td>
+                <td class="td1 line_s line_l">第三節 <br> 10:30~11:10 </td>
+                <td class="contan line_s line_l" >數學 <br>劉展華</td>
+                <td class="contan line_s line_l" >健康 <br>潘文欽</td>
+                <td class="contan line_s line_l" >國語 <br>劉展華</td>
+                <td class="contan line_s line_l" >鄉土 <br>魏士欽</td>
+                <td class="contan line_s line_l" rowspan="2">自然 <br>黃欽民</td>
             </tr>
             <tr>
-                <td>51</td>
-                <td>52</td>
-                <td>53</td>
-                <td>54</td>
-                <td>55</td>
-                <td>56</td>
+                <td class="td1 line_s line_l">第四節 <br> 11:20~12:00 </td>
+                <td class="contan line_s line_l" >英語 <br>黃定宜</td>
+                <td class="contan line_s line_l" >彈性 <br>劉展華</td>
+                <td class="contan line_s line_l" >社會 <br>劉展華</td>
+                <td class="contan line_s line_l" >英語 <br>黃定宜</td>
+                <!-- <td>56</td> -->
             </tr>
             <tr>
-                <td>61</td>
-                <td>62</td>
-                <td>63</td>
-                <td>64</td>
-                <td>65</td>
-                <td>66</td>
+                <td  class="td1 line_s line_l">午修 <br> 12:00~ 13:20 </td>
+                <td class="merge1  line_s line_l" colspan="5"></td>
+                <!-- <td>63</td> -->
+                <!-- <td>64</td> -->
+                <!-- <td>65</td> -->
+                <!-- <td>66</td> -->
             </tr>
             <tr>
-                <td>71</td>
-                <td>72</td>
-                <td>73</td>
-                <td>74</td>
-                <td>75</td>
-                <td>76</td>
+                <td class="td1 line_s line_l">第五節 <br> 13:30~14:10</td>
+                <td class="contan line_s line_l" >社會 <br>劉展華</td>
+                <td class="contan line_s line_l"  rowspan="2">美勞 <br>許文杰</td>
+                <td class="merge1 line_s line_l" rowspan="3"></td>
+                <td class="contan line_s line_l"  rowspan="3">綜合 <br>劉展華</td>
+                <td class="contan line_s line_l" >體育 <br>潘文欽</td>
             </tr>
             <tr>
-                <td>81</td>
-                <td>82</td>
-                <td>83</td>
-                <td>84</td>
-                <td>85</td>
-                <td>86</td>
+                <td class="td1 line_s line_l">第六節 <br> 14:20~15:00</td>
+                <td class="contan line_s line_l" >國語<br>劉展華</td>
+                <!-- <td>83</td> -->
+                <!-- <td>84</td> -->
+                <!-- <td>85</td> -->
+                <td class="contan line_s line_l" >國語<br>劉展華</td>
             </tr>
             <tr>
-                <td>91</td>
-                <td>92</td>
-                <td>93</td>
-                <td>94</td>
-                <td>95</td>
-                <td>96</td>
+                <td class="td1 line_s line_l">第七節 <br> 15:20~16:00</td>
+                <td class="contan line_s line_l"  colspan="2">彈性 <br>劉展華</td>
+                <!-- <td>93</td> -->
+                <!-- <td>94</td> -->
+                <!-- <td>95</td> -->
+                <td class="contan line_s line_l" >社會<br>劉展華</td>
             </tr>
         </table>
-        
+
     </div>
-    
+    <div class="container2">
+        bb
+    </div>
+
 </body>
+
 </html>
