@@ -9,7 +9,7 @@
 <style>
 
     .container{
-        width: 100%;
+        width: 80%;
     }
 
     .text-blue {
@@ -18,10 +18,14 @@
 
     .form-bg{
         background: lightblue;
+        width: auto;
+        padding: 20px;
+        
     } 
 
     .field-head-tex{
-        font-size: 30px;
+        font-size: 40px;
+        font-weight: 900;
         font-family: 'Trebuchet MS';
         text-align: center;
         
@@ -40,13 +44,19 @@
     fieldset {
         margin: auto;
         width: 60%;
-        border: 3px solid lightseagreen;
+        border: 5px double lightseagreen;
+        border-style: outset;
+        border-width: 10px;
     }
 
     .textarea-label {
             display: flex;
             margin-left: 20px;
         }
+    .text-shadow {
+        color:white;
+        text-shadow: 1px 1px 4px black,0 0 40px lightseagreen,0 0 4px blue;
+    }
 
 </style>
 
@@ -54,7 +64,7 @@
     <div >
         <form  action="">
             <fieldset class="form-bg field-text">
-                <legend class="field-head-tex">hr報表</legend>
+                <legend class="field-head-tex text-shadow ">hr報表</legend>
 
                 <div class="container">
                     <label  for="name">姓名</label>
@@ -110,12 +120,23 @@
                 </div>
 
                 <div>
-                    <p>
-                    <label class="textarea-label" for="textarea">備註：</label>
-                    <textarea  name="textarea" id="" cols="30" rows="10">
+                    <table>
+                        <tr>
+                            <td >
+                                <p>
+                                <label class="textarea-label" for="textarea">備註：</label>
+                                </p>
+                            </td>
+                            <td>
+                                <textarea  name="textarea" id="" cols="30" rows="10">
                        
-                    </textarea>
-                    </p>
+                                </textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    
+                    
                 </div>
 
                 <div>
