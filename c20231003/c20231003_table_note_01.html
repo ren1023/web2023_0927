@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格練習_20231003</title>
+</head>
+<style>
+    .container{
+        width: 80%;
+        margin: auto;
+        text-align: center;
+    }
+
+    
+    td {
+            
+            border: 1px solid black; 
+            border-collapse: collapse;
+            background-color: lemonchiffon;
+            font-size: 25px;
+            font-family: "sans-serif"; 
+        }
+
+    
+
+    table {
+        
+        width: 100%;
+    }
+
+    td {
+            vertical-align: text-top;
+        }
+
+    .h-10{
+        /* viewhight */
+        height: 10vh;
+    }
+
+    .h-20{
+        /* viewhight */
+        height: 20vh;
+    }
+
+    .h-50{
+        /* viewhight */
+        height: 50vh;
+    }
+
+    .h-70{
+        /* viewhight */
+        height: 70vh;
+    }
+
+
+    .h-90 {
+            /* vh viewpoint */
+            height: 90vh;
+        }
+
+       
+
+    .w-25 {
+         width: 25%;
+    }
+    .w-30 {
+        width: 30%;
+    }
+    .w-50 {
+        width: 50%;
+    }
+
+    .text-red{
+            color: red;
+        }
+
+    
+
+  
+
+
+
+        
+</style>
+<body>
+    <div class="container">
+        <h1>1.康乃爾筆記法</h1>
+        <table >
+            <tr >
+                <td class="h-50 w-30">
+                    <h4 class="text-red">B</h4> 
+                    <br>
+                    <p>整理 Lorem, ipsum.</p>
+                </td>
+                <td class="h-50 w-30">A <br> 筆記</td>
+            </tr>
+            <tr>
+                <td colspan="2">C <br> 總結 </td>
+                <!-- <td>22</td> -->
+            </tr>
+        </table>
+    </div>
+<br>
+<hr>
+<br>
+
+
+    <div class="container">
+        <h1>2.東大筆記法</h1>
+        <table >
+            <tr >
+                <td class="h-20 w-50">A <br>筆記</td>
+                <td class="w-25">B <br> 整理</td>
+                <td class="w-25">C <br> 總結</td>
+            </tr>
+        </table>
+    </div>
+<br>
+<hr>
+<br>
+
+
+<div class="container">
+    <h1>3.麥肯錫筆記法</h1>
+    <table >
+        <tr>
+            <td class="w-25" colspan="3">A <br> 重點問題</td>
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+        </tr>
+        <tr>
+            <td class="h-50">A <br> 現狀</td>
+            <td>B <br> 解釋</td>
+            <td>C <br> 行動</td>
+        </tr>
+    </table>
+</div>
+<br>
+<hr>
+<br>
+
+
+<div class="container">
+    <h3>4.獲利時代</h3>
+    <table>
+        <tr>
+            <td class="h-20" colspan="2" rowspan="2">關鍵合作夥伴</td>
+            <!-- <td>2</td> -->
+            <td colspan="2" >關鍵活動</td>
+            <!-- <td>4</td> -->
+            <td colspan="2" rowspan="2">價值主張</td>
+            <!-- <td>6</td> -->
+            <td colspan="2" >客戶關係</td>
+            <!-- <td>8</td> -->
+            <td colspan="2" rowspan="2">目標客層</td>
+            <!-- <td>10</td> -->
+        </tr>
+        <tr>
+            <!-- <td>1</td> -->
+            <!-- <td>2</td> -->
+            <td colspan="2">關鍵資源</td>
+            <!-- <td>4</td> -->
+            <!-- <td colspan="2" rowspan="2">5</td> -->
+            <!-- <td>6</td> -->
+            <td colspan="2">通路</td>
+            <!-- <td>8</td> -->
+            <!-- <td>9</td> -->
+            <!-- <td>10</td> -->
+        </tr>
+        <tr>
+            <td class="h-10" colspan="5">目標客層</td>
+            <!-- <td>2</td> -->
+            <!-- <td>3</td> -->
+            <!-- <td>4</td> -->
+            <!-- <td>5</td> -->
+            <td colspan="5">收益流</td>
+            <!-- <td>7</td> -->
+            <!-- <td>8</td> -->
+            <!-- <td>9</td> -->
+            <!-- <td>10</td> -->
+        </tr>
+    </table>
+</div>
+
+
+</body>
+</html>
