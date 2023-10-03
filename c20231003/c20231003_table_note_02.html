@@ -8,7 +8,7 @@
 <style>
     table, tr,td{
         background: lightblue;
-        border: 1px solid black;
+        border: 2px solid black;
         border-collapse: collapse;
         text-align: center;
     }
@@ -18,39 +18,115 @@
 
     td{
         height: 20vh;
+        padding: 0px 30px 20px 20px;
     }
 
     .no-border-top{
         border-top: 0px;
     }
 
+    .text-left{
+        text-align: left;
+    }
+
+    .bgc-gre{
+        background-color: lightseagreen;
+    }
+
+    .bgc-sal{
+        background-color: lightsalmon;
+    }
+
+    .bd-color{
+        border: 3px solid saddlebrown;
+        border-bottom: 0px;
+    }
+   
+
+    .no-bd-color-sad{
+        border-top: 0px;
+        border-right: 3px solid saddlebrown;
+        border-bottom: 3px solid saddlebrown ;
+        border-left: 3px solid saddlebrown;
+    }
+
 </style>
 <body>
+    
     <div class="container">
         <h1>獲利時代</h1>
-        <table>
+        <table class="bd-color">
             <tr>
-                <td rowspan="2">11</td>
-                <td>12</td>
-                <td rowspan="2">13</td>
-                <td>14</td>
-                <td rowspan="2">15</td>
+                
+                <td class="bgc-gre" rowspan="2">
+                    <h3>1. Key Partners</h3>
+                    <p class="text-left">
+                        Identify the external organizations, suppliers, or partners that you will collaborate with to achieve your business goals and deliver value.
+                    </p>
+                </td>
+                <td>
+                    <h3>2. Key Activities</h3>
+                    <p class="text-left">
+                        Describe the key activities your business needs to perform to create and deliver value to customers. This could include manufacturing, marketing, research, etc.
+                    </p>
+                </td>
+                <td class="bgc-gre" rowspan="2">
+                    <h3>3. Value Propositions</h3>
+                    <p class="text-left">
+                        Describe the unique value or benefit that your product or service offers to your customers. What problem does it solve or need does it fulfill?
+                    </p>
+                </td>
+                <td>
+                    <h3>4. Customer Relationships</h3>
+                    <p class="text-left">
+                        Explain the type of relationships you intend to establish and maintain with your customers. This could be through personal assistance, self-service, automated systems, etc.
+                    </p>
+                </td>
+                <td class="bgc-gre"  rowspan="2">
+                    <h3>5. Customer Segments</h3>
+                    <p class="text-left">
+                        Identify the different groups of people or organizations that your business aims to serve. These are your target customers.
+                    </p>
+                </td>
             </tr>
             <tr>
                 <!-- <td>21</td> -->
-                <td>22</td>
+                <td>
+                    <h3>6. Key Resources</h3>
+                    <p class="text-left">
+                        List the critical assets, infrastructure, and resources required to deliver your value proposition and operate your business effectively. This might include technology, physical facilities, staff, etc.
+                    </p>
+
+                </td>
                 <!-- <td>23</td> -->
-                <td>24</td>
+                <td>
+                    <h3>7. Channels</h3>
+                    <p class="text-left">
+                        Outline the various channels or methods through which you will reach and communicate with your customers. This could include online sales, retail stores, social media, etc.
+                    </p>
+                </td>
                 <!-- <td>25</td> -->
             </tr>
         </table>
         
-        <table class="no-border-top" >
-            <tr class="no-border-top">
-                <td class="no-border-top">31</td>
-                <td class="no-border-top">32</td>
+        <!-- <br> -->
+        <table class="no-border-top no-bd-color-sad " >
+            <tr class="no-border-top ">
+                <td class="no-border-top bgc-sal ">
+                    <h3>8. Cost Structure</h3>
+                    <p class="text-left">
+                        Outline the costs and expenses associated with running your business. This includes both fixed and variable costs, such as production costs, marketing expenses, salaries, etc.
+                    </p>
+                </td>
+                <td class="no-border-top bgc-sal">
+                    <h3>9. Revenue Streams</h3>
+                    <p class="text-left">
+                        Define the different sources of revenue for your business. How will you generate income? This could include one-time sales, subscription fees, advertising, etc.
+                    </p>
+                </td>
             </tr>
         </table>
     </div>
+    
 </body>
 </html>
