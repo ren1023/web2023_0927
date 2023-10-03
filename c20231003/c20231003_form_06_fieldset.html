@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select/Radio/Checkbox</title>
+</head>
+<style>
+
+    .container{
+        width: 100%;
+    }
+
+    .text-blue {
+        color: blue;
+    }
+
+    .form-bg{
+        background: lightblue;
+    } 
+
+    .field-head-tex{
+        font-size: 30px;
+        font-family: 'Trebuchet MS';
+        text-align: center;
+        
+    }
+    
+    .field-text {
+        font-family: 'Lucida Sans';
+        font-size: 15px;
+        color: black;
+    }
+
+    textarea {
+        text-align: left;
+    }
+
+    fieldset {
+        margin: auto;
+        width: 60%;
+        border: 3px solid lightseagreen;
+    }
+
+    .textarea-label {
+            display: block;
+        }
+
+</style>
+
+<body>
+    <div >
+        <form  action="">
+            <fieldset class="form-bg field-text">
+                <legend class="field-head-tex">hr報表</legend>
+
+                <div class="container">
+                    <label  for="name">姓名</label>
+                    <input type="name" name="" id="" placeholder="王小明">
+                </div>
+
+                <div class="container">
+                    <label for="number">電話</label>
+                    <input type="number" name="" id="" placeholder="0938383838">
+                </div>
+
+                <div class="container">
+                    <label for="address">地址</label>
+                    <input type="text" name="" id="" size="40" placeholder="Enter your address">
+                </div>
+
+                <div class="container">
+                    <p>
+                        <label for="select">下拉選單</label>
+                        <select name="" id="">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </p>
+                </div>
+
+                
+                <div class="container">
+                    <p>
+                        <label for="Myradio">單選</label>
+                        <input type="radio" name="Myradio[]" id="" value="">
+                        <label for="">item1</label>
+                        <input type="radio" name="Myradio[]" id="" value="">
+                        <label for="">item2</label>
+                        <input type="radio" name="Myradio[]" id="" value="">
+                        <label for="">item3</label>
+                    </p>
+                </div>
+
+                <div class="container">
+                    <p>
+                        <!-- name欄位，及為後端程式 變數名 -->
+                        <!-- []代表陣列 array -->
+                        <label for="checkbox">多選</label>
+                        <input type="checkbox" name="" id="checkbox1" value="">
+                        <label for="checkbox1">item1</label>
+                        <input type="checkbox" name="" id="checkbox2" value="">
+                        <label for="checkbox2">item2</label>
+                        <input type="checkbox" name="" id="checkbox3" value="">
+                        <label for="checkbox3">item3</label>
+                    </p>
+                </div>
+
+                <div>
+                    <p>
+                    <label class="textarea-label" for="textarea">備註：</label>
+                    <textarea  name="textarea" id="" cols="30" rows="10">
+                       
+                    </textarea>
+                    </p>
+                </div>
+
+                <div>
+                    <P>
+                    <input type="reset" value="reset"> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="submit" value="submit">
+                    </P>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+    
+
+   
+
+    
+
+    
+
+    
+
+
+</body>
+
+</html>
