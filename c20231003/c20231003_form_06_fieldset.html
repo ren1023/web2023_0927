@@ -12,10 +12,12 @@
         margin: auto;
     }
 
+    /* 字的顏色 */
     .text-blue {
         color: blue;
     }
 
+    /* 表單背景顏色 */
     .form-bg {
         background: lightblue;
         width: auto;
@@ -23,6 +25,7 @@
 
     }
 
+    /* 表單群組的表頭格式 */
     .field-head-tex {
         font-size: 40px;
         font-weight: bold;
@@ -31,16 +34,19 @@
 
     }
 
+    /* 表單群組字型格式 */
     .field-text {
         font-family: 'Lucida Sans';
         font-size: 15px;
         color: black;
     }
 
+    /* 多行文字方塊格式 */
     textarea {
         text-align: left;
     }
 
+    /* 表單群組位置及背景格式 */
     fieldset {
         margin: auto;
         width: 400px;
@@ -49,25 +55,30 @@
         border-width: 10px;
     }
 
+    /* 多行文字方塊，標籤格式 */
     .textarea-label {
         display: flex;
         margin-left: 20px;
     }
 
+    /* 文字陰影 */
     .text-shadow {
         color: white;
         text-shadow: 1px 1px 4px black, 0 0 40px lightseagreen, 0 0 4px blue;
     }
 
+    /* 按扭格式 */
     .customer-button{
         width: 170px;
         /* background-color: #5865F2; */
         margin-left: 40px;
     }
 
+    /* 按扭位置 */
     .cus-button-left {
         margin-left: 40px;
     }
+    
 </style>
 
 <body>
@@ -76,21 +87,25 @@
             <fieldset class="form-bg field-text">
                 <legend class="field-head-tex text-shadow ">hr報表</legend>
 
+                <!-- 單行文字方塊 -->
                 <div class="container">
                     <label for="name">姓名</label>
                     <input type="name" name="" id="" placeholder="王小明">
                 </div>
 
+                <!-- 數字方塊 -->
                 <div class="container">
                     <label for="number">電話</label>
                     <input type="number" name="" id="" placeholder="0938383838">
                 </div>
 
+                <!-- 單行文字方塊 -->
                 <div class="container">
                     <label for="address">地址</label>
                     <input type="text" name="" id="" size="40" placeholder="Enter your address">
                 </div>
 
+                <!-- 下拉選單 -->
                 <div class="container">
                     <p>
                         <label for="select">下拉選單</label>
@@ -102,7 +117,7 @@
                     </p>
                 </div>
 
-
+                <!-- 單選的，選擇鈕 -->
                 <div class="container">
                     <p>
                         <label for="Myradio">單選</label>
@@ -115,6 +130,7 @@
                     </p>
                 </div>
 
+                <!-- 多選的，核取方塊 -->
                 <div class="container">
                     <p>
                         <!-- name欄位，及為後端程式 變數名 -->
@@ -130,7 +146,7 @@
                 </div>
 
 
-
+                <!-- 以表單的方式將備註分成2欄 -->
                 <div>
                     <table>
                         <tr>
@@ -140,17 +156,16 @@
                                 </p>
                             </td>
                             <td>
+                                <!-- 多行文字方塊 -->
                                 <textarea name="textarea" id="" cols="30" rows="10">
 
                                 </textarea>
                             </td>
                         </tr>
                     </table>
-
-
-
                 </div>
 
+                <!-- 按鈕方塊 -->
                 <div>
                     <P>
                         <input class="cus-button-left" type="reset" value="reset"> &nbsp;&nbsp;&nbsp;&nbsp;
