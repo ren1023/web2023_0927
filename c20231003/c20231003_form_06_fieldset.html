@@ -7,30 +7,30 @@
     <title>select/Radio/Checkbox</title>
 </head>
 <style>
-
-    .container{
+    .container {
         width: 80%;
+        margin: auto;
     }
 
     .text-blue {
         color: blue;
     }
 
-    .form-bg{
+    .form-bg {
         background: lightblue;
         width: auto;
         padding: 20px;
-        
-    } 
 
-    .field-head-tex{
+    }
+
+    .field-head-tex {
         font-size: 40px;
-        font-weight: 900;
+        font-weight: bold;
         font-family: 'Trebuchet MS';
         text-align: center;
-        
+
     }
-    
+
     .field-text {
         font-family: 'Lucida Sans';
         font-size: 15px;
@@ -43,31 +43,41 @@
 
     fieldset {
         margin: auto;
-        width: 60%;
+        width: 400px;
         border: 5px double lightseagreen;
         border-style: outset;
         border-width: 10px;
     }
 
     .textarea-label {
-            display: flex;
-            margin-left: 20px;
-        }
-    .text-shadow {
-        color:white;
-        text-shadow: 1px 1px 4px black,0 0 40px lightseagreen,0 0 4px blue;
+        display: flex;
+        margin-left: 20px;
     }
 
+    .text-shadow {
+        color: white;
+        text-shadow: 1px 1px 4px black, 0 0 40px lightseagreen, 0 0 4px blue;
+    }
+
+    .customer-button{
+        width: 170px;
+        /* background-color: #5865F2; */
+        margin-left: 40px;
+    }
+
+    .cus-button-left {
+        margin-left: 40px;
+    }
 </style>
 
 <body>
-    <div >
-        <form  action="">
+    <div class="container">
+        <form action="">
             <fieldset class="form-bg field-text">
                 <legend class="field-head-tex text-shadow ">hr報表</legend>
 
                 <div class="container">
-                    <label  for="name">姓名</label>
+                    <label for="name">姓名</label>
                     <input type="name" name="" id="" placeholder="王小明">
                 </div>
 
@@ -92,7 +102,7 @@
                     </p>
                 </div>
 
-                
+
                 <div class="container">
                     <p>
                         <label for="Myradio">單選</label>
@@ -119,45 +129,47 @@
                     </p>
                 </div>
 
+
+
                 <div>
                     <table>
                         <tr>
-                            <td >
+                            <td>
                                 <p>
-                                <label class="textarea-label" for="textarea">備註：</label>
+                                    <label class="textarea-label" for="textarea">備註：</label>
                                 </p>
                             </td>
                             <td>
-                                <textarea  name="textarea" id="" cols="30" rows="10">
-                       
+                                <textarea name="textarea" id="" cols="30" rows="10">
+
                                 </textarea>
                             </td>
                         </tr>
                     </table>
-                    
-                    
-                    
+
+
+
                 </div>
 
                 <div>
                     <P>
-                    <input type="reset" value="reset"> &nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="submit" value="submit">
+                        <input class="cus-button-left" type="reset" value="reset"> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input class="customer-button" type="submit" value="submit">
                     </P>
                 </div>
 
             </fieldset>
         </form>
     </div>
-    
 
-   
 
-    
 
-    
 
-    
+
+
+
+
+
 
 
 </body>
