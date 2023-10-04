@@ -5,14 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form設計與排版</title>
     <style>
+        legend {
+            text-align: center;
+            /* border-radius: 20dp ; */
+            /* color:#FBD86A; */
+            /* max-lines: 3dp; */
+        }
 
+        fieldset {
+            text-align: left;
+            background: -webkit-linear-gradient(90deg, #CCCCCC, #FFFFFF) repeat scroll 0 0 transparent;
+            background: -moz-linear-gradient(90deg, #CCCCCC, #FFFFFF) repeat scroll 0 0 transparent;
+            border-radius: 10px 10px 10px 10px;
+            /* box-shadow: 0 0 15px #AAAAAA; */
+            padding-right: 1em;
+            padding-left: 1em;
+        }
+
+        .container input {
+            /* background: -webkit-linear-gradient(90deg, #FFFFFF, #EEEEEE) repeat scroll 0 0 transparent; */
+            /* background: -moz-linear-gradient(90deg, #FFFFFF, #EEEEEE) repeat scroll 0 0 transparent; */
+            border: 1px solid #AAAAAA;
+            /* border-right: 30%; */
+            /* border-left: 30px; */
+            border-radius: 3px 3px 3px 3px;
+            box-shadow: 0 0 3px #AAAAAA;
+            padding: 5px;
+            /* text-align: left; */
+            /* position: relative; */
+            /* font-weight: 100%; */
+
+        }
 
 
     </style>
 </head>
 <body>
 
-    
+    <div class="container">
+
+        <form action="">
+
+            <fieldset>
+                <legend>個人資料</legend>
+                
+                <div class="container">
+                    <p>
+                        <label for="name">姓名</label>
+                        <input type="name" name="" id="" placeholder="王小明">
+                    </p>
+                </div>
+                <div class="container">
+                    <p>
+                        <label for="">電話</label>
+                        <input type="number" name="" id="" placeholder="0936123456">
+                    </p>
+                </div>
+                <div class="container">
+                    <P>
+                        <label for="">住址</label>
+                        <input type="text" name="" id="">
+                    </P>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+
     
 </body>
 </html>
