@@ -7,9 +7,15 @@
     <title>select/Radio/Checkbox</title>
 </head>
 <style>
+    .b-bg{
+        background-color: RGB(108,166,213);
+    }
     .container {
         width: 80%;
         margin: auto;
+    }
+    .container-sub {
+        margin-left: 20px;
     }
 
     /* 字的顏色 */
@@ -78,35 +84,35 @@
     .cus-button-left {
         margin-left: 40px;
     }
-    
+
 </style>
 
-<body>
+<body class="b-bg">
     <div class="container">
         <form action="">
             <fieldset class="form-bg field-text">
                 <legend class="field-head-tex text-shadow ">hr報表</legend>
 
                 <!-- 單行文字方塊 -->
-                <div class="container">
+                <div class="container-sub">
                     <label for="name">姓名</label>
                     <input type="name" name="" id="" placeholder="王小明">
                 </div>
 
                 <!-- 數字方塊 -->
-                <div class="container">
+                <div class="container-sub">
                     <label for="number">電話</label>
                     <input type="number" name="" id="" placeholder="0938383838">
                 </div>
 
                 <!-- 單行文字方塊 -->
-                <div class="container">
+                <div class="container-sub">
                     <label for="address">地址</label>
                     <input type="text" name="" id="" size="40" placeholder="Enter your address">
                 </div>
 
                 <!-- 下拉選單 -->
-                <div class="container">
+                <div class="container-sub">
                     <p>
                         <label for="select">下拉選單</label>
                         <select name="" id="">
@@ -118,7 +124,7 @@
                 </div>
 
                 <!-- 單選的，選擇鈕 -->
-                <div class="container">
+                <div class="container-sub">
                     <p>
                         <label for="Myradio">單選</label>
                         <input type="radio" name="Myradio[]" id="" value="">
@@ -131,7 +137,7 @@
                 </div>
 
                 <!-- 多選的，核取方塊 -->
-                <div class="container">
+                <div class="container-sub">
                     <p>
                         <!-- name欄位，及為後端程式 變數名 -->
                         <!-- []代表陣列 array -->
@@ -165,6 +171,16 @@
                     </table>
                 </div>
 
+                <!-- 檔案上傳 -->
+                <input class="cus-button-left" type="file" name="" id="">
+
+                <p>
+                    <!-- 按下 submit時，網址列會出現類似如下的資料，其中 -->
+                    帳號：<input type="text" name="account"><br>
+                    ※隱藏了 作者：auther:Time
+                    <input type="hidden" name="auther" id="Time">
+                </p>
+
                 <!-- 按鈕方塊 -->
                 <div>
                     <P>
@@ -175,6 +191,8 @@
 
             </fieldset>
         </form>
+
+        
     </div>
 
 
