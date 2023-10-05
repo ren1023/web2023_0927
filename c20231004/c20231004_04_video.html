@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 整個網頁的背景顏色 */
+        body {
+
+            background-color: blueviolet;
+        }
+
+        /* 容器的背影顏色 */
+        .container {
+            width: 100%;
+            height: 80vh;
+            background-color: antiquewhite;
+        }
+
+
+        /* 表格的背景顏色 */
+        table {
+
+            width: 70%;
+            height: 50vh;
+            text-align: center;
+            margin: auto;
+            background-color: aliceblue;
+            border: 10px solid blue;
+        }
+
+
+        /* table data 的 */
+        td {
+
+            /* width:50%; */
+            text-align: center;
+            margin: auto;
+            background-color: lightcoral;
+            margin: auto;
+            padding: 5px;
+            
+        }
+
+        .td1 {
+            width: 40%;
+            background-color: lightpink;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+        }
+
+        audio {
+            width: 100%;
+
+        }
+
+        p {
+            text-align: left;
+            font-family:'Trebuchet MS';
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box">
+            <table>
+                <tr>
+                    <td>
+                        <h3>video</h3>
+                        <video src="./videos/test.mp4" type="video/mp4" controls muted loop></video>
+                    </td>
+                    <td class="td1">
+                        <h4>Lorem, ipsum.</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, veritatis!
+                        </p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h3>Audio</h3>
+                        <audio src="./videos/test_mp3.mp3" type="audio/mp3" controls muted loop></video>
+                    </td>
+                    <td class="td1">
+                        <h4>Lorem, ipsum.</h4>
+                        <P>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, veritatis!
+                        </P>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

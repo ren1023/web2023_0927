@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body
+        .box {
+            background-image: url("https://picsum.photos/id/49/200/300");
+            width: 400px;
+            height: 600px;
+            background-repeat: repeat-x;
+            background-color: aqua;
+
+        }
+        .clickDiv {
+            background-image: url('./images/pokemon.png');
+            background-size: 100px 70px;
+            width: 100px;
+            height: 70px;
+        }
+        
+        .aImag {
+            width: 100px;
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- 用html的方式載入圖片 -->
+    <div class="container">
+        <h3>html-img</h3>
+        <img src="https://picsum.photos/id/49/200/300" alt="" srcset="">
+    </div>
+
+    <!-- 以backgroundimage的方式載入圖片 -->
+    <div class="container">
+        <h3>css-backgroundimage</h3>
+        <div class="box">
+
+        </div>
+    </div>
+
+    <!-- 使用background image的方式建立超連結 -->
+    <div class="container">
+        <h3>link bg-image</h3>
+        <a href="">
+            <div class="clickDiv">
+
+            </div>
+        </a>
+    </div>
+
+
+    <!-- 使用image的方式建立超連結 -->
+    <div class="container">
+        <h3>link-imag</h3>
+        <a href="">
+            <img src="./images/pokemon.png" alt="" class="aImag">
+        </a>
+    </div>
+    
+</body>
+</html>
