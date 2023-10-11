@@ -7,18 +7,27 @@
     <style>
 
         *{
+            /* 去除空白 */
             margin: 0;
+            /* border不會超出 */
+            box-sizing: border-box;
         }
+
+        body{
+            background-image: url(./images/start.jpg);
+        }
+
         .contanier{
             width: 80%;
             height: 95vh;
+            
         }
 
         .box1{
             background-color: gray;
             width: 50vh;
             height: 30vh;
-            border-radius: 25px;
+            /* border-radius: 25px; */
             
         }
 
@@ -26,15 +35,15 @@
             background-image: url(./images/sleep.jpg);
         }
 
-        .box3{
+        .box3 > td{
 
-            /* width: 50vh; */
-            /* height: 70vh; */
+            width: 50%; 
+            height: 40vh;
         }
 
         .table1{
 
-            border: 10px solid black;
+            /* border: 10px solid black; */
             text-align: center;
             width: 100%;
             height: 30vh;
@@ -44,6 +53,7 @@
             /* border-radius: 10px; 設置圓角半徑 */
             /* overflow: hidden; 隱藏多餘的圓角 */
             background-blend-mode: lighten;
+            border-radius: 10px;
 
         }
 
@@ -51,7 +61,7 @@
             width: auto;
             height:auto;
             text-align: auto;
-            border-radius: 25px;
+            /* border-radius: 25px; */
             /* opacity: 0.7; */
         }
 
@@ -65,10 +75,11 @@
 
         table{
 
-            border: 1px solid black;
+            /* border: 1px solid black; */
             border-collapse: collapse;
             text-align: center;
             width: 100%;
+            height: 30vh;
             font-family: 'Lucida Sans';
             background-color: whitesmoke;
             opacity: 0.8;
@@ -79,19 +90,22 @@
 
         td{
 
-            border: 3px solid black;
+            /* border: 3px solid black; */
             text-align: center;
             width: 50%;
+            border-radius: 10px;
             font-family: 'Lucida Sans';
-            
-            }
+        }
 
         a {
+            display: inline-block;
             color:tomato;
             font-size: 30px;
-            /* margin-left: 200px; */
-            /* margin: auto; */
-            /* align-content: flex-start; */
+            margin-top: 17px;
+            /* 去除下底線 */
+            text-decoration: none; 
+            /* color: aliceblue; */
+            /* background-color: lightblue; */
             
         }
 
@@ -103,6 +117,7 @@
             color: #fff;
             text-align: right;
             font-family: 'Trebuchet MS';
+            
        
         }
 
