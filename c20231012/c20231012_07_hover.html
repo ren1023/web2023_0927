@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .container{
+            width: 100%;
+            height: 100vh;
+        }
+         /* .topnav{
+            color: white;
+            width: 100%;
+            text-align: center;
+            /* margin-left: 200px; 
+            margin:auto;
+            overflow: hidden;
+            background-color: gray;
+            border-radius: 70px;
+        }*/
+         
+        /*  
+        .topnav>a{
+            
+            color: white;/* 文本颜色为白色 
+            background-color: #016A70; /* 背景颜色为深绿色 
+            border-radius: 30px; /* 边框圆角半径为25像素，创建圆角效果 
+            float: left; /* 使元素向左浮动，允许其他内容围绕它
+            text-align: center; /* 文本居中对齐 
+            padding: 10px 10px; /*内边距为10像素，上下和左右均为10像素 
+            text-decoration: none; /* 去除文本下划线 
+            font-size: 16px; /* 字体大小为16像素 
+            font-family: Arial;/* 字体为Arial 
+            margin-left: 50px;
+            margin-top: 30px;
+
+        }
+        */
+        /* .topnav>a:hover{
+            background-color: pink;
+            font-size: 22px;
+            transition-duration: 0.5s;
+        } */
+
+        #top {
+            /* 固定 */
+            position: fixed;
+            right: 100px;
+            bottom: 100px;
+            font-family: Verdana;
+        }
+
+        #top:hover {
+            /* 固定 */
+            position: fixed;
+            right: 100px;
+            bottom: 100px;
+            font-family: Verdana;
+            font-size: 22px;
+        }
+
+
+        .box1{
+            width: 50%;
+            height: 30vh;
+            background-color: aqua;
+        }
+
+        .box2{
+            width: 600px;
+            height: 600px;
+            background-image: url(../c20231011/images/01.png);
+            background-repeat: no-repeat;
+        }
+
+        .box2:hover{
+            width: 300px;
+            height: 300px;
+            background-image: url(../c20231011/images/02.png);
+            transition-duration: 1s;
+            border-radius: 25px;
+            
+        }
+
+        .boox3{
+            width: 50%;
+            height: 300px;
+            background-color: cadetblue;
+        }
+
+        input{
+            color: rebeccapurple;
+            margin-bottom: 20px;
+            /* background-color: blue; */
+        }
+
+        input:focus{
+            color: rebeccapurple;
+            margin-bottom: 20px;
+            background-color: blueviolet;
+        }
+        /* nav{
+            text-align: center;
+        } */
+
+        .text1{
+            text-align: center;
+            color: blueviolet;
+            margin: auto;
+            background-color: aquamarine;
+            margin-bottom: 10px;
+        }
+
+        .topnav{
+            background-color: gray;
+            text-align: center;
+            border-radius: 25px;
+            width: auto;
+            height: 10vh;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+
+        <!-- toole bar -->
+        <!-- <nav> -->
+        <div class="topnav">
+            <a href="#home" class="text1">home</a>
+            <a href="#about" class="text1">about</a>
+            <a href="#other" class="text1">other</a>
+        </div>
+        <!-- </nav> -->
+
+
+         <div id="home"></div>
+         <div class="box1">
+                mybox
+         </div>
+
+        
+
+         <div id="about"></div>
+         <div class="box2">
+            box2
+         </div>
+
+         
+
+         <div id="other"></div>
+         <div class="box3">
+            box3
+         </div>
+         <a href="#" id="top">top</a>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+    <div class="container">
+        <div>
+        <form action="">
+            <p>
+                <label for="">name：</label>
+                <input type="text" name="" id="">
+            </p>
+            <p>
+                <label for="">phone：</label>
+                <input type="number" name="" id="">
+            </p>
+        </form>
+        </div>
+    </div>
+    
+</body>
+</html>

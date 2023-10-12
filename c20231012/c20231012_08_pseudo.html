@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .container{
+            width: 100vh;
+            height: 80vh;
+        }
+        table,th,tr,td{
+
+            font-family: 'Trebuchet MS'; /* 设置字体为 'Trebuchet MS' */
+            border: 1px solid black; /* 设置边框为 1像素宽的实线，颜色为黑色 */
+            border-collapse: collapse; /* 合并边框模式，使相邻单元格的边框重叠在一起 */
+            text-align: center; /* 文本居中对齐 */
+        }
+        table{
+            width: 50%;
+        }
+        /* td{
+            width: 20%;
+        } */
+        .money {
+            text-align: right; /* 將文字靠右對齊 */
+        }
+        .money::before {
+            content: "$"; /* 在元素之前插入"$"符號 */
+        }
+        .money::after {
+            content: "元"; /* 在元素之後插入"元"字元 */
+        }
+        .status::after {
+            content: "%"; /* 在具有"status"類別的元素之後插入"%"符號 */
+        }
+
+        
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                    <th style="width: 15%;">name</th>
+                    <th style="width: 20%;">bonus</th>
+                    <th style="width: 20%">績效成長</th>
+                    <th>備註</th>
+            </tr>
+            <tr>
+                <td>Amy</td>
+                <td class="money">5000</td>
+                <td class="status">20</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td class="money">6000</td>
+                <td class="status">30</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td class="money">8000</td>
+                <td class="status">50</td>
+                <td ></td>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+</html>
