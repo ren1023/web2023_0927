@@ -38,23 +38,58 @@
             /* background-color: aquamarine; */
             font-family: 'Cambria';
             text-align: center;
+            border-collapse: collapse;
+
+
         }
 
         table {
             width: 100%;
+            border-radius: 12px;
+            /* 調整圓角大小 */
+            overflow: hidden;
+            /* 使圓角生效 */
+
         }
 
         td {
             height: 30px;
         }
 
+        /* even 奇數，odd 偶數 是  */
         tr:nth-child(even) {
             background-color: pink;
+            color: blue;
         }
+
+        /* 將表格中的第二個 <tr> 元素（表格行）文字顏色設置為藍色 */
+        /* tr:nth-child(1){
+            color:blue;
+        } */
 
         th {
             background-color: gray;
             font-size: 20px;
+        }
+
+        .text-right {
+            text-align: right;
+            font-size: 20px;
+        }
+
+        .tableskin>a {
+            text-decoration: none;
+            /* text-align: right; */
+        }
+
+        a {
+            font-family: "lucida Sans";
+            font-weight: bold;
+
+        }
+
+        h2 {
+            text-align: left;
         }
     </style>
 </head>
@@ -62,63 +97,151 @@
 <body>
     <div class="container">
         <!-- 學生資料_start -->
-        <div class="tableskin">
+        <div class="tableskin text-right">
             <h2>Student_List</h2>
+            <a href="./create.html">Add&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
             <table>
                 <tr>
                     <th>id</th>
                     <th>name</th>
                     <th>mobile</th>
                     <th>pic</th>
+                    <th>data modify</th>
                 </tr>
                 <tr>
-                    <td>1</td>
-                    <td>amy</td>
+                    <td> <a href="./delete.html">1</a></td>
+                    <td><a href="./modify.html?id=1">amy</a></td>
                     <td>0938123456</td>
-                    <td>amy.pic</td>
+                    <td>
+                        <img src="https://picsum.photos/id/24/100/100" alt="">
+                        <br>
+                        amy.pic
+                    </td>
+                    <!-- 按扭，超連結 -->
+                    <form action="">
+                        <td>
+                            <a href="./modify.html"></a>
+                            <input type="submit" name="sumbit" id="sumbit" value="修改">
+                            <a href="./delete.html"></a>
+                            <input type="submit" name="sumbit" id="sumbit" value="刪除">
+                            </a>
+                        </td>
+                    </form>
+
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td>bob</td>
+                    <td><a href="./modify.html?id=2">bob</a></td>
                     <td>0938383838</td>
                     <td>bob.pic</td>
+                    <!-- 按扭，超連結 -->
+                    <form action="">
+                        <td>
+                            <a href="./modify.html"></a>
+                            <input type="submit" name="sumbit" id="sumbit" value="修改">
+                            <a href="./delete.html"></a>
+                            <input type="submit" name="sumbit" id="sumbit" value="刪除">
+                            </a>
+                        </td>
+                    </form>
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>john</td>
+                    <td><a href="./modify.html?id=3">john</a></td>
                     <td>0939393939</td>
                     <td>john.pic</td>
+                    <!-- 按扭，超連結 -->
+                    <form action="">
+                        <td>
+                            <a href="./modify.html"></a>
+                            <input type="submit" name="sumbit" id="sumbit" value="修改">
+                            <a href="./delete.html"></a>
+                            <input type="submit" name="sumbit" id="sumbit" value="刪除">
+                            </a>
+                        </td>
+                    </form>
                 </tr>
                 <tr>
                     <td>4</td>
-                    <td>cat</td>
+                    <td><a href="./modify.html?id=4">cat</a></td>
                     <td>0938777999</td>
                     <td>cat.pic</td>
+                    <!-- 按扭，超連結 -->
+                    <form action="">
+                        <td>
+                            <a href="./modify.html"></a>
+                            <input type="submit" name="sumbit" id="sumbit" value="修改">
+                            <a href="./delete.html"></a>
+                            <input type="submit" name="sumbit" id="sumbit" value="刪除">
+                            </a>
+                        </td>
+                    </form>
                 </tr>
                 <tr>
                     <td>5</td>
-                    <td>amy</td>
+                    <td><a href="./modify.html?id=5">amy</a></td>
                     <td>0938123456</td>
                     <td>amy.pic</td>
+                    <!-- 按扭，超連結 -->
+                    <form action="">
+                        <td>
+                            <a href="./modify.html"></a>
+                            <input type="submit" name="sumbit" id="sumbit" value="修改">
+                            <a href="./delete.html"></a>
+                            <input type="submit" name="sumbit" id="sumbit" value="刪除">
+                            </a>
+                        </td>
+                    </form>
                 </tr>
                 <tr>
                     <td>6</td>
-                    <td>bob</td>
+                    <td><a href="./modify.html?id=6">bob</a></td>
                     <td>0938383838</td>
                     <td>bob.pic</td>
+                    <!-- 按扭，超連結 -->
+                    <form action="">
+                        <td>
+                            <a href="./modify.html"></a>
+                            <input type="submit" name="sumbit" id="sumbit" value="修改">
+                            <a href="./delete.html"></a>
+                            <input type="submit" name="sumbit" id="sumbit" value="刪除">
+                            </a>
+                        </td>
+                    </form>
                 </tr>
                 <tr>
                     <td>7</td>
-                    <td>john</td>
+                    <td><a href="./modify.html?id=7">john</a></td>
                     <td>0939393939</td>
                     <td>john.pic</td>
+                    <!-- 按扭，超連結 -->
+                    <form action="">
+                        <td>
+                            <a href="./modify.html"></a>
+                            <input type="submit" name="sumbit" id="sumbit" value="修改">
+                            <a href="./delete.html"></a>
+                            <input type="submit" name="sumbit" id="sumbit" value="刪除">
+                            </a>
+                        </td>
+                    </form>
                 </tr>
                 <tr>
                     <td>8</td>
-                    <td>cat</td>
+                    <td><a href="./modify.html?id=8">cat</a></td>
                     <td>0938777999</td>
                     <td>cat.pic</td>
+                    <!-- 按扭，超連結 -->
+                    <form action="">
+                        <td>
+                            <a href="./modify.html"></a>
+                            <input type="submit" name="sumbit" id="sumbit" value="修改">
+                            <a href="./delete.html"></a>
+                            <input type="submit" name="sumbit" id="sumbit" value="刪除">
+                            </a>
+                        </td>
+                    </form>
                 </tr>
+
             </table>
         </div>
         <!-- 學生資料_end -->
