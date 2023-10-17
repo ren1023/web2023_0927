@@ -6,18 +6,21 @@
     <title>Delete</title>
     <style>
         .container {
-            margin-top: 10%;
-            margin-bottom: 10%;
+            margin-top: 3%;
+            margin-bottom: 5%;
         }
         table,
         tr,
         th,
         td {
-            border: 1px solid black;
+            /* border: 1px solid black; */
             border-collapse: collapse;
             text-align: left;
             padding: 10px;
             font-family: 'Trebuchet MS';
+            border-radius: 10px;
+            background-color:rgb(213, 129, 221);
+            
         }
         table {
             width: 50%;
@@ -38,8 +41,18 @@
             /* font-size: 50px; */
             color: red;
         }
-        input[type="file"] {
-            margin-left: 30px;
+        input[type="submit"]{
+            margin-left:45%;
+        }
+        .result>td,th  {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: left;
+            padding: 10px;
+            font-family: 'Trebuchet MS';
+            border-radius: 10px;
+            /* background-color:rgb(210, 82, 222); */
+
         }
     </style>
 </head>
@@ -74,15 +87,15 @@
     <!--  -->
     <!-- 搜尋結果_提供刪除功能_start -->
     <div class="container">
-        <table>
+        <table >
             <h4>搜尋結果：</h4>
-            <tr>
+            <tr class="result">
                 <th>id</th>
                 <th>name</th>
                 <th>mobile</th>
                 <th>delete</th>
             </tr>
-            <tr>
+            <tr class="result">
                 <td>1</td>
                 <td>Amy</td>
                 <td>0938123456</td>

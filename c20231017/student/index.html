@@ -15,19 +15,24 @@
             padding: 10px 10px;
             /* display: flex; 將容器內的容器水平排列 */
             width: 90%;
+
         }
 
         .tableskin {
-            background-color: lightgreen;
+            background-color: greenyellow;
             width: 80%;
             /* justify-content: center; */
             /* 這會使得容器中的所有元素 <div> 都水平居中 */
             padding: 10px 10px;
+            padding-bottom: 5%;
             margin: auto;
-            margin-top: 30px;
+            /* margin-top: 30px; */
             border-radius: 10px;
-            border: 2px solid green;
-            
+            border: 5px solid yellowgreen;
+            /* box-shadow: 10px 10px #888888; */
+            /* //內側 ｜ x 軸-位移 | y 軸-位移 | 模糊值 blur-radius ｜ 擴散值 spread-radius ｜ 顏色 */
+            box-shadow: inset 0 0 20px 5px yellowgreen;
+
         }
 
         table,
@@ -40,7 +45,9 @@
             /* background-color: aquamarine; */
             font-family: 'Cambria';
             text-align: center;
-            
+            margin: auto;
+            /* background-color: green; */
+
 
 
         }
@@ -66,6 +73,11 @@
             color: blue;
         }
 
+        /* even 奇數，odd 偶數 是  */
+        tr:nth-child(even) {
+            background-color: lightgreen;
+        }
+
         /* 將表格中的第一個 <tr> 元素（表格行）文字顏色設置為黑色 */
         tr:nth-child(1) {
             color: black;
@@ -80,9 +92,9 @@
             text-align: right;
             font-size: 20px;
         }
-        
-        .text-green > a {
-            color:green;
+
+        .text-green>a {
+            color: green;
             text-decoration: none;
         }
 
@@ -121,7 +133,7 @@
                     <td> <a href="./delete.html">1</a></td>
                     <td><a href="./modify.html?id=1">amy</a></td>
                     <td>0938123456</td>
-                    <td >
+                    <td>
                         <img src="https://picsum.photos/id/24/100/100" alt="">
                         <br>
                         amy.pic
