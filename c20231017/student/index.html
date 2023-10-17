@@ -7,11 +7,11 @@
     <title>student</title>
     <style>
         body {
-            background-color: lightsalmon;
+            /* background-color: lightsalmon; */
         }
 
         .container {
-            background-color: antiquewhite;
+            /* background-color: antiquewhite; */
             padding: 10px 10px;
             /* display: flex; 將容器內的容器水平排列 */
             width: 90%;
@@ -25,7 +25,9 @@
             padding: 10px 10px;
             margin: auto;
             margin-top: 30px;
-            border-radius: 20px;
+            border-radius: 10px;
+            border: 2px solid green;
+            
         }
 
         table,
@@ -33,21 +35,23 @@
         tr,
         td {
             /* color: red; */
-            border: 1px solid black;
+            border: 1px solid rgb(0, 0, 0);
             border-collapse: collapse;
             /* background-color: aquamarine; */
             font-family: 'Cambria';
             text-align: center;
-            border-collapse: collapse;
+            
 
 
         }
 
         table {
-            width: 100%;
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 90%;
             border-radius: 12px;
             /* 調整圓角大小 */
-            overflow: hidden;
+            /* overflow: hidden; */
             /* 使圓角生效 */
 
         }
@@ -57,15 +61,15 @@
         }
 
         /* even 奇數，odd 偶數 是  */
-        tr:nth-child(even) {
+        tr:nth-child(odd) {
             background-color: pink;
             color: blue;
         }
 
-        /* 將表格中的第二個 <tr> 元素（表格行）文字顏色設置為藍色 */
-        /* tr:nth-child(1){
-            color:blue;
-        } */
+        /* 將表格中的第一個 <tr> 元素（表格行）文字顏色設置為黑色 */
+        tr:nth-child(1) {
+            color: black;
+        }
 
         th {
             background-color: gray;
@@ -75,6 +79,11 @@
         .text-right {
             text-align: right;
             font-size: 20px;
+        }
+        
+        .text-green > a {
+            color:green;
+            text-decoration: none;
         }
 
         .tableskin>a {
@@ -89,7 +98,7 @@
         }
 
         h2 {
-            text-align: left;
+            text-align: center;
         }
     </style>
 </head>
@@ -112,176 +121,90 @@
                     <td> <a href="./delete.html">1</a></td>
                     <td><a href="./modify.html?id=1">amy</a></td>
                     <td>0938123456</td>
-                    <td>
+                    <td >
                         <img src="https://picsum.photos/id/24/100/100" alt="">
                         <br>
                         amy.pic
                     </td>
-                    <!-- 按扭，超連結 -->
-                    <form action="">
-                        <td>
-                            <a href="./modify.html"></a>
-                            <input type="submit" name="sumbit" id="sumbit" value="修改">
-                            <a href="./delete.html"></a>
-                            <input type="submit" name="sumbit" id="sumbit" value="刪除">
-                            </a>
-                        </td>
-                    </form>
-
+                    <td class="text-green">
+                        <a href="./modify.html?id=1">修改</a>
+                        <a href="./delete.html?id=1">刪除</a>
+                    </td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td><a href="./modify.html?id=2">bob</a></td>
                     <td>0938383838</td>
                     <td>bob.pic</td>
-                    <!-- 按扭，超連結 -->
-                    <form action="">
-                        <td>
-                            <a href="./modify.html"></a>
-                            <input type="submit" name="sumbit" id="sumbit" value="修改">
-                            <a href="./delete.html"></a>
-                            <input type="submit" name="sumbit" id="sumbit" value="刪除">
-                            </a>
-                        </td>
-                    </form>
+                    <td class="text-green">
+                        <a href="./modify.html?id=2">修改</a>
+                        <a href="./delete.html?id=2">刪除</a>
+                    </td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td><a href="./modify.html?id=3">john</a></td>
                     <td>0939393939</td>
                     <td>john.pic</td>
-                    <!-- 按扭，超連結 -->
-                    <form action="">
-                        <td>
-                            <a href="./modify.html"></a>
-                            <input type="submit" name="sumbit" id="sumbit" value="修改">
-                            <a href="./delete.html"></a>
-                            <input type="submit" name="sumbit" id="sumbit" value="刪除">
-                            </a>
-                        </td>
-                    </form>
+                    <td class="text-green">
+                        <a href="./modify.html?id=3">修改</a>
+                        <a href="./delete.html?id=3">刪除</a>
+                    </td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td><a href="./modify.html?id=4">cat</a></td>
                     <td>0938777999</td>
                     <td>cat.pic</td>
-                    <!-- 按扭，超連結 -->
-                    <form action="">
-                        <td>
-                            <a href="./modify.html"></a>
-                            <input type="submit" name="sumbit" id="sumbit" value="修改">
-                            <a href="./delete.html"></a>
-                            <input type="submit" name="sumbit" id="sumbit" value="刪除">
-                            </a>
-                        </td>
-                    </form>
+                    <td class="text-green">
+                        <a href="./modify.html?id=4">修改</a>
+                        <a href="./delete.html?id=4">刪除</a>
+                    </td>
                 </tr>
                 <tr>
                     <td>5</td>
                     <td><a href="./modify.html?id=5">amy</a></td>
                     <td>0938123456</td>
                     <td>amy.pic</td>
-                    <!-- 按扭，超連結 -->
-                    <form action="">
-                        <td>
-                            <a href="./modify.html"></a>
-                            <input type="submit" name="sumbit" id="sumbit" value="修改">
-                            <a href="./delete.html"></a>
-                            <input type="submit" name="sumbit" id="sumbit" value="刪除">
-                            </a>
-                        </td>
-                    </form>
+                    <td class="text-green">
+                        <a href="./modify.html?id=5">修改</a>
+                        <a href="./delete.html?id=5">刪除</a>
+                    </td>
                 </tr>
                 <tr>
                     <td>6</td>
                     <td><a href="./modify.html?id=6">bob</a></td>
                     <td>0938383838</td>
                     <td>bob.pic</td>
-                    <!-- 按扭，超連結 -->
-                    <form action="">
-                        <td>
-                            <a href="./modify.html"></a>
-                            <input type="submit" name="sumbit" id="sumbit" value="修改">
-                            <a href="./delete.html"></a>
-                            <input type="submit" name="sumbit" id="sumbit" value="刪除">
-                            </a>
-                        </td>
-                    </form>
+                    <td class="text-green">
+                        <a href="./modify.html?id=6">修改</a>
+                        <a href="./delete.html?id=6">刪除</a>
+                    </td>
                 </tr>
                 <tr>
                     <td>7</td>
                     <td><a href="./modify.html?id=7">john</a></td>
                     <td>0939393939</td>
                     <td>john.pic</td>
-                    <!-- 按扭，超連結 -->
-                    <form action="">
-                        <td>
-                            <a href="./modify.html"></a>
-                            <input type="submit" name="sumbit" id="sumbit" value="修改">
-                            <a href="./delete.html"></a>
-                            <input type="submit" name="sumbit" id="sumbit" value="刪除">
-                            </a>
-                        </td>
-                    </form>
+                    <td class="text-green">
+                        <a href="./modify.html?id=7">修改</a>
+                        <a href="./delete.html?id=7">刪除</a>
+                    </td>
                 </tr>
                 <tr>
                     <td>8</td>
                     <td><a href="./modify.html?id=8">cat</a></td>
                     <td>0938777999</td>
                     <td>cat.pic</td>
-                    <!-- 按扭，超連結 -->
-                    <form action="">
-                        <td>
-                            <a href="./modify.html"></a>
-                            <input type="submit" name="sumbit" id="sumbit" value="修改">
-                            <a href="./delete.html"></a>
-                            <input type="submit" name="sumbit" id="sumbit" value="刪除">
-                            </a>
-                        </td>
-                    </form>
+                    <td class="text-green">
+                        <a href="./modify.html?id=8">修改</a>
+                        <a href="./delete.html?id=8">刪除</a>
+                    </td>
                 </tr>
 
             </table>
         </div>
         <!-- 學生資料_end -->
-        <!--  -->
-        <!-- 測試用 -->
-        <!-- <div class="tableskin">
-            <table>
-                <tr>
-                    <td>id</td>
-                    <td>name</td>
-                    <td>mobile</td>
-                    <td>pic</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Amy</td>
-                    <td>0938123456</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Bob</td>
-                    <td>0938383838</td>
-                    <td>picture2</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>John</td>
-                    <td>0939393939</td>
-                    <td>picture3</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-        </div> -->
-        <!-- 測試用 -->
     </div>
 </body>
 
