@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,8 @@
             width: 90%;
             margin-bottom: 5%;
             margin: auto;
-                    }
+        }
+
         table,
         tr,
         td {
@@ -23,10 +25,12 @@
             border-radius: 10px;
             background-color: rgb(18, 201, 18);
         }
+
         table {
             width: 30%;
             margin: auto;
         }
+
         h3 {
             text-align: center;
             /* font-style: italic; */
@@ -34,17 +38,20 @@
             font-size: 50px;
             color: green;
         }
+
         input[type="file"] {
             margin-left: 30px;
         }
+
         input[type="submit"] {
             margin-left: 45%;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <a href="./teacher_list.html">teacher_list</a>
+        <a href="./teacherIndex.html">teacherIndex</a>
     </div>
     <div class="container">
         <h3>Teacher_data_Create</h3>
@@ -56,25 +63,26 @@
                         <input type="text" name="name" id="name">
                     </td>
                 </tr>
-                    <tr>
-                        <td>
-                            <label for="mobile">mobile：</label>
-                            <input type="number" name="mobile" id="mobile">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="pic">pic：</label>
-                            <input type="file" name="file" multiple>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="submit" name="sumbit" id="sumbit" value="送出">
-                        </td>
-                    </tr>
+                <tr>
+                    <td>
+                        <label for="mobile">mobile：</label>
+                        <input type="number" name="mobile" id="mobile">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="pic">pic：</label>
+                        <input type="file" name="file" multiple>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="sumbit" id="sumbit" value="送出">
+                    </td>
+                </tr>
             </table>
         </form>
     </div>
 </body>
+
 </html>

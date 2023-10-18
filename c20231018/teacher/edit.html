@@ -1,52 +1,62 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher_data_Modify</title>
+    <title>Teacher_data_edit</title>
     <style>
-        .container{
+        .container {
             margin-top: 10%;
             margin-bottom: 5%;
             width: 90%;
             /* box-shadow: inset 0 0 20px 5px yellowgreen; */
             margin: auto;
-                    }
-        table,tr,td{
+        }
+
+        table,
+        tr,
+        td {
             /* border: 1px solid black; */
             border-collapse: collapse;
             text-align: left;
             padding: 10px;
             font-family: 'Trebuchet MS';
             border-radius: 10px;
-            background-color: aqua;
+            background-color: rgb(18, 201, 18);
+
         }
-        table{
+
+        table {
             width: 30%;
             margin: auto;
         }
-        h3{
+
+        h3 {
             text-align: center;
             /* font-style:italic; */
             font-weight: bold;
             font-size: 50px;
             color: blue;
         }
+
         /* 設定 該屬性的格式 */
-        input[type="file"]{
-            margin-left:30px;
+        input[type="file"] {
+            margin-left: 30px;
         }
-        input[type="submit"]{
-            margin-left:45%;
+
+        input[type="submit"] {
+            margin-left: 45%;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <a href="./teacher_list.html">teacher_list</a>
+        <a href="./teacherIndex.html">teacherIndex</a>
     </div>
     <div class="container">
-        <h3>Teacher_data_Modify</h3>
+        <h3>Teacher_data_edit</h3>
         <form action="" enctype="multipart/form-data">
             <table>
                 <tr>
@@ -55,25 +65,26 @@
                         <input type="text" name="name" id="name" value="Amy">
                     </td>
                 </tr>
-                    <tr>
-                        <td>
-                            <label for="mobile">mobile：</label>
-                            <input type="number" name="mobile" id="mobile" value="0938123456">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="pic">pic：</label>
-                            <input type="file" name="file" multiple>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="submit" name="sumbit" id="sumbit" value="送出">
-                        </td>
-                    </tr>
+                <tr>
+                    <td>
+                        <label for="mobile">mobile：</label>
+                        <input type="number" name="mobile" id="mobile" value="0938123456">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="pic">pic：</label>
+                        <input type="file" name="file" multiple>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="sumbit" id="sumbit" value="送出">
+                    </td>
+                </tr>
             </table>
         </form>
     </div>
 </body>
+
 </html>
