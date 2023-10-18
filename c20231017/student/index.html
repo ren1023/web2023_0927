@@ -7,25 +7,32 @@
     <title>student</title>
     <style>
         body {
-            background-color: lightsalmon;
+            /* background-color: lightsalmon; */
         }
 
         .container {
-            background-color: antiquewhite;
+            /* background-color: antiquewhite; */
             padding: 10px 10px;
             /* display: flex; 將容器內的容器水平排列 */
             width: 90%;
+
         }
 
         .tableskin {
-            background-color: lightgreen;
+            background-color: greenyellow;
             width: 80%;
             /* justify-content: center; */
             /* 這會使得容器中的所有元素 <div> 都水平居中 */
             padding: 10px 10px;
+            padding-bottom: 5%;
             margin: auto;
-            margin-top: 30px;
-            border-radius: 20px;
+            /* margin-top: 30px; */
+            border-radius: 10px;
+            border: 5px solid yellowgreen;
+            /* box-shadow: 10px 10px #888888; */
+            /* //內側 ｜ x 軸-位移 | y 軸-位移 | 模糊值 blur-radius ｜ 擴散值 spread-radius ｜ 顏色 */
+            box-shadow: inset 0 0 20px 5px yellowgreen;
+
         }
 
         table,
@@ -33,21 +40,25 @@
         tr,
         td {
             /* color: red; */
-            border: 1px solid black;
+            border: 1px solid rgb(0, 0, 0);
             border-collapse: collapse;
             /* background-color: aquamarine; */
             font-family: 'Cambria';
             text-align: center;
-            border-collapse: collapse;
+            margin: auto;
+            /* background-color: green; */
+
 
 
         }
 
         table {
-            width: 100%;
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 90%;
             border-radius: 12px;
             /* 調整圓角大小 */
-            overflow: hidden;
+            /* overflow: hidden; */
             /* 使圓角生效 */
 
         }
@@ -57,15 +68,20 @@
         }
 
         /* even 奇數，odd 偶數 是  */
-        tr:nth-child(even) {
+        tr:nth-child(odd) {
             background-color: pink;
             color: blue;
         }
 
-        /* 將表格中的第二個 <tr> 元素（表格行）文字顏色設置為藍色 */
-        /* tr:nth-child(1){
-            color:blue;
-        } */
+        /* even 奇數，odd 偶數 是  */
+        tr:nth-child(even) {
+            background-color: lightgreen;
+        }
+
+        /* 將表格中的第一個 <tr> 元素（表格行）文字顏色設置為黑色 */
+        tr:nth-child(1) {
+            color: black;
+        }
 
         th {
             background-color: gray;
@@ -75,6 +91,11 @@
         .text-right {
             text-align: right;
             font-size: 20px;
+        }
+
+        .text-green>a {
+            color: green;
+            text-decoration: none;
         }
 
         .tableskin>a {
@@ -88,7 +109,7 @@
         }
 
         h2 {
-            text-align: left;
+            text-align: center;
         }
         
         .text-green > a {
@@ -122,6 +143,7 @@
                         <br>
                         amy.pic
                     </td>
+<<<<<<< HEAD
                    
                     <td class="text-green"> 
                         <a href="./delete.html?id=1">del</a>
@@ -129,16 +151,28 @@
                         <a href="./modify.html?id=1">&nbsp;modify</a>
                     </td>
                    
+=======
+                    <td class="text-green">
+                        <a href="./modify.html?id=1">修改</a>
+                        <a href="./delete.html?id=1">刪除</a>
+                    </td>
+>>>>>>> 5018be9a21fa0f330532317faa4eb5556cc3eaeb
                 </tr>
                 <tr>
                     <td>2</td>
                     <td><a href="./modify.html?id=2">bob</a></td>
                     <td>0938383838</td>
                     <td>bob.pic</td>
+<<<<<<< HEAD
                     <!-- 按扭，超連結 -->
                     <td class="text-green"> 
                         <a href="./delete.html?id=2">del</a>
                         <a href="./modify.html?id=2">&nbsp;modify</a>
+=======
+                    <td class="text-green">
+                        <a href="./modify.html?id=2">修改</a>
+                        <a href="./delete.html?id=2">刪除</a>
+>>>>>>> 5018be9a21fa0f330532317faa4eb5556cc3eaeb
                     </td>
                 </tr>
                 <tr>
@@ -146,9 +180,15 @@
                     <td><a href="./modify.html?id=3">john</a></td>
                     <td>0939393939</td>
                     <td>john.pic</td>
+<<<<<<< HEAD
                     <td class="text-green"> 
                         <a href="./delete.html?id=3">del</a>
                         <a href="./modify.html?id=3">&nbsp;modify</a>
+=======
+                    <td class="text-green">
+                        <a href="./modify.html?id=3">修改</a>
+                        <a href="./delete.html?id=3">刪除</a>
+>>>>>>> 5018be9a21fa0f330532317faa4eb5556cc3eaeb
                     </td>
                 </tr>
                 <tr>
@@ -156,9 +196,15 @@
                     <td><a href="./modify.html?id=4">cat</a></td>
                     <td>0938777999</td>
                     <td>cat.pic</td>
+<<<<<<< HEAD
                     <td class="text-green"> 
                         <a href="./delete.html?id=4">del</a>
                         <a href="./modify.html?id=4">&nbsp;modify</a>
+=======
+                    <td class="text-green">
+                        <a href="./modify.html?id=4">修改</a>
+                        <a href="./delete.html?id=4">刪除</a>
+>>>>>>> 5018be9a21fa0f330532317faa4eb5556cc3eaeb
                     </td>
                 </tr>
                 <tr>
@@ -166,9 +212,15 @@
                     <td><a href="./modify.html?id=5">amy</a></td>
                     <td>0938123456</td>
                     <td>amy.pic</td>
+<<<<<<< HEAD
                     <td class="text-green"> 
                         <a href="./delete.html?id=5">del</a>
                         <a href="./modify.html?id=5">&nbsp;modify</a>
+=======
+                    <td class="text-green">
+                        <a href="./modify.html?id=5">修改</a>
+                        <a href="./delete.html?id=5">刪除</a>
+>>>>>>> 5018be9a21fa0f330532317faa4eb5556cc3eaeb
                     </td>
                 </tr>
                 <tr>
@@ -176,9 +228,15 @@
                     <td><a href="./modify.html?id=6">bob</a></td>
                     <td>0938383838</td>
                     <td>bob.pic</td>
+<<<<<<< HEAD
                     <td class="text-green"> 
                         <a href="./delete.html?id=6">del</a>
                         <a href="./modify.html?id=6">&nbsp;modify</a>
+=======
+                    <td class="text-green">
+                        <a href="./modify.html?id=6">修改</a>
+                        <a href="./delete.html?id=6">刪除</a>
+>>>>>>> 5018be9a21fa0f330532317faa4eb5556cc3eaeb
                     </td>
                 </tr>
                 <tr>
@@ -186,10 +244,16 @@
                     <td><a href="./modify.html?id=7">john</a></td>
                     <td>0939393939</td>
                     <td>john.pic</td>
+<<<<<<< HEAD
                     <td class="text-green"> 
                         
                         <a href="./delete.html?id=7">del</a>
                         <a href="./modify.html?id=7">&nbsp;modify</a>
+=======
+                    <td class="text-green">
+                        <a href="./modify.html?id=7">修改</a>
+                        <a href="./delete.html?id=7">刪除</a>
+>>>>>>> 5018be9a21fa0f330532317faa4eb5556cc3eaeb
                     </td>
                 </tr>
                 <tr>
@@ -197,16 +261,25 @@
                     <td><a href="./modify.html?id=8">cat</a></td>
                     <td>0938777999</td>
                     <td>cat.pic</td>
+<<<<<<< HEAD
                     <td class="text-green"> 
                         <a href="./delete.html?id=8">del</a>
                         <a href="./modify.html?id=8">&nbsp;modify</a>
+=======
+                    <td class="text-green">
+                        <a href="./modify.html?id=8">修改</a>
+                        <a href="./delete.html?id=8">刪除</a>
+>>>>>>> 5018be9a21fa0f330532317faa4eb5556cc3eaeb
                     </td>
                 </tr>
 
             </table>
         </div>
         <!-- 學生資料_end -->
+<<<<<<< HEAD
         
+=======
+>>>>>>> 5018be9a21fa0f330532317faa4eb5556cc3eaeb
     </div>
 </body>
 
