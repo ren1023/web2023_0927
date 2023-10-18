@@ -7,20 +7,23 @@
     <style>
         .container{
             margin-top: 10%;
-            margin-bottom: 10%;
+            margin-bottom: 5%;
+            width: 90%;
+            /* box-shadow: inset 0 0 20px 5px yellowgreen; */
+            margin: auto;
                     }
         table,tr,td{
-            border: 1px solid black;
+            /* border: 1px solid black; */
             border-collapse: collapse;
             text-align: left;
             padding: 10px;
             font-family: 'Trebuchet MS';
+            border-radius: 10px;
+            background-color: rgb(143, 255, 255);
         }
-
         table{
-            width: 50%;
+            width: 30%;
             margin: auto;
-            
         }
         h3{
             text-align: center;
@@ -28,26 +31,24 @@
             font-weight: bold;
             font-size: 50px;
             color: blue;
-            
         }
-        
+        /* 設定 該屬性的格式 */
         input[type="file"]{
             margin-left:30px;
         }
-        
-
+        input[type="submit"]{
+            margin-left:45%;
+        }
     </style>
 </head>
 <body>
-    <div class="contain">
+    <div class="container">
         <a href="./student_list.html">student_list</a>
     </div>
     <div class="container">
-        <h3>Modify</h3>
+        <h3>Student_data_Modify</h3>
         <form action="" enctype="multipart/form-data">
-            
             <table>
-
                 <tr>
                     <td>
                         <label for="name">name：</label>
@@ -55,7 +56,6 @@
                     </td>
                 </tr>
                     <tr>
-                        
                         <td>
                             <label for="mobile">mobile：</label>
                             <input type="number" name="mobile" id="mobile" value="0938123456">
@@ -72,7 +72,6 @@
                             <input type="submit" name="sumbit" id="sumbit" value="送出">
                         </td>
                     </tr>
-                    
             </table>
         </form>
     </div>
