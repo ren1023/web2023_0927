@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student_data_Modify</title>
+    <title>Student_data_Create</title>
     <style>
         .container {
             margin-top: 10%;
-            margin-bottom: 5%;
             width: 90%;
-            /* box-shadow: inset 0 0 20px 5px yellowgreen; */
+            margin-bottom: 5%;
             margin: auto;
         }
 
@@ -21,9 +20,11 @@
             border-collapse: collapse;
             text-align: left;
             padding: 10px;
+            /* margin-left: 20%; */
             font-family: 'Trebuchet MS';
             border-radius: 10px;
-            background-color: rgb(143, 255, 255);
+            /* background-color: rgb(18, 201, 18); */
+            background-color: rgb(213, 129, 221);
         }
 
         table {
@@ -36,10 +37,9 @@
             font-style: italic;
             font-weight: bold;
             font-size: 50px;
-            color: blue;
+            color: green;
         }
 
-        /* 設定 該屬性的格式 */
         input[type="file"] {
             margin-left: 30px;
         }
@@ -48,6 +48,7 @@
             margin-left: 45%;
         }
     </style>
+    </style>
 </head>
 
 <body>
@@ -55,13 +56,13 @@
         <a href="./studentIndex.html">studentIndex</a>
     </div>
     <div class="container">
-        <h3>Student_data_Modify</h3>
+        <h3>Student_data_Create</h3>
         <form action="" enctype="multipart/form-data">
             <table>
                 <tr>
                     <td>
                         <label for="name">name：</label>
-                        <input type="text" name="name" id="name" value="Amy">
+                        <input type="text" name="name" id="name">
                     </td>
                 </tr>
                 <tr>
@@ -73,7 +74,7 @@
                 <tr>
                     <td>
                         <label for="mobile">mobile：</label>
-                        <input type="number" name="mobile" id="mobile" value="0938123456">
+                        <input type="number" name="mobile" id="mobile">
                     </td>
                 </tr>
                 <tr>

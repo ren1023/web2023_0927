@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,26 +9,22 @@
             margin-top: 3%;
             margin-bottom: 5%;
         }
-
         table,
         tr,
         th,
         td {
-            /* border: 1px solid black; */
+            border: 1px solid black;
             border-collapse: collapse;
             text-align: left;
             padding: 10px;
             font-family: 'Trebuchet MS';
             border-radius: 10px;
             background-color: rgb(213, 129, 221);
-
         }
-
         table {
             width: 50%;
             margin: auto;
         }
-
         h3 {
             text-align: center;
             font-style: italic;
@@ -37,7 +32,6 @@
             font-size: 50px;
             color: red;
         }
-
         h4 {
             text-align: center;
             padding-right: 40%;
@@ -46,48 +40,44 @@
             /* font-size: 50px; */
             color: red;
         }
-
         input[type="submit"] {
             margin-left: 45%;
         }
-
-        .result>td,
-        th {
-            border: 1px solid black;
+        .query{
+            /* background-color: aquamarine; */
+        }
+        .result{
+            /* background-color: antiquewhite; */
+        }
+        .no-line {
+            border: 0px solid black;
             border-collapse: collapse;
-            text-align: left;
-            padding: 10px;
-            font-family: 'Trebuchet MS';
-            border-radius: 10px;
-            /* background-color:rgb(210, 82, 222); */
-
         }
     </style>
 </head>
-
 <body>
     <div class="container">
         <a href="./studentIndex.html">studentIndex</a>
     </div>
     <!-- 刪除_搜尋_start -->
-    <div class="container">
+    <div class="query">
         <h3>Student_data_Delete</h3>
         <form action="">
-            <table>
-                <tr>
-                    <td>
+            <table class="no-line">
+                <tr class="no-line" >
+                    <td class="no-line">
                         <label for="name">name：</label>
                         <input type="text" name="name" id="name" value="Amy">
                     </td>
                 </tr>
-                <tr>
-                    <td>
+                <tr class="no-line">
+                    <td class="no-line">
                         <label for="mobile">mobile：</label>
                         <input type="number" name="mobile" id="mobile" value="0938123456">
                     </td>
                 </tr>
-                <tr>
-                    <td>
+                <tr class="no-line">
+                    <td class="no-line">
                         <input type="submit" name="sumbit" id="sumbit" value="搜尋">
                     </td>
                 </tr>
@@ -98,8 +88,8 @@
     <hr>
     <!--  -->
     <!-- 搜尋結果_提供刪除功能_start -->
-    <div class="container">
-        <table>
+    <div class="result">
+        <table >
             <h4>搜尋結果：</h4>
             <tr>
                 <th>id</th>
@@ -119,5 +109,4 @@
     </div>
     <!-- 搜尋結果_提供刪除功能_end -->
 </body>
-
 </html>
