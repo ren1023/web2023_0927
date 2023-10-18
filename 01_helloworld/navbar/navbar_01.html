@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Create Navbar in HTML and CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            /* background: url(./images/gregShield.jpg)no-repeat; */
+            background: linear-gradient(to bottom, rgba(195, 220, 153, 0.32), rgba(255, 255, 255, 0.73) 80%),url(./images/gregShield.jpg)no-repeat;
+            
+            background-size: cover;
+            background-position: center;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 100px;
+            /* background-color: seagreen; */
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            /* 相應元素的堆疊順序較高，它將在堆疊中處於較前面的位置，並且通常會顯示在其他具有較低 z-index 值的元素之上。 */
+        }
+        .logo {
+            font-size: 32px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            /* 屬性的數字值可以從 100 至 900，並以 100 的倍數進行調整。因此，font-weight: 700; 表示文字使用相對較粗的字重呈現。 */
+        }
+        .navbar a {
+            position: relative;
+            font-size: 18px;
+            color: #fff;
+            font-weight: 500;
+            text-decoration: none;
+            margin-left: 40px;
+        }
+        .navbar a::before {
+            content: '';
+            position: absolute;
+            /* 是一個 CSS 屬性，用於指定元素的定位方式。當您將元素的位置設置為絕對定位時，它將根據最接近的已定位的祖先元素進行定位，如果沒有已定位的祖先元素，則相對於文檔的 body 元素進行定位。 */
+            top: 100%;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            transition: .3s;
+        }
+        .navbar a:hover::before {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- 超連結底線有動畫 -->
+    <header class="header">
+        <a href="#" class="logo">Logo</a>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Gallery</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+</body>
+</html>

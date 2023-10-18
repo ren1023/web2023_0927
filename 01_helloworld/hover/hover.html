@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 滑鼠移動至此查看效果 */
+        .shape-ex1 {
+            font-size: 18px;
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+        }
+        .shape-ex1:after {
+            content: '';
+            width: 0%;
+            height: 1px;
+            background-color: #000;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: all .3s linear;
+        }
+        .shape-ex1:hover::after {
+            width: 100%;
+        }
+        /* 文字顏色: 更改文字顏色 */
+        .shape-ex3 {
+            font-size: 18px;
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            transition: all .3s linear;
+        }
+        .shape-ex3:hover {
+            color: #d81616;
+        }
+        /* 文字顏色: 利用背景顏色配合文字顏色來凸顯 */
+        .shape-ex4 {
+            font-size: 18px;
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            transition: all .3s linear;
+        }
+        .shape-ex4:hover {
+            color: #fff;
+            background-color: #000
+        }
+        /* 滑鼠滑過會產生重疊的字 */
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .container {
+            margin-top: 200px;
+            margin-left: 250px;
+        }
+        .moreBtnText {
+            font-size: 72px;
+            color: #AA0601;
+            font-weight: 700;
+            position: relative;
+            z-index: 100;
+            white-space: nowrap;
+        }
+        .moreBtnText::before {
+            content: "MORE";
+            position: absolute;
+            color: #AA0601;
+            transition: all .65s .1s;
+            transform: translateY(0px);
+        }
+        .moreBtnText:hover::before {
+            transform: translateY(-45px);
+            opacity: .7;
+        }
+        .moreBtnText::after {
+            content: "MORE";
+            position: absolute;
+            color: #AA0601;
+            transition: all .65s .1s;
+            transform: translateY(0px);
+            left: 0;
+        }
+        .moreBtnText:hover::after {
+            transform: translateY(-95px);
+            opacity: .4;
+        }
+        /*  */
+        /*  */
+    </style>
+</head>
+<body>
+    <div class="shape-ex1">滑鼠移動至此查看效果</div>
+    <p></p>
+    <div class="shape-ex3">滑鼠移動改顏色看效果</div>
+    <p></p>
+    <div class="shape-ex4">文字顏色: 利用背景顏色配合文字顏色來凸顯</div>
+    <p></p>
+    <div class="container">
+        <div class="moreBtnText">MORE</div>
+    </div>
+</body>
+</html>
