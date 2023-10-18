@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modify</title>
+    <title>Create</title>
     <style>
         .container{
             margin-top: 10%;
-            margin-bottom: 10%;
                     }
         table,tr,td{
             border: 1px solid black;
@@ -16,46 +15,40 @@
             padding: 10px;
             font-family: 'Trebuchet MS';
         }
-
         table{
             width: 50%;
             margin: auto;
-            
         }
         h3{
             text-align: center;
             font-style:italic;
             font-weight: bold;
             font-size: 50px;
-            color: blue;
-            
+            color:green;
         }
-        
         input[type="file"]{
             margin-left:30px;
         }
-        
-
     </style>
 </head>
 <body>
+    <div class="contain">
+        <a href="./teacher_list.html">teacher_list</a>
+    </div>
     <div class="container">
-        <h3>Modify</h3>
+        <h3>Teacher_data_Create</h3>
         <form action="" enctype="multipart/form-data">
-            
             <table>
-
                 <tr>
                     <td>
                         <label for="name">name：</label>
-                        <input type="text" name="name" id="name" value="Amy">
+                        <input type="text" name="name" id="name">
                     </td>
                 </tr>
                     <tr>
-                        
                         <td>
                             <label for="mobile">mobile：</label>
-                            <input type="number" name="mobile" id="mobile" value="0938123456">
+                            <input type="number" name="mobile" id="mobile">
                         </td>
                     </tr>
                     <tr>
@@ -69,7 +62,6 @@
                             <input type="submit" name="sumbit" id="sumbit" value="送出">
                         </td>
                     </tr>
-                    
             </table>
         </form>
     </div>

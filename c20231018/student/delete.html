@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+    <style>
+        .container {
+            margin-top: 10%;
+            margin-bottom: 10%;
+        }
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: left;
+            padding: 10px;
+            font-family: 'Trebuchet MS';
+        }
+        table {
+            width: 50%;
+            margin: auto;
+        }
+        h3 {
+            text-align: center;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 50px;
+            color: red;
+        }
+        h4 {
+            text-align: center;
+            padding-right: 40%;
+            /* font-style:italic; */
+            font-weight: bold;
+            /* font-size: 50px; */
+            color: red;
+        }
+        input[type="file"] {
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contain">
+        <a href="./student_list.html">student_list</a>
+    </div>
+    <!-- 刪除_搜尋_start -->
+    <div class="container">
+        <h3>Delete</h3>
+        <form action="">
+            <table>
+                <tr>
+                    <td>
+                        <label for="name">name：</label>
+                        <input type="text" name="name" id="name" value="Amy">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="mobile">mobile：</label>
+                        <input type="number" name="mobile" id="mobile" value="0938123456">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="sumbit" id="sumbit" value="搜尋">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <!-- 刪除_搜尋_end -->
+    <hr>
+    <!--  -->
+    <!-- 搜尋結果_提供刪除功能_start -->
+    <div class="container">
+        <table>
+            <h4>搜尋結果：</h4>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>mobile</th>
+                <th>delete</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Amy</td>
+                <td>0938123456</td>
+                <td>
+                    <input type="submit" name="sumbit" id="sumbit" value="刪除">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- 搜尋結果_提供刪除功能_end -->
+</body>
+</html>
