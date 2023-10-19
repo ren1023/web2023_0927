@@ -1,22 +1,126 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>position</title>
     <style>
-        .pos-static{
-            left:30px;
+        /* 設置頁面高度為 2000 像素 */
+        body {
+            height: 2000px;
         }
-        .pos-relative{
-            position:relative;
-            left:30px;
+
+        /* 定義靜態定位的元素 */
+        .pos-static {
+            left: 30px;
+            /* 水平位移 30 像素 */
         }
+
+        /* 定義相對定位的元素 */
+        .pos-relative {
+            z-index: 500;
+            /* 堆疊順序為 500 */
+            position: relative;
+            /* 設置相對定位 */
+            left: 30px;
+            /* 水平位移 30 像素 */
+        }
+
+        /* 定義固定定位的元素 */
+        .pos-fixed {
+            position: fixed;
+            /* 設置固定定位 */
+            right: 100px;
+            /* 距離視窗右側 100 像素 */
+            bottom: 30px;
+            /* 距離視窗底部 30 像素 */
+        }
+
+        /* 移除超連結的下劃線 */
+        a {
+            text-decoration: none;
+        }
+
+        /* 定義固定在頂部的導航欄樣式 */
+        .nav-fix {
+            position: fixed;
+            /* 設置固定定位 */
+            top: 0;
+            /* 距離視窗頂部 0 像素 */
+            width: 100%;
+            /* 寬度為 100% */
+            height: 7vh;
+            /* 高度為 7% 視窗高度 */
+            background: lightblue;
+            /* 背景色為淺藍色 */
+            z-index: 100;
+            /* 堆疊順序為 100 */
+        }
+
+        /* 定義固定在底部的頁尾樣式 */
+        footer {
+            position: fixed;
+            /* 設置固定定位 */
+            background: lightgoldenrodyellow;
+            /* 背景色為淺金黃色 */
+            bottom: 0;
+            /* 距離視窗底部 0 像素 */
+            height: 15vh;
+            /* 高度為 15% 視窗高度 */
+            z-index: 100;
+            /* 堆疊順序為 100 */
+        }
+        .box-relative{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background: pink;
+        }
+        .pos-absolute{
+            /* position: absolute; */
+            width: 100px;
+            height: 100px;
+            /* background: green; */
+        }
+        
+        .box1{
+            background: green;
+            position: absolute;
+            right: 100; /* 這是 default 值，可以不用寫 */
+            top: 100; /* 這是 default 值，可以不用寫 */
+        }
+        .box2{
+            background: blue;
+            position: absolute;
+            right: 0;
+            top: 100;
+        }
+        .box3{
+            background: blueviolet;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+        .box4{
+            background: red;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        
+
         
     </style>
 </head>
+
 <body>
     <div class="container">
+        <nav class="nav-fix">
+            <!-- my nav bar -->
+            <a href="">a1</a>
+            <a href="">a2</a>
+        </nav>
         <h3>position</h3>
         <br>
         <hr>
@@ -32,7 +136,45 @@
         <p class="pos-relative">
             Lorem ipsum dolor sit amet.
         </p>
+        <br>
+        <hr>
+        <br>
+        <h4>absolute</h4>
+        <div class="box-relative">
+            box-relative
+            <div class="pos-absolute box1">
+                absolute
+            </div>
+
+            <div class="pos-absolute box2">
+                absolute
+            </div>
+            <div class="pos-absolute box3">
+                absolute
+            </div>
+            <div class="pos-absolute box4">
+                absolute
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <h4>fixed</h4>
+        <p class="pos-fixed">
+            Lorem ipsum dolor sit amet.
+            <button>100</button>
+            <button>200</button>
+        </p>
+
+        <a href="#" class="pos-fixed">top</a>
+
+        <footer>
+            <p>
+                I am Footer
+            </p>
+        </footer>
     </div>
-    
+
 </body>
+
 </html>
