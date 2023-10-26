@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container1{
+            display: flex;/* 將容器設置為 flex 容器，啟用 Flexbox 佈局模型 */
+            flex-direction: column;
+            width: 100%;
+            height: 80vh;
+            background: lightblue;
+            margin-bottom: 10px;
+        }
+        .container1 > .item{
+            width: 300px;
+            height: 300px;
+            background: lightgray;
+            text-align: center;
+            margin-bottom: 10px;
+
+        }
+        .container2{
+            display: flex;/* 將容器設置為 flex 容器，啟用 Flexbox 佈局模型 */
+            flex-direction: column-reverse;
+            width: 100%;
+            height: 80vh;
+            background: lightblue;
+            margin-bottom: 10px;
+        }
+        .container3{
+            display: flex;/* 將容器設置為 flex 容器，啟用 Flexbox 佈局模型 */
+            flex-wrap:wrap;
+            width: 100%;
+            height: 80vh;
+            background: lightblue;
+            margin-bottom: 10px;
+        }
+
+        .container4{
+            display: flex;/* 將容器設置為 flex 容器，啟用 Flexbox 佈局模型 */
+            justify-content: center;
+            width: 100%;
+            height: 80vh;
+            background: lightblue;
+            margin-bottom: 10px;
+        }
+
+        .item{
+            width: 300px;
+            height: 300px;
+            background: lightgray;
+            text-align: center;
+            margin-bottom: 10px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="container1">
+        container_flex-direction: column
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+    </div>
+
+    <div class="container2">
+        container_flex-direction: column-reverse
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+    </div>
+
+    <div class="container3">
+        container_flex-wrap: wrap
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+    </div>
+
+    <div class="container4">
+        justify-content：center
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+    </div>
+
+</div>
+    
+</body>
+</html>
