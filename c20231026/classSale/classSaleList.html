@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課程購買網</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 100px;
+            background-color: seagreen;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .navbar a {
+            position: relative;
+            font-size: 18px;
+            color: white;
+            font-weight: 500;
+            text-decoration: none;
+            margin-left: 40px;
+        }
+
+        .navbar>a::before {
+            content: '';
+            position: absolute;
+            /* 是一個 CSS 屬性，用於指定元素的定位方式。當您將元素的位置設置為絕對定位時，它將根據最接近的已定位的祖先元素進行定位，如果沒有已定位的祖先元素，則相對於文檔的 body 元素進行定位。 */
+            top: 100%;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: .3s;
+        }
+
+        .navbar>a:hover::before {
+            width: 100%;
+        }
+
+        img {
+            width: 250px;
+        }
+
+        .container-pc {
+            display: flex;
+            flex-direction: row;
+            height: 70vh;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            height: 70vh;
+            margin: auto;
+            background: lightblue;
+        }
+
+        .subclass {
+            display: flex;
+            /* justify-content: center; */
+            /* align-items: center; */
+
+            width: 30%;
+            /* height: 25vh; */
+            background-color: lightgray;
+            border: 3px solid grey;
+            margin-left: 10px;
+            border-radius: 25px;
+            
+        }
+
+        .pc{
+            /* background: lightgreen; */
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+        }
+
+        .eng {
+            background: linear-gradient(to right, #01bf6d, #d2fc9a);
+
+
+        }
+
+        .container-eng {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            height: 70vh;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            height: 70vh;
+            margin: auto;
+            background: lightcoral;
+        }
+
+
+        table,
+        tr,
+        td {
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- <div class="container"> -->
+        <header class="header">
+            <!-- <a href="#" class="logo">Logo</a> -->
+            <nav class="navbar">
+                <a href="#section1">Computer</a>
+                <a href="#section2">English</a>
+            </nav>
+        </header>
+    <!-- </div> -->
+
+
+    <div class="container1">
+        
+        <p id="section1"></p>
+        <div class="container-pc">
+
+            <div class="subclass pc">
+
+                <table>
+                    <tr>
+                        <td>
+                            <p>
+                                <img src="./java.jpg" alt="">
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                            <h2>Java雲端服務開發技術養成班</h2>
+                            從零開始成為取代性低、高度專業、薪資福利穩定的Java工程師
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="subclass pc">
+                <table>
+                    <tr>
+                        <td>
+                            <p>
+                                <img src="./python.jpg" alt="">
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                            <h2>Python 語法世界，程式實作不頭痛</h2>
+                            從零開始成為取代性低、高度專業、薪資福利穩定的Java工程師
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="subclass pc">
+                <table>
+                    <tr>
+                        <td>
+                            <p>
+                                <img src="./excel.jpg" alt="">
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                            <h2>無痛起步-Excel VBA超入門實戰</h2>
+                            從零開始成為取代性低、高度專業、薪資福利穩定的Java工程師
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <!-- container-eng -->
+        <p id="section2"></p>
+        <div class="container-eng">
+
+            <div class="subclass eng">
+
+                <table>
+                    <tr>
+                        <td>
+                            <p>
+                                <img src="./eng1.jpg" alt="">
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                            <h2>英文文法養成班</h2>
+                            從零開始成為取代性低、高度專業、薪資福利穩定的Java工程師
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="subclass eng">
+                <table>
+                    <tr>
+                        <td>
+                            <p>
+                                <img src="./eng2.jpg" alt="">
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                            <h2>英文對話養成班</h2>
+                            從零開始成為取代性低、高度專業、薪資福利穩定的Java工程師
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="subclass eng">
+                <table>
+                    <tr>
+                        <td>
+                            <p>
+                                <img src="./java.jpg" alt="">
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                            <h2>英文對話養成班</h2>
+                            從零開始成為取代性低、高度專業、薪資福利穩定的Java工程師
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="subclass eng">
+
+                <table>
+                    <tr>
+                        <td>
+                            <p>
+                                <img src="./java.jpg" alt="">
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                            <h2>Java雲端服務開發技術養成班</h2>
+                            從零開始成為取代性低、高度專業、薪資福利穩定的Java工程師
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="subclass eng">
+                <table>
+                    <tr>
+                        <td>
+                            <p>
+                                <img src="./java.jpg" alt="">
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                            <h2>Java雲端服務開發技術養成班</h2>
+                            從零開始成為取代性低、高度專業、薪資福利穩定的Java工程師
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="subclass eng">
+                <table>
+                    <tr>
+                        <td>
+                            <p>
+                                <img src="./java.jpg" alt="">
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                            <h2>Java雲端服務開發技術養成班</h2>
+                            從零開始成為取代性低、高度專業、薪資福利穩定的Java工程師
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- container-eng -->
+
+
+
+
+    </div>
+
+
+</body>
+
+</html>

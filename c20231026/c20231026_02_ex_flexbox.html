@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: lightgreen;
+        }
+    
+        .containerl1 {
+            /* 將容器設置為 flex 容器，啟用 Flexbox 佈局模型 */
+            display: flex;
+            flex-direction: row;
+            /* 水平對齊：置中 */
+            justify-content: space-around;
+            /* 垂直對齊：置中 */
+            align-items: center;            
+            width: 80%;
+            height: 70vh;
+            background: lightseagreen;
+            
+
+        }
+        .containerl21 {
+            /* 將容器設置為 flex 容器，啟用 Flexbox 佈局模型 */
+            display: flex;
+            flex-direction: row;
+            /* 水平對齊：置中 */
+            justify-content:flex-end;
+            /* 垂直對齊：置中 */
+            align-items: center;
+            
+            width: 70%;
+            height: 50vh;
+            background: lightpink;
+            margin-bottom: 10px;
+            /* margin-left: 10px; */
+        }
+        .containerl22 {
+            /* 將容器設置為 flex 容器，啟用 Flexbox 佈局模型 */
+            display: flex;
+            flex-direction: row;
+            /* 水平對齊：置中 */
+            justify-content:center;
+            /* 垂直對齊：置中 */
+            align-items: flex-end;
+            
+            width: 80%;
+            height: 50vh;
+            background: lightsalmon;
+            margin-bottom: 10px;
+            /* margin-left: 10px; */
+        }
+
+
+        .item {
+            width: 100px;
+            height: 100px;
+            background: lightgray;
+            /* text-align: center; */
+            /* margin-bottom: 10px; */
+
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="containerl1">
+    containerl1
+    <div class="containerl21">
+        container21
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+    </div>
+
+    <div class="containerl22">
+        container22
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+    </div>
+</div>
+    
+.container
+
+</body>
+</html>

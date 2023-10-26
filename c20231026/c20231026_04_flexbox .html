@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: lightgreen;
+        }
+        .container {
+            /* 將容器設置為 flex 容器，啟用 Flexbox 佈局模型 */
+            display: flex;
+            flex-direction: row;
+            /* 水平對齊：置中 */
+            justify-content: space-around;
+            /* 垂直對齊：置中 */
+            align-items: center;
+            /* 使用 flex-wrap 屬性將 flex 元素包裹到多行或多列 */
+            flex-wrap: wrap;
+            
+            width: 40%;
+            height: 80vh;
+            background: lightblue;
+            margin:auto;
+        }
+        .item {
+            width: 200px;
+            height: 200px;
+            background: lightgray;
+        }
+        .item {
+            width: 200px;
+            height: 200px;
+            background: lightgray;
+        }
+
+        .color-green::before{
+            width: 200px;
+            height: 200px;
+            background: lightgray;
+        }
+        
+        .color-green:hover{
+            background: lightgray;
+            background-image: url(./o-circle.png);
+            background-size: cover;
+        }
+
+
+        .color-red:hover{
+            background: palevioletred;
+            background-image: url(./x-icon.png);
+            background-size: cover;
+        }
+    
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- container -->
+        <div class="item color-green">item5</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item color-green">item5</div>
+        <div class="item color-red">item6</div>
+        <div class="item">item7</div>
+        <div class="item">item8</div>
+        <div class="item color-green">item9</div>
+
+    </div>
+    
+</body>
+</html>
