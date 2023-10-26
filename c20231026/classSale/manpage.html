@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        /* navbar-start */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 100px;
+            background-color: seagreen;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+        .navbar a {
+            position: relative;
+            font-family: 'Trebuchet MS';
+            font-size: 18px;
+            /* color: white; */
+            font-weight: 500;
+            text-decoration: none;
+            /* margin-left: 40px; */
+        }
+        .navbar>a::before {
+            content: ' ';
+            position: absolute;
+            /* 是一個 CSS 屬性，用於指定元素的定位方式。當您將元素的位置設置為絕對定位時，它將根據最接近的已定位的祖先元素進行定位，如果沒有已定位的祖先元素，則相對於文檔的 body 元素進行定位。 */
+            top: 100%;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: .3s;
+        }
+        .navbar>a:hover::before {
+            width: 100%;
+        }
+
+        /* navbar-end */
+
+        .container0 {
+            box-sizing: border-box;
+            background-color: lightseagreen;
+            /* width: 80%; */
+            /* height: 70vh; */
+        }
+
+        .container1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+            height: 70vh;
+            /* margin: 0 25%; */
+            margin: auto;
+
+            background-color: goldenrod;
+        }
+
+        .container2 {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            height: 70vh;
+            margin: auto;
+            background-color: blue;
+        }
+
+
+
+        /* product---start---*/
+        .items1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* background-color: pink; */
+            width: 100%;
+            height: 60vh;
+            /* margin-top: 10px; */
+            border-radius: 15%;
+            /* border: 1px solid black; */
+        }
+
+        .items2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* background-color: pink; */
+            width: 30%;
+            height: 35vh;
+            /* margin-top: 10px; */
+            border-radius: 15%;
+
+        }
+
+        .picture {
+            /* background-color: rgb(91, 253, 76); */
+            /* width: 100%; */
+            height: 55%;
+            text-align: center;
+            /* margin: auto; */
+            /* margin-top: 10px; */
+        }
+
+        .conten {
+            background-color: lightyellow;
+            width: 90%;
+            /* height: 100px; */
+            text-align: center;
+        }
+
+        .buy {
+            background-color: lightskyblue;
+            width: 25%;
+            /* height: 40px; */
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+
+
+        /* .img-150 {
+            /* width: 100%; */
+            /* height: 100%; */
+            /* margin: auto; */
+
+        /* } */ 
+
+        .picture-150 {
+            background-color: rgb(91, 253, 76);
+            width: 50%;
+            /* height: 50%; */
+            text-align: center;
+            /* margin: auto; */
+            margin-top: 10px;
+        }
+
+        .conten-150 {
+            background-color: lightyellow;
+            width: 50%;
+            height: 80px;
+            text-align: center;
+            /* margin: auto; */
+        }
+        .buy-150 {
+            width: 25%;
+            margin-top: 1px;
+            margin: auto;
+            margin-top: 3rem;
+        }
+        /* product---end */
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        button {
+            width: 100%;
+            margin: auto;
+            border-radius: 10%;
+            /* text-align: bottom; */
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <nav class="navbar">
+            <a href="#section1">Computer</a>
+            <a href="#section2">English</a>
+        </nav>
+    </div>
+
+    <div class="container0">
+
+        <!-- container1--start -->
+        <p id="section1"></p>
+        <div class="container1">
+            <!-- container1 -->
+            <div class="items1">
+                <div class="picture">
+                    <img src="./java.jpg" alt="">
+                </div>
+                <div class="conten">
+                    <h4>Lorem, ipsum.</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit!</p>
+                </div>
+                <div class="buy">
+                    <button>buy</button>
+                </div>
+            </div>
+
+            <div class="items1">
+                <div class="picture">
+                    <img src="./java.jpg" alt="">
+                </div>
+                <div class="conten">
+                    <h4>Lorem, ipsum.</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit!</p>
+                </div>
+                <div class="buy">
+                    <button>buy</button>
+                </div>
+            </div>
+
+            <div class="items1">
+                <div class="picture">
+                    <img src="./java.jpg" alt="">
+                </div>
+                <div class="conten">
+                    <h4>Lorem, ipsum.</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit!</p>
+                </div>
+                <div class="buy">
+                    <button>buy</button>
+                </div>
+            </div>
+        </div>
+        <!-- container1---end--- -->
+
+
+        <!-- container2--start -->
+        <p id="section2"></p>
+        <div class="container2">
+            <!-- container2 -->
+            <div class="items2">
+                
+                <div class="picture-150">
+                    <img class="img-150" src="./java.jpg" alt="">
+                </div>
+                <div class="conten-150">
+                    <h4>Lorem, ipsum.</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit!</p>
+                </div>
+                <div class="buy buy-150">
+                    <button>buy</button>
+                </div>
+            </div>
+            <div class="items2">
+                
+                <div class="picture-150">
+                    <img class="img-150" src="./java.jpg" alt="">
+                </div>
+                <div class="conten conten-150">
+                    <h4>Lorem, ipsum.</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit!</p>
+                </div>
+                <div class="buy buy-150">
+                    <button>buy</button>
+                </div>
+            </div>
+            <div class="items2">
+                
+                <div class="picture-150">
+                    <img class="img-150" src="./java.jpg" alt="">
+                </div>
+                <div class="conten conten-150">
+                    <h4>Lorem, ipsum.</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit!</p>
+                </div>
+                <div class="buy buy-150">
+                    <button>buy</button>
+                </div>
+            </div>
+            <div class="items2">
+                
+                <div class="picture-150">
+                    <img class="img-150" src="./java.jpg" alt="">
+                </div>
+                <div class="conten conten-150">
+                    <h4>Lorem, ipsum.</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit!</p>
+                </div>
+                <div class="buy buy-150">
+                    <button>buy</button>
+                </div>
+            </div>
+            <div class="items2">
+                
+                <div class="picture-150">
+                    <img class="img-150" src="./java.jpg" alt="">
+                </div>
+                <div class="conten conten-150">
+                    <h4>Lorem, ipsum.</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit!</p>
+                </div>
+                <div class="buy buy-150">
+                    <button>buy</button>
+                </div>
+            </div>
+            <div class="items2">
+                
+                <div class="picture-150">
+                    <img class="img-150" src="./java.jpg" alt="">
+                </div>
+                <div class="conten conten-150">
+                    <h4>Lorem, ipsum.</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit!</p>
+                </div>
+                <div class="buy buy-150">
+                    <button>buy</button>
+                </div>
+            </div>
+
+        </div>
+        <!-- container2---end--- -->
+
+
+    </div>
+
+</body>
+
+</html>
