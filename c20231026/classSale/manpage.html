@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,33 +8,35 @@
         body {
             margin: 0;
         }
-
         /* navbar-start */
         .header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            padding: 20px 100px;
-            background-color: seagreen;
+            padding: 10px 100px;
+            /* background-color: seagreen; */
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 100;
+            background-image: url(./image/bg-bar.jpg);
         }
         .navbar a {
             position: relative;
             font-family: 'Trebuchet MS';
             font-size: 18px;
-            /* color: white; */
             font-weight: 500;
             text-decoration: none;
-            /* margin-left: 40px; */
+            display: inline-block;
+            margin: 1px 5px;
+            color: aliceblue;
         }
         .navbar>a::before {
             content: ' ';
+            /* 絕對定位時，根據最接近的已定位的祖先元素進行定位*/
             position: absolute;
-            /* 是一個 CSS 屬性，用於指定元素的定位方式。當您將元素的位置設置為絕對定位時，它將根據最接近的已定位的祖先元素進行定位，如果沒有已定位的祖先元素，則相對於文檔的 body 元素進行定位。 */
             top: 100%;
             left: 0;
             width: 0;
@@ -46,16 +47,12 @@
         .navbar>a:hover::before {
             width: 100%;
         }
-
         /* navbar-end */
-
         .container0 {
             box-sizing: border-box;
             background-color: lightseagreen;
-            /* width: 80%; */
-            /* height: 70vh; */
+            background-image: url(./image/background.jpg);
         }
-
         .container1 {
             display: flex;
             flex-direction: row;
@@ -65,10 +62,13 @@
             height: 70vh;
             /* margin: 0 25%; */
             margin: auto;
-
-            background-color: goldenrod;
+            /* background-color: goldenrod; */
+            background: linear-gradient(to right, #220b05, #feb47b);
+            border-style: ridge;
+            border-color: #7e2c18;
+            border-radius: 9px;
+            margin: 43px auto;
         }
-
         .container2 {
             display: flex;
             flex-direction: row;
@@ -77,12 +77,13 @@
             align-items: center;
             width: 80%;
             height: 70vh;
-            margin: auto;
-            background-color: blue;
+            margin: 2px auto;
+            /* background-color: blue; */
+            background: linear-gradient(to right, #220b05, #feb47b);
+            border-style: ridge;
+            border-color: #7e2c18;
+            border-radius: 9px;
         }
-
-
-
         /* product---start---*/
         .items1 {
             display: flex;
@@ -92,240 +93,209 @@
             /* background-color: pink; */
             width: 100%;
             height: 60vh;
-            /* margin-top: 10px; */
             border-radius: 15%;
-            /* border: 1px solid black; */
         }
-
         .items2 {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             /* background-color: pink; */
-            width: 30%;
+            width: 33%;
             height: 35vh;
-            /* margin-top: 10px; */
             border-radius: 15%;
-
         }
-
         .picture {
             /* background-color: rgb(91, 253, 76); */
-            /* width: 100%; */
+            width: 90%;
             height: 55%;
             text-align: center;
-            /* margin: auto; */
-            /* margin-top: 10px; */
         }
-
         .conten {
             background-color: lightyellow;
             width: 90%;
-            /* height: 100px; */
             text-align: center;
         }
-
         .buy {
-            background-color: lightskyblue;
+            /* background-color: lightskyblue; */
             width: 25%;
-            /* height: 40px; */
             text-align: center;
             margin-top: 1rem;
+            border-radius: 9px;
         }
-
-
-
-        /* .img-150 {
-            /* width: 100%; */
-            /* height: 100%; */
-            /* margin: auto; */
-
-        /* } */ 
-
-        .picture-150 {
-            background-color: rgb(91, 253, 76);
-            width: 50%;
-            /* height: 50%; */
-            text-align: center;
-            /* margin: auto; */
-            margin-top: 10px;
-        }
-
-        .conten-150 {
-            background-color: lightyellow;
-            width: 50%;
-            height: 80px;
-            text-align: center;
-            /* margin: auto; */
-        }
-        .buy-150 {
-            width: 25%;
-            margin-top: 1px;
-            margin: auto;
-            margin-top: 3rem;
-        }
-        /* product---end */
         img {
             width: 100%;
             height: 100%;
         }
-        button {
+        .img-150 {
             width: 100%;
+            height: 100%;
             margin: auto;
-            border-radius: 10%;
-            /* text-align: bottom; */
         }
-
-
+        .picture-150 {
+            background-color: rgb(91, 253, 76);
+            width: 90%;
+            height: 50%;
+            text-align: center;
+            /* margin: auto; */
+            margin-top: 10px;
+        }
+        .conten-150 {
+            background-color: lightyellow;
+            width: 90%;
+            height: 80px;
+            text-align: center;
+            padding-bottom: 10px;
+            /* margin: auto; */
+        }
+        .buy-150 {
+            width: 20%;
+            height: 10%;
+            margin: 1rem auto;
+        }
+        .maintext {
+            font-size: 18px;
+            font-weight: bolder;
+        }
+        marquee{
+            behavior: alternate;
+        }
+        /* product---end */
     </style>
 </head>
-
 <body>
     <div class="header">
         <nav class="navbar">
-            <a href="#section1">Computer</a>
-            <a href="#section2">English</a>
+            <marquee>test</marquee>
+            <a href="#section1">Vampire Girls</a>
+            <a href="#section2">Vampire Kids</a>
         </nav>
     </div>
-
     <div class="container0">
-
         <!-- container1--start -->
-        <p id="section1"></p>
+        <div id="section1"></div>
         <div class="container1">
             <!-- container1 -->
             <div class="items1">
                 <div class="picture">
-                    <img src="./java.jpg" alt="">
+                    <img src="./image/1-1.avif" alt="">
                 </div>
                 <div class="conten">
-                    <h4>Lorem, ipsum.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit!</p>
+                    <p class="maintext">吸血鬼傳說探索</p>
+                    <p>探索吸血鬼傳說的起源與演變</p>
                 </div>
                 <div class="buy">
-                    <button>buy</button>
+                    <img src="./image/shopping-bag.png" alt="">
                 </div>
             </div>
-
             <div class="items1">
                 <div class="picture">
-                    <img src="./java.jpg" alt="">
+                    <img src="./image/1-2.avif" alt="">
                 </div>
                 <div class="conten">
-                    <h4>Lorem, ipsum.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit!</p>
+                    <p class="maintext">吸血鬼舞蹈技巧</p>
+                    <p>學習舞蹈技巧，將吸血鬼元素融入你的舞蹈動作中</p>
                 </div>
                 <div class="buy">
-                    <button>buy</button>
+                    <img src="./image/shopping-bag.png" alt="">
                 </div>
             </div>
-
             <div class="items1">
                 <div class="picture">
-                    <img src="./java.jpg" alt="">
+                    <img src="./image/1-3.avif" alt="">
                 </div>
                 <div class="conten">
-                    <h4>Lorem, ipsum.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit!</p>
+                    <p class="maintext">吸血鬼裝扮秘笈</p>
+                    <p>學習裝扮技巧，打造獨特而令人難忘的吸血鬼形象</p>
                 </div>
                 <div class="buy">
-                    <button>buy</button>
+                    <img src="./image/shopping-bag.png" alt="">
                 </div>
             </div>
         </div>
         <!-- container1---end--- -->
-
-
         <!-- container2--start -->
-        <p id="section2"></p>
+        <div id="section2"></div>
         <div class="container2">
             <!-- container2 -->
             <div class="items2">
-                
                 <div class="picture-150">
-                    <img class="img-150" src="./java.jpg" alt="">
+                    <img class="img-150" src="./image/2-1.avif" alt="">
                 </div>
                 <div class="conten-150">
-                    <h4>Lorem, ipsum.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit!</p>
+                    <p class="maintext">吸血鬼美食烹飪班</p>
+                    <p>探索烹飪吸血鬼主題美食的技巧和秘訣</p>
                 </div>
                 <div class="buy buy-150">
-                    <button>buy</button>
+                    <img src="./image/shopping-bag-s.jpg" alt="">
                 </div>
             </div>
             <div class="items2">
-                
                 <div class="picture-150">
-                    <img class="img-150" src="./java.jpg" alt="">
+                    <img class="img-150" src="./image/2-2.avif" alt="">
                 </div>
                 <div class="conten conten-150">
-                    <h4>Lorem, ipsum.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit!</p>
+                    <p class="maintext">吸血鬼血液酒品評鑑</p>
+                    <p>品嚐各種吸血鬼主題血液酒，並學習評鑑技巧</p>
                 </div>
                 <div class="buy buy-150">
-                    <button>buy</button>
+                    <img src="./image/shopping-bag-s.jpg" alt="">
                 </div>
             </div>
             <div class="items2">
-                
                 <div class="picture-150">
-                    <img class="img-150" src="./java.jpg" alt="">
+                    <img class="img-150" src="./image/2-3.avif" alt="">
                 </div>
                 <div class="conten conten-150">
-                    <h4>Lorem, ipsum.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit!</p>
+                    <p class="maintext">吸血鬼小說寫作工作坊</p>
+                    <p>學習創作獨特的吸血鬼故事並精進你的寫作技巧</p>
                 </div>
                 <div class="buy buy-150">
-                    <button>buy</button>
+                    <img src="./image/shopping-bag-s.jpg" alt="">
                 </div>
             </div>
             <div class="items2">
-                
                 <div class="picture-150">
-                    <img class="img-150" src="./java.jpg" alt="">
+                    <img class="img-150" src="./image/2-4.avif" alt="">
                 </div>
                 <div class="conten conten-150">
-                    <h4>Lorem, ipsum.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit!</p>
+                    <p class="maintext">吸血鬼化妝與特效</p>
+                    <p>學習製作吸血鬼特效妝容，打造驚人的視覺效果</p>
                 </div>
                 <div class="buy buy-150">
-                    <button>buy</button>
+                    <img src="./image/shopping-bag-s.jpg" alt="">
                 </div>
             </div>
             <div class="items2">
-                
                 <div class="picture-150">
-                    <img class="img-150" src="./java.jpg" alt="">
+                    <img class="img-150" src="./image/2-5.avif" alt="">
                 </div>
                 <div class="conten conten-150">
-                    <h4>Lorem, ipsum.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit!</p>
+                    <p class="maintext">吸血鬼音樂表演技巧</p>
+                    <p>學習音樂表演技巧，融入吸血鬼元素創作出獨特的音樂作品</p>
                 </div>
                 <div class="buy buy-150">
-                    <button>buy</button>
+                    <img src="./image/shopping-bag-s.jpg" alt="">
                 </div>
             </div>
             <div class="items2">
-                
                 <div class="picture-150">
-                    <img class="img-150" src="./java.jpg" alt="">
+                    <img class="img-150" src="./image/2-6.avif" alt="">
                 </div>
                 <div class="conten conten-150">
-                    <h4>Lorem, ipsum.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit!</p>
+                    <p class="maintext">吸血鬼心理學研究</p>
+                    <p>研究吸血鬼心理學，深入了解吸血鬼文化的背後意義</p>
                 </div>
                 <div class="buy buy-150">
-                    <button>buy</button>
+                    <img src="./image/shopping-bag-s.jpg" alt="">
                 </div>
             </div>
-
         </div>
         <!-- container2---end--- -->
-
-
     </div>
-
+    <footer>
+        <p>©2023 HalloweeVampire</p>
+        <!-- A footer for the page. -->
+    </footer>
 </body>
-
 </html>
