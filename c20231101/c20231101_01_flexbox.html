@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+        .container{
+            display: flex; /* 使用 Flexbox 佈局 */
+            flex-direction: row; /* 子元素水平排列 */
+            width: 80%; /* 寬度為父容器的 80% */
+            height: 70vh; /* 高度為視窗高度的 70% */
+            margin: auto; /* 自動置中 */
+            background-color: lightblue; /* 背景顏色為淺藍色 */
+            justify-content: space-evenly; /* 主軸方向均勻分佈 */
+            flex-wrap: wrap; /* 允許換行 */
+            align-items: center; /* 交叉軸方向置中對齊 */
+            /* align-content: space-around; */
+
+        }
+        .item{
+            width: 30%;
+            height: 150px;
+            background-color: lightcoral;
+        }
+
+        .item1{
+            align-self: flex-start;
+            background-color: lightslategray;
+        }
+        .item6 {
+            align-self: flex-end;
+            background-color: lightgreen;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="container"> -->
+            <div class="item item1">
+
+            </div>
+            <div class="item">
+
+            </div>
+            <div class="item">
+
+            </div>
+            <div class="item">
+
+            </div>
+            <div class="item">
+
+            </div>
+            <div class="item item6 ">
+
+            </div>
+        <!-- </div> -->
+    </div>
+    
+</body>
+</html>

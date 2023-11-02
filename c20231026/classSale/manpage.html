@@ -6,6 +6,7 @@
     <title>Document</title>
     <style>
         body {
+            box-sizing: border-box;
             margin: 0;
         }
         /* navbar-start */
@@ -68,10 +69,12 @@
             border-color: #7e2c18;
             border-radius: 9px;
             margin: 43px auto;
+            opacity:0.7;
         }
         .container2 {
             display: flex;
             flex-direction: row;
+            /* flexbox內的item，超過container時會換行。 */
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
@@ -110,6 +113,7 @@
             width: 90%;
             height: 55%;
             text-align: center;
+            
         }
         .conten {
             background-color: lightyellow;
@@ -126,6 +130,7 @@
         img {
             width: 100%;
             height: 100%;
+            border-radius: 5%;
         }
         .img-150 {
             width: 100%;
@@ -133,7 +138,7 @@
             margin: auto;
         }
         .picture-150 {
-            background-color: rgb(91, 253, 76);
+            /* background-color: rgb(91, 253, 76); */
             width: 90%;
             height: 50%;
             text-align: center;
