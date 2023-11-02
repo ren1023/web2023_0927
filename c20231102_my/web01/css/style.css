@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+
+}
+
+.body {
+    /* height: 80vh;
+    background-color: gray; */
+}
+
+.header {
+    width: 1024px;
+    height: 65px;
+    /* background-color: rebeccapurple; */
+    margin: auto;
+    margin-bottom: 2px;
+    border: 1px solid black;
+    border-bottom: 0;
+}
+
+.container {
+    width: 1024px;
+    /* background-color: red; */
+    display: flex;
+    margin: auto;
+
+}
+
+.aside {
+    width: 215px;
+    /* height: calc(768px - 65px -20px ); */
+    /* height: 600px; */
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+
+    
+
+}
+
+.aside-header {
+    width: 215px;
+    height:calc(100% - 25px);
+    /* height: 200px; */
+    background-color: lightgoldenrodyellow;
+
+}
+
+.aside-footer {
+    width: 215px;
+    height: 25px;
+    background-color: lightgrey;
+    font-size: 16px;
+    font-family: '標楷體';
+    color: #0000FF;
+    text-align: center;
+
+
+}
+
+
+.main {
+    width: calc(1024px - 215px);
+    height: calc(768px - 65px - -20px);
+    /* background-color: lightcyan; */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-left: 0;
+
+}
+
+.main-header {
+    height: 29px;
+    /* background-color: lightsalmon; */
+    font-size: 24px;
+    font-family: '標楷體';
+    color: #0000FF;
+}
+
+.main-footer {
+    height: calc(100% - 29px);
+    background-color: lightseagreen;
+}
+
+.footer {
+    width: 1024px;
+    background-color: lawngreen;
+    margin: auto;
+    border: 1px solid black;
+    border-top: 0;
+
+
+}
