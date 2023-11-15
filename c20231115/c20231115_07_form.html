@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <div class="container-md container-fluid mt-5">
+        <h1 class="text-center">HR Form</h1>
+        <form>
+            <div class="row mb-3">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">姓名</label>
+                <div class="col-lg-6">
+                    <input type="text" class="form-control" id="inputEmail3">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">生日</label>
+                <div class="col-lg-6">
+                    <input type="date" class="form-control" id="inputEmail3">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">電話</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputPassword3">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">地址</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputPassword3">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputPassword3" class="col-sm-2 col-form-label">喜歡的程式語言</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>請選擇</option>
+                    <option value="1">html</option>
+                    <option value="2">CSS</option>
+                    <option value="3">JS</option>
+                </select>
+            </div>
+            <fieldset class="row mb-3">
+                <legend class="col-form-label col-sm-2 pt-0">興趣</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1"
+                            checked>
+                        <label class="form-check-label" for="gridRadios1">
+                            打球
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        <label class="form-check-label" for="gridRadios2">
+                            打電動
+                        </label>
+                    </div>
+                    <div class="form-check disabled">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3"
+                            disabled>
+                        <label class="form-check-label" for="gridRadios3">
+                            打電話
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="row mb-3">
+                <legend class="col-form-label col-sm-2 pt-0">技能</legend>
+                <div class="row col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck1">
+                        <label class="form-check-label" for="gridCheck1">
+                            網頁設計
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck1">
+                        <label class="form-check-label" for="gridCheck1">
+                            網路管理
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form-floating">
+                <label for="floatingTextarea2">Comments</label>
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                    style="height: 100px"></textarea>
+
+            </div>
+            <div class="input-group mt-3">
+                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04"
+                    aria-label="Upload">
+                <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
+            </div>
+            <div class="pt-3 mb-4">
+                <button type="submit" class="btn btn-dark btn-lg btn-block">送出</button>
+                <button type="Reset" class="btn btn-dark btn-lg btn-block">重置</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
