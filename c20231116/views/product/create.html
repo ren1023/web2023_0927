@@ -16,12 +16,55 @@
 <body>
 
 <div class="container mt-3">
-  <h2>Form Control Size</h2>
-  <p>You can change the size of .form-control inputs with .form-control-lg or .form-control-sm:</p>
-  <form>
-    <input type="text" class="form-control form-control-lg" placeholder="Large input">
-    <input type="text" class="form-control mt-3" placeholder="Normal input">
-    <input type="text" class="form-control form-control-sm mt-3" placeholder="Small input">
+  <h2>Product Create</h2>
+  <p> 新增產品項目 </p>
+  <form action="/action_page.php">
+    <div class="row">
+        <div class="col-lg-6 col-sm-12">
+            <div class="mb-3">
+                <div class="mb-3 mt-3">
+                    <label for="file" class="form-label"> 照片檔上傳 </label>
+                    <input type="file" class="form-control" id="file" placeholder="Enter file" name="file">
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-sm-12">
+            <div class="mb-3">
+                <label for="imageDesc" class="form-label"> 產品備註： </label>
+                <input type="text" class="form-control" id="imageDesc" placeholder="Enter Description" name="imageDesc">
+              </div>
+        </div>
+    </div>
+
+   
+    <div class="row">
+        <div class="col-lg-6 col-sm-12">
+            <div class="mb-3">
+                <label for="price" class="form-label"> Price </label>
+                <input type="number" class="form-control" id="price" placeholder="Enter Description" name="price">
+              </div>
+        </div>
+        <div class="col-lg-6 col-sm-12">
+            <div class="mb-3">
+                <label for="unit" class="form-label"> Unit： </label>
+                <input type="text" class="form-control" id="unit" placeholder="Enter Unit" name="unit">
+              </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-lg-12 col-sm-12">
+            <div class="d-grid gap-3">
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+              </div>
+        </div>
+    </div>
+    
+
+   
   </form>
 </div>
 
