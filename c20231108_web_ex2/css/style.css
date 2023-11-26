@@ -1,0 +1,100 @@
+.container-box{
+    /* background-color: blue; */
+    width: 1024px;
+    height: 768px;
+    font-family: "標楷體";
+}
+
+header{
+    /* background-color: pink; */
+    width: 1024px;
+    height: 65px;
+    text-align: center;
+    margin: auto;
+    border: 1px solid black;
+}
+
+.container{
+    background-color: lightgoldenrodyellow;
+    width: 1024px;
+    height: calc(768px - 65px - 20px);
+    display: flex;
+}
+
+aside{
+    background-color: lightseagreen;
+    width: 215px;
+    height: calc(768px - 65px - 20px);
+
+}
+
+.aside-header{
+    /* background-color: lightgreen; */
+    height: calc(100% - 25px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aside-title{
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    color: fuchsia;
+    /* border-bottom: 1px solid black; */
+    text-decoration: underline black;
+    text-underline-offset: 5px;
+    margin-bottom: 10px;
+
+    
+}
+
+.box{
+    width: 200px;
+    height: 30px;
+    background-image: url(../images/menu1.png);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 5px;
+}
+
+.box:hover{
+    background-image: url(../images/menu2.png);
+}
+
+.aside-footer{
+    background-color: lightgray;
+    height: 25px;
+    text-align: center;
+}
+
+main{
+    /* background-color: lightsalmon; */
+    width: calc(100% - 215px);
+    height: calc(768px - 65px - 20px);
+    /* display: flex; */
+}
+
+.main-haeder{
+    /* background-color: blue; */
+    /* width: calc(100% - 215px); */
+    height: 29px;
+}
+marquee{
+    font-size: 24px;
+    color: blue;
+}
+
+.main-footer{
+    background-color: yellow;
+    height: calc(768px - 65px - 29px - 20px);
+}
+
+
+footer{
+    background-color: lightgreen;
+    width: 1024px;
+    height: 20px;
+}
