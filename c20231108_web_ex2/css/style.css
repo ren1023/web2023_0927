@@ -19,6 +19,8 @@ header{
     width: 1024px;
     height: calc(768px - 65px - 20px);
     display: flex;
+    border: 1px solid black;
+    border-top: none;
 }
 
 aside{
@@ -34,6 +36,9 @@ aside{
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* border: 1px solid black; */
+    /* border-top:none; */
+    margin-top: 5px;
 }
 
 .aside-title{
@@ -65,9 +70,12 @@ aside{
 }
 
 .aside-footer{
-    background-color: lightgray;
+    /* background-color: lightgray; */
     height: 25px;
     text-align: center;
+    border-top: 1px solid black;
+    color: #000;
+    font-size: 16px;
 }
 
 main{
@@ -85,11 +93,13 @@ main{
 marquee{
     font-size: 24px;
     color: blue;
+    border-bottom: 1px solid black;
 }
 
 .main-footer{
     background-color: yellow;
     height: calc(768px - 65px - 29px - 20px);
+    
 }
 
 
@@ -97,4 +107,6 @@ footer{
     background-color: lightgreen;
     width: 1024px;
     height: 20px;
+    border: 1px solid black;
+    border-top: none;
 }
