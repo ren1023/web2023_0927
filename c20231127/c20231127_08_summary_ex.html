@@ -24,8 +24,8 @@
         }
 
         .card-image {
-            width: 400px;
-            height: 600px;
+            width: 250px;
+            height: 400px;
             object-fit: cover;
             /* 可选：根据需要调整图像裁剪方式 */
             margin: auto;
@@ -37,6 +37,7 @@
     <!-- nav -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-primary sticky-top">
         <div class="container-fluid">
+
             <a class="navbar-brand" href="javascript:void(0)">Apple</a>
             <div class="navbar-brand" href="#">
                 <i class="fa-brands fa-apple"></i>
@@ -63,166 +64,394 @@
                 </form>
             </div>
         </div>
+
+
     </nav>
     <!-- nav_end -->
-    <!-- carousel -->
-    <div class="container-fluid mt-3">
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="500">
-                    <!-- <img src="cinqueterre.jpg" class="rounded-circle" alt="Cinque Terre" width="304" height="304">  -->
-                    <img src="./imgs/iphone.jpg" class="d-block w-100 carousel-image " alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./imgs/ipad.jpg" class="d-block w-100 carousel-image" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <!-- <img src="cinqueterre.jpg" class="rounded-circle" alt="Cinque Terre" width="304" height="304">  -->
-                    <img src="./imgs/watch.jpg" class="d-block w-100 carousel-image rounded-circle" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
-    <!-- carousel_end -->
-    <!-- card -->
-    <div class="container mt-5">
-        <div class="card-group">
-            <div class="card ">
-                <img src="./imgs/iphone15.jpg" class="card-img-top card-image" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">iphone15</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./imgs/ipadpro.jpg" class="card-img-top card-image" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">ipadpro</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
-                    </p>
-                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./imgs/watch_ultra.jpg" class="card-img-top card-image" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">watch_ultra</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This card has even longer content than the first to show that equal height
-                        action.</p>
-                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- card_end -->
 
-    <!-- collapse -->
-    <div class="container mt-5  ">
-        <div class="row ">
-            <p class="d-inline-flex gap-1  justify-content-end">
-                <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1a" role="button"
-                    aria-expanded="false" aria-controls="multiCollapseExample1a"> 歡喜大回饋 </a>
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#multiCollapseExample2b" aria-expanded="false"
-                    aria-controls="multiCollapseExample2b">
-                    驚喜大回饋 </button>
-                <button class="btn btn-danger" type="button" data-bs-toggle="collapse"
-                    data-bs-target=".multi-collapse12ab" aria-expanded="false"
-                    aria-controls="multiCollapseExample1a multiCollapseExample2b"> 跳樓大回饋 </button>
-            </p>
-        </div>
-        <div class="row justify-content-sm-end">
-            <div class="col-8">
-                <div class="collapse multi-collapse12ab" id="multiCollapseExample1a">
-                    <div class="card card-body ">
-                        舊換新： 一隻 iphoe4 >>>>>>>>>> 換一隻 iphone15 pro
+   
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-12">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#home"> 最新產品 </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#menu1"> 台灣直營店 </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#menu2"> 客服反應窗口 </a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="home" class="container tab-pane active"><br>
+                        <h3> 最新產品 </h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua.</p>
+
+                        <!-- carousel -->
+                        <div class="container-fluid mt-3">
+                            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active" data-bs-interval="500">
+                                        <!-- <img src="cinqueterre.jpg" class="rounded-circle" alt="Cinque Terre" width="304" height="304">  -->
+                                        <img src="./imgs/iphone.jpg" class="d-block w-100 carousel-image " alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./imgs/ipad.jpg" class="d-block w-100 carousel-image" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <!-- <img src="cinqueterre.jpg" class="rounded-circle" alt="Cinque Terre" width="304" height="304">  -->
+                                        <img src="./imgs/watch.jpg" class="d-block w-100 carousel-image rounded-circle"
+                                            alt="...">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- carousel_end -->
+                        <!-- card -->
+                        <div class="container mt-5">
+                            <div class="card-group">
+                                <div class="card ">
+                                    <img src="./imgs/iphone15.jpg" class="card-img-top card-image" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">iphone15</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a
+                                            natural lead-in to
+                                            additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                                ago</small></p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <img src="./imgs/ipadpro.jpg" class="card-img-top card-image" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">ipadpro</h5>
+                                        <p class="card-text">This card has supporting text below as a natural lead-in to
+                                            additional content.
+                                        </p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                                ago</small></p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <img src="./imgs/watch_ultra.jpg" class="card-img-top card-image" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">watch_ultra</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a
+                                            natural lead-in to
+                                            additional content. This card has even longer content than the first to show
+                                            that equal height
+                                            action.</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                                ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card_end -->
+
+                        <!-- collapse -->
+                        <div class="container mt-5  ">
+                            <div class="row ">
+                                <p class="d-inline-flex gap-1  justify-content-end">
+                                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1a"
+                                        role="button" aria-expanded="false" aria-controls="multiCollapseExample1a">
+                                        歡喜大回饋 </a>
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#multiCollapseExample2b" aria-expanded="false"
+                                        aria-controls="multiCollapseExample2b">
+                                        驚喜大回饋 </button>
+                                    <button class="btn btn-danger" type="button" data-bs-toggle="collapse"
+                                        data-bs-target=".multi-collapse12ab" aria-expanded="false"
+                                        aria-controls="multiCollapseExample1a multiCollapseExample2b"> 跳樓大回饋 </button>
+                                </p>
+                            </div>
+                            <div class="row justify-content-sm-end">
+                                <div class="col-8">
+                                    <div class="collapse multi-collapse12ab" id="multiCollapseExample1a">
+                                        <div class="card card-body ">
+                                            舊換新： 一隻 iphoe4 >>>>>>>>>> 換一隻 iphone15 pro
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="collapse multi-collapse12ab" id="multiCollapseExample2b">
+                                        <div class="card card-body">
+                                            <div class="div fw-bold text-danger">
+                                                <!-- <img src="https://picsum.photos/id/350/400/300" alt=""> -->
+                                                舊換新：G-shock >>>>>>>>>> 換一隻 apple watch ultra
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- collapse_end -->
+
+                        <!-- dropdown -->
+                        <div class="container text-center mt-5">
+
+                            <div class="btn-group">
+                                <button class="btn btn-secondary dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                                    <i class="fa-solid fa-mobile-screen"></i>
+                                    Default dropdown
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="btn-group">
+                                <button class="btn btn-secondary dropdown-toggle bg-warning" type="button"
+                                    data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false">
+                                    <i class="fa-solid fa-tablet-screen-button"></i>
+                                    Clickable inside
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="btn-group">
+                                <button class="btn btn-secondary dropdown-toggle bg-success" type="button"
+                                    data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                    <i class="fa-solid fa-clock"></i>
+                                    Clickable outside
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="btn-group">
+                                <button class="btn btn-secondary dropdown-toggle bg-primary " type="button"
+                                    data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                    Manual close
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                    <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- dropdown_end -->
+
                     </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="collapse multi-collapse12ab" id="multiCollapseExample2b">
-                    <div class="card card-body">
-                        <div class="div fw-bold text-danger">
-                            <!-- <img src="https://picsum.photos/id/350/400/300" alt=""> -->
-                            舊換新：G-shock >>>>>>>>>> 換一隻 apple watch ultra
+
+                    <div id="menu1" class="container tab-pane fade"><br>
+                        <h3> 台灣直營店 </h3>
+                        <p>Apple 台北 101</p>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.0067533348483!2d121.55932278628256!3d25.03384488111393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abb6e90233d5%3A0xf872050c112645cb!2zQXBwbGUg5Y-w5YyXMTAx!5e0!3m2!1szh-TW!2stw!4v1701069880216!5m2!1szh-TW!2stw"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <br>
+                        <br>
+                        <p>Apple 信義 A13</p>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.9412525874254!2d121.56535687537657!3d25.036067677815048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab029b5e75c9%3A0x996600598a4389ab!2zQXBwbGUg5L-h576pIEExMw!5e0!3m2!1szh-TW!2stw!4v1701069980075!5m2!1szh-TW!2stw"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+
+
+                    </div>
+
+                    <div id="menu2" class="container tab-pane fade"><br>
+                        <h3> 客服反應窗口 </h3>
+                        <br><br>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary btn-lg float-start " data-bs-toggle="modal"
+                            data-bs-target="#myModal">
+                            開啟客戶服務單
+                        </button> (float 的應用)
+                        Apple 產品支援中心 - 您的問題，我們的使命！
+
+                        在 Apple 產品支援中心，我們深知您的 Apple 裝置對您的重要性，無論是 iPhone、iPad、MacBook、或是其他產品。我們的目標是確保您的產品始終運行在最佳狀態。當面臨技術挑戰或需要專業建議時，我們在此提供支援。
+                        
+                        專業且迅速的服務
+                        
+                        技術支援：由專業技術人員解答您的疑問，提供詳細的故障排除指南。
+                        保修與維修：了解您的保修狀態並獲取維修服務，包括零件更換和系統更新。
+                        便捷的反應渠道
+                        
+                        線上反應表單：透過我們的線上平台快速提交您的問題，我們將盡快與您聯繫。
+                        親自訪問：在您方便的時間前來 Apple 授權服務中心，獲得面對面的協助。
+                        我們承諾
+                        
+                        提供準確、快速的回應，以及親切、專業的服務。
+                        確保您的裝置和資料的隱私與安全。
+                        聯絡我們
+                        
+                        官方網站：[Apple Support]
+                        服務熱線：0800-XXX-XXX
+                        我們期待為您的 Apple 裝置帶來最佳的使用體驗，解決您的任何疑慮。您的滿意，我們的追求！                          
+                        </div>
+
+                        <!-- The Modal -->
+                        <div class="modal" id="myModal">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+
+                                    <!-- Modal Header -->
+                                    <!-- <div class="modal-header"> -->
+                                    <!-- <h4 class="modal-title">Modal Heading</h4> -->
+                                    <button type="button" class="btn-close " data-bs-dismiss="modal"></button>
+                                    <!-- </div> -->
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        <!-- Modal body container.. -->
+                                        <div class="container mt-3">
+                                            <h2> 客服服務需求單 </h2>
+                                            <form action="/action_page.php">
+                                                <div class="row">
+                                                    <div class="col-12 col-sm-6">
+                                                        <div class="mb-3 mt-3">
+                                                            <label for="text">File:</label>
+                                                            <input type="file" class="form-control" id="file"
+                                                                name="file">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="mb-3">
+                                                            <label for="photoDesc"> 問題描述:</label>
+                                                            <input type="text" class="form-control" id="photoDesc"
+                                                                placeholder="Enter Problem Description"
+                                                                name="photoDesc">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col-12 col-sm-6">
+                                                        <div class="mb-3">
+                                                            <label for="price"> 聯絡電話 </label>
+                                                            <input type="number" class="form-control" id="price"
+                                                                placeholder="Enter phone number" name="price">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-sm-6">
+                                                        <div class="mb-3">
+                                                            <label for="unit"> 匿名稱呼 </label>
+                                                            <input type="text" class="form-control" id="unit"
+                                                                placeholder="Enter other name" name="unit">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mt-5">
+                                                    <div class="col-12">
+                                                        <div class="mb-3">
+                                                            <div class="d-grid gap-2">
+                                                                <button type="submit"
+                                                                    class="btn btn-primary btn-lg bg-self-blue">Submit</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- Modal body container end -->
+                                    </div>
+
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+
+
             </div>
-        </div>
-    </div>
-    <!-- collapse_end -->
+            <div class="col-md-4 col-sm-12">
 
-    <!-- dropdown -->
-    <div class="container text-center mt-5">
+                <!-- offcanvans start -->
 
-        <div class="btn-group">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                data-bs-auto-close="true" aria-expanded="false">
-                <i class="fa-solid fa-mobile-screen"></i>
-                Default dropdown
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Menu item</a></li>
-                <li><a class="dropdown-item" href="#">Menu item</a></li>
-                <li><a class="dropdown-item" href="#">Menu item</a></li>
-            </ul>
-        </div>
+                <div class="offcanvas offcanvas-start text-bg-dark" id="demo">
+                    <div class="offcanvas-header">
+                        <h1 class="offcanvas-title"> 產品列表 </h1>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <p>Macbook 系 列 </p>
+                        <p>apple TV 系列 </p>
+                        <p>airpods 系列 </p>
+                        <!-- <button class="btn btn-secondary" type="button">A Button</button> -->
+                    </div>
+                </div>
 
-        <div class="btn-group">
-            <button class="btn btn-secondary dropdown-toggle bg-warning" type="button" data-bs-toggle="dropdown"
-                data-bs-auto-close="inside" aria-expanded="false">
-                <i class="fa-solid fa-tablet-screen-button"></i>
-                Clickable inside
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Menu item</a></li>
-                <li><a class="dropdown-item" href="#">Menu item</a></li>
-                <li><a class="dropdown-item" href="#">Menu item</a></li>
-            </ul>
-        </div>
+                <div class="container-fluid mt-3">
+                    <!-- <h3> 其型號相關 </h3> -->
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                        其它型號
+                    </button>
+                </div>
 
-        <div class="btn-group">
-            <button class="btn btn-secondary dropdown-toggle bg-success" type="button" data-bs-toggle="dropdown"
-                data-bs-auto-close="outside" aria-expanded="false">
-                <i class="fa-solid fa-clock"></i>
-                Clickable outside
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Menu item</a></li>
-                <li><a class="dropdown-item" href="#">Menu item</a></li>
-                <li><a class="dropdown-item" href="#">Menu item</a></li>
-            </ul>
-        </div>
+               
 
-        <div class="btn-group">
-            <button class="btn btn-secondary dropdown-toggle bg-primary " type="button" data-bs-toggle="dropdown"
-                data-bs-auto-close="false" aria-expanded="false">
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-                Manual close
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Menu item</a></li>
-                <li><a class="dropdown-item" href="#">Menu item</a></li>
-                <li><a class="dropdown-item" href="#">Menu item</a></li>
-            </ul>
+                <!-- offcanvans end -->
+            </div>
+
         </div>
     </div>
 
-    <!-- dropdown_end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 </html>
