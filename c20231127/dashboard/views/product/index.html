@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Latest compiled JavaScript -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Document</title>
+  <style>
+    .bg-img {
+      background-image: url("https://picsum.photos/id/46/200/300");
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body class="bg-img">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Logo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Photos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./create.html">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Link</a></li>
+              <li><a class="dropdown-item" href="#">Another link</a></li>
+              <li><a class="dropdown-item" href="#">A third link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid mt-3">
+    <h2>Hover Rows</h2>
+    <p>The .table-hover class enables a hover state on table rows:</p>
+    <div class="text-end">
+
+      <!-- new create product button -->
+      <button type="button" class="btn btn-primary btn-md" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        新增產品項目
+      </button>
+
+      <a href="./create.html" class="btn btn-success btn-lg mb-3">
+        <i class="fas fa-plus"></i>
+      </a>
+      <!-- <button id="myBtn" type="button" class="btn btn-danger"><i class="fa-solid fa-xmark"></i></button> -->
+    </div>
+    <table class="table table-hover text-center align-middle">
+      <thead>
+        <tr>
+          <th width="5%">id</th>
+          <th width="25%">img_url</th>
+          <th width="30%">desc</th>
+          <th width="5%">pri</th>
+          <th width="10%">unit</th>
+          <th>oprate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>
+            <img src="https://picsum.photos/id/20/315/250" class="rounded" alt="" width="304" height="236">
+          </td>
+          <td>
+            <p>imgUrl:p1</p>
+            Lorem ipsum dolor sit amet.
+          </td>
+          <td>100</td>
+          <td> 元 </td>
+          <td>
+            <button type="button" class="ms-3 btn btn-warning "><i class="fa-solid fa-pen"></i></button>
+            <button type="button" class="ms-3 btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            1
+          </td>
+          <td>
+            <img src="https://picsum.photos/id/20/315/250" class="rounded" alt="" width="304" height="236">
+          </td>
+          <td>
+            <p>imgUrl:p1</p>
+            Lorem ipsum dolor sit amet.
+          </td>
+          <td>100</td>
+          <td> 元 </td>
+          <td>
+            <button type="button" class="ms-3 btn btn-warning "><i class="fa-solid fa-pen"></i></button>
+            <button type="button" class="ms-3 btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- modal-body create product start -->
+          <div class="container mt-3">
+            <h2>Product Create</h2>
+            <p> 新增產品項目 </p>
+            <form action="/action_page.php">
+              <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                  <div class="mb-3">
+                    <div class="mb-3 mt-3">
+                      <label for="file" class="form-label"> 照片檔上傳 </label>
+                      <input type="file" class="form-control" id="file" placeholder="Enter file" name="file">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                  <div class="mb-3">
+                    <label for="imageDesc" class="form-label"> 產品備註： </label>
+                    <input type="text" class="form-control" id="imageDesc" placeholder="Enter Description"
+                      name="imageDesc">
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                  <div class="mb-3">
+                    <label for="price" class="form-label"> Price </label>
+                    <input type="number" class="form-control" id="price" placeholder="Enter Description" name="price">
+                  </div>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                  <div class="mb-3">
+                    <label for="unit" class="form-label"> Unit： </label>
+                    <input type="text" class="form-control" id="unit" placeholder="Enter Unit" name="unit">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-4">
+                <div class="col-lg-12 col-sm-12">
+                  <div class="d-grid gap-3">
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </form>
+          </div>
+          <!-- modal-body create product end -->
+        </div>
+        <!-- 借老師的經驗，通常會將 footer 移除 -->
+        <!-- <div class="modal-footer"> 
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
