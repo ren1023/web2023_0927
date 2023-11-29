@@ -30,6 +30,7 @@ aside{
     width: 215px;
     height: calc(768px - 65px - 20px);
     border-right: 1px solid black;
+    /* text-align: center; */
 
 }
 
@@ -43,13 +44,15 @@ aside{
     /* border: 1px solid black; */
     /* border-top:none; */
     margin-top: 5px;
+    font-size: 16px;
+    /* text-align: center; */
 }
 
 .aside-title{
     font-weight: 500;
     font-size: 24px;
-    text-align: center;
-    color: fuchsia;
+    /* text-align: center; */
+    color: #f0f;
     /* border-bottom: 1px solid black; */
     text-decoration: underline black;
     text-underline-offset: 5px;
