@@ -5,6 +5,7 @@
     /* text-align: center; */
     font-family: "標楷體";
     border: 1px solid black;
+    margin: auto;
 }
 header {
     width: 1024px;
@@ -77,8 +78,7 @@ aside{
 main{
     width: calc(100% - 215px);
     height: 100%;
-    
-    background-color: lemonchiffon;
+    /* background-color: lemonchiffon; */
 }
 .main-header{
     width: 100%;
