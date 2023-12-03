@@ -89,4 +89,7 @@ iframe{
 footer{
     height: 20px;
     /* background-color: lightcoral; */
+    color: #000000;
+    font-size: 16px;
+    text-align: center;
 }
