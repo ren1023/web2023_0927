@@ -54,6 +54,7 @@ aside{
     font-size: 16px;
     color: #000000;
     border-top: 1px solid black;
+    /* margin: auto; */
 }
 main{
     width: calc(100% - 215px);
@@ -75,7 +76,6 @@ iframe{
 }
 footer{
     height: 20px;
-    /* background-color: lightgreen; */
     border-top: 1px solid black;
     text-align: center;
 }
