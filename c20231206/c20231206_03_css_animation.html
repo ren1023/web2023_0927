@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            line-height: 100px; /* 設置行高與容器高度相同 */
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            animation-name: ani;
+            animation-duration: 4s;
+        }
+
+        @keyframes ani {
+
+            /* 種類一 */
+            from {
+                background-color: red;
+            }
+
+            to {
+                background-color: yellow;
+            }
+
+            /* 種類二 */
+            0% {
+                background-color: red;
+            }
+
+            50% {
+                background-color: yellow;
+            }
+
+            100% {
+                background-color: lightgreen;
+
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <p>讚</p>
+
+    </div>
+</body>
+
+</html>
