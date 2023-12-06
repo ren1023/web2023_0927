@@ -5,27 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .box{
+        .box {
             width: 100px;
             height: 100px;
             transition: 2s;
         }
-        .box:hover{
-            width: 60%;
-            transform: rotate(20deg);
+        .box:hover {
+            /* width: 60%; */
+            /* transform: scaleY(1.5); */
+            /* transform: skewY(20deg); */
+            transform: rotate(-20deg);
         }
-        .bg-blue{
+        .bg-blue {
             background-color: lightblue;
         }
-        .bg-pink{
+        .bg-pink {
             background-color: pink;
         }
     </style>
 </head>
 <body>
     <div class="box bg-blue">
+        <img src="https://picsum.photos/id/800/300/300" alt="">
     </div>
-<br>
-    <div class="box bg-pink"></div>
+    <br>
+    <div class="box bg-pink">
+    </div>
 </body>
 </html>
