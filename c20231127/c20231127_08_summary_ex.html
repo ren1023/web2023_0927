@@ -30,6 +30,20 @@
             /* 可选：根据需要调整图像裁剪方式 */
             margin: auto;
         }
+
+        .text-center {
+            float: right;
+        }
+
+        .fixed-top-button {
+            position: fixed;
+            top: 50%;
+            /* 垂直中間 */
+            right: -20%;
+            /* 水平中間 */
+            transform: translate(-50%, -50%);
+            /* 確保完全居中 */
+        }
     </style>
 </head>
 
@@ -48,13 +62,13 @@
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">iphone</a>
+                        <a class="nav-link" href="#iphone">iphone</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">ipad</a>
+                        <a class="nav-link" href="#ipad">ipad</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="javascript:void(0)">watch</a>
+                        <a class="nav-link" href="#watch">watch</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -69,7 +83,7 @@
     </nav>
     <!-- nav_end -->
 
-   
+
 
     <div class="container">
         <div class="row">
@@ -82,7 +96,7 @@
                         <a class="nav-link" data-bs-toggle="tab" href="#menu1"> 台灣直營店 </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#menu2"> 客服反應窗口 </a>
+                        <a class="nav-link " data-bs-toggle="tab" href="#menu2"> 客服反應窗口 </a>
                     </li>
                 </ul>
 
@@ -125,7 +139,7 @@
                         <!-- card -->
                         <div class="container mt-5">
                             <div class="card-group">
-                                <div class="card ">
+                                <div class="card " id="iphone">
                                     <img src="./imgs/iphone15.jpg" class="card-img-top card-image" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">iphone15</h5>
@@ -136,7 +150,7 @@
                                                 ago</small></p>
                                     </div>
                                 </div>
-                                <div class="card">
+                                <div class="card" id="ipad">
                                     <img src="./imgs/ipadpro.jpg" class="card-img-top card-image" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">ipadpro</h5>
@@ -147,7 +161,7 @@
                                                 ago</small></p>
                                     </div>
                                 </div>
-                                <div class="card">
+                                <div class="card" id="watch">
                                     <img src="./imgs/watch_ultra.jpg" class="card-img-top card-image" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">watch_ultra</h5>
@@ -284,32 +298,30 @@
                     <div id="menu2" class="container tab-pane fade"><br>
                         <h3> 客服反應窗口 </h3>
                         <br><br>
-                        <div class="text-center">
-                            <button type="button" class="btn btn-primary btn-lg float-start " data-bs-toggle="modal"
-                            data-bs-target="#myModal">
-                            開啟客戶服務單
-                        </button> (float 的應用)
-                        Apple 產品支援中心 - 您的問題，我們的使命！
+                        <div>
+                            <button type="button" class="btn btn-primary btn-lg float-end " data-bs-toggle="modal"
+                                data-bs-target="#myModal">
+                                新增客戶服務單
+                            </button>
+                            <p class="text-left">
+                                Apple 產品支援中心 - 您的問題，我們的使命！<br>
 
-                        在 Apple 產品支援中心，我們深知您的 Apple 裝置對您的重要性，無論是 iPhone、iPad、MacBook、或是其他產品。我們的目標是確保您的產品始終運行在最佳狀態。當面臨技術挑戰或需要專業建議時，我們在此提供支援。
-                        
-                        專業且迅速的服務
-                        
-                        技術支援：由專業技術人員解答您的疑問，提供詳細的故障排除指南。
-                        保修與維修：了解您的保修狀態並獲取維修服務，包括零件更換和系統更新。
-                        便捷的反應渠道
-                        
-                        線上反應表單：透過我們的線上平台快速提交您的問題，我們將盡快與您聯繫。
-                        親自訪問：在您方便的時間前來 Apple 授權服務中心，獲得面對面的協助。
-                        我們承諾
-                        
-                        提供準確、快速的回應，以及親切、專業的服務。
-                        確保您的裝置和資料的隱私與安全。
-                        聯絡我們
-                        
-                        官方網站：[Apple Support]
-                        服務熱線：0800-XXX-XXX
-                        我們期待為您的 Apple 裝置帶來最佳的使用體驗，解決您的任何疑慮。您的滿意，我們的追求！                          
+                                在 Apple 產品支援中心，我們深知您的 Apple 裝置對您的重要性，無論是
+                                iPhone、iPad、MacBook、或是其他產品。我們的目標是確保您的產品始終運行在最佳狀態。<br>
+                                當面臨技術挑戰或需要專業建議時，我們在此提供支援。<br>
+                                <br>
+                                技術支援：由專業技術人員解答您的疑問，提供詳細的故障排除指南。<br>
+                                保修與維修：了解您的保修狀態並獲取維修服務，包括零件更換和系統更新。<br>
+                                便捷的反應渠道<br>
+                                <br>
+                                線上反應表單：透過我們的線上平台快速提交您的問題，我們將盡快與您聯繫。<br>
+                                親自訪問：在您方便的時間前來 Apple 授權服務中心，獲得面對面的協助。<br>
+                                聯絡我們<br>
+                                <br>
+                                官方網站：[Apple Support]<br>
+                                服務熱線：0800-XXX-XXX<br>
+                                我們期待為您的 Apple 裝置帶來最佳的使用體驗，解決您的任何疑慮。您的滿意，我們的追求！ <br>
+                            </p>
                         </div>
 
                         <!-- The Modal -->
@@ -421,10 +433,12 @@
                     </button>
                 </div>
 
-               
-
                 <!-- offcanvans end -->
             </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end fixed-top-button">
+                <a href="#"> <button class="btn btn-outline-success">TOP</button></a>
+            </div>
+
 
         </div>
     </div>
