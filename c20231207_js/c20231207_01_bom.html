@@ -14,12 +14,29 @@
 </head>
 
 <body>
+    <h2>JavaScript Window</h2>
+    <p id="demo"></p>
+
+    <button type="button" id="myBtn">myBtn</button>
+    <button type="button" id="closeBtn">closeBtn</button>
 
 
     <script>
-        
-    </script>
+        document.getElementById("demo").innerHTML =
+            "Browser inner window width: " + window.innerWidth + "px<br>" +
+            "Browser inner window height: " + window.innerHeight + "px";
 
+        let myBtn = document.getElementById('myBtn');
+        let closeBtn = document.getElementById('closeBtn');
+
+
+        // 動作
+        
+
+
+
+
+    </script>
 </body>
 
 </html>
