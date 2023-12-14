@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            /* box-sizing: border-box; */
+            /* margin: 0; */
+        }
+
+        body {
+            /* background-image: url(https://picsum.photos/id/41/200/300); */
+            background-size: cover;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-md container-fluid mt-5 border border-dark">
+        <h1 class="text-center">HR Form</h1>
+        <form>
+            <div class="row mb-3">
+                <div class="col-lg-6 col-sm-12">
+                    <div class="item">
+                        <label for="text" class=" label-control">姓名</label>
+                        <input type="text" class="form-control" id="name" name="">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <div class="item">
+                        <label for="" class=" label-control">身份證號碼</label>
+                        <input type="text" class="form-control" id="id" name="">
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-lg-6 col-sm-12">
+                    <div class="item">
+                        <label for="" class=" label-control">生日</label>
+                        <input type="date" class="form-control" id="birthday" name="date">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <div class="item">
+                        <label for="" class="label-control">電話</label>
+                        <input type="text" class="form-control" id="mobile" name="mobile">
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-lg-6 col-sm-12">
+                    <div class="item">
+                        <label for="" class="col-sm-2 label-control">密碼</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <div class="item">
+                        <label for="" class="label-control">E-mail</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-lg-12 col-sm-12">
+                    <div class="item">
+                        <label for="" class="label-control">地址</label>
+                        <input type="text" class="form-control" id="address" name="address">
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-lg-12 col-sm-12">
+                    <div class="item">
+                        <label for="" class="label-control">喜歡的程式語言</label>
+                        <select class="form-select">
+                            <option selected>請選擇</option>
+                            <option value="1">html</option>
+                            <option value="2">CSS</option>
+                            <option value="3">JavaScript</option>
+                            <option value="4">PHP</option>
+                            <option value="5">Java</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <fieldset class="row mb-3">
+                <legend class="col-form-label col-sm-2 pt-0">興趣</legend>
+                <div class="col-lg-6 col-sm-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1"
+                            checked>
+                        <label class="form-check-label" for="gridRadios1">
+                            滑手機
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        <label class="form-check-label" for="gridRadios2">
+                            追劇
+                        </label>
+                    </div>
+                    <div class="form-check ">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3"
+                            disabled>
+                        <label class="form-check-label" for="gridRadios3">
+                            打電話
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="row mb-3">
+                <legend class="col-form-label col-sm-2 pt-0">技能</legend>
+                <div class="col-lg-6 col-sm-12">
+                    <div class="item">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                            <label class="form-check-label" for="gridCheck1">
+                                PHP程式設計
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                            <label class="form-check-label" for="gridCheck1">
+                                MariaDB資料庫
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                            <label class="form-check-label" for="gridCheck1">
+                                Photoshops影像處理
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <!-- <div class="row mb-3">
+                <label for="text">Radio</label>
+                <div class="col-lg-12 col-sm-12">
+                    <div class="item">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                value="option1">
+                            <label class="form-check-label" for="inlineRadio1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                value="option2">
+                            <label class="form-check-label" for="inlineRadio2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                                value="option3" disabled>
+                            <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                    <div class="item">
+                        <label for="floatingTextarea2">Comments</label>
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                                style="height: 100px"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                    <div class="input-group mt-3">
+                        <input type="file" class="form-control" id="inputGroupFile04"
+                            aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                        <button class="btn btn-outline-secondary" type="button"
+                            id="inputGroupFileAddon04">Upload</button>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-3 mb-4">
+                <button type="submit" class="btn btn-dark btn-lg btn-block">送出</button>
+                <button type="Reset" class="btn btn-dark btn-lg btn-block">重置</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+
+        // 綁定
+        let studentObj = {
+            'name': '王小明',
+            'id': 'H123456789',
+            'birthday': '1999-12-01',
+            'mobile': '0936123456',
+            'password': '1111111',
+            'email': 'min@gmail.com',
+            'address': '泰山職訊局',
+        }
+
+        const nameInput = document.getElementById('name');
+        const idInput = document.getElementById('id');
+        const birthdayInput = document.getElementById('birthday');
+        const mobileInput = document.getElementById('mobile');
+        const passwordInput = document.getElementById('password');
+        const emailInput = document.getElementById('email');
+        const addressInput = document.getElementById('address');
+
+
+        console.log('obj.name', studentObj.name);
+        nameInput.value = studentObj.name;
+        idInput.value = studentObj.id;
+        birthdayInput.value = studentObj.birthday;
+        mobileInput.value = studentObj.mobile;
+        passwordInput.value = studentObj.password;
+        emailInput.value = studentObj.email;
+        addressInput.value = studentObj.address;
+
+
+    </script>
+
+</body>
+
+</html>

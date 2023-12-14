@@ -16,52 +16,53 @@
 
   <div class="container mt-5">
     <div class="row">
-      <div class="col">
-        <div class="box">
+      <div class="col-6 ">
+        <div class="box ">
           <input type="number" id="num1">
-          <input type="number" id="num2">
+          <input type="number" class="mt-3" id="num2">
         </div>
-        <div class="col">
-          <button type="button" id = 'myBtn' class="btn btn-lg btn-success mt-5">計算</button>
+        <div class="col-4">
+          <button type="button" id='myBtn' class="btn btn-lg btn-success mt-5">計算</button>
         </div>
+
       </div>
 
     </div>
   </div>
   <script>
 
-    const num1=document.getElementById('num1');
-    const num2=document.getElementById('num2');
-    const myBtn=document.getElementById('myBtn');
+    const num1 = document.getElementById('num1');
+    const num2 = document.getElementById('num2');
+    const myBtn = document.getElementById('myBtn');
 
 
-    console.log('num1',num1);
-    console.log('num1 typeof', typeof(num1));
-    console.log('num2',num2);
-    console.log('num2 typeof', typeof(num2));
-    console.log('myBtn',myBtn);
+    console.log('num1', num1);
+    console.log('num1 typeof', typeof (num1));
+    console.log('num2', num2);
+    console.log('num2 typeof', typeof (num2));
+    console.log('myBtn', myBtn);
 
-    myBtn.addEventListener('click',function(){
+    myBtn.addEventListener('click', function () {
       console.log('myBtn ok');
 
-      let num1Value=Number(num1.value);
-      let num2Value=Number(num2.value);
+      let num1Value = Number(num1.value);
+      let num2Value = Number(num2.value);
 
-      console.log('num1Value',num1Value);
-      console.log('num1Value typeof', typeof(num1Value));
-      console.log('num2Value',num2Value);      
-      console.log('num2Value typeof', typeof(num2Value));
+      console.log('num1Value', num1Value);
+      console.log('num1Value typeof', typeof (num1Value));
+      console.log('num2Value', num2Value);
+      console.log('num2Value typeof', typeof (num2Value));
 
-      let sum= num1Value + num2Value
-      console.log('sum',sum);
-      console.log('sum typeof', typeof(sum));
+      let sum = num1Value + num2Value
+      console.log('sum', sum);
+      console.log('sum typeof', typeof (sum));
 
 
     })
 
 
-  
-   
+
+
   </script>
 </body>
 
