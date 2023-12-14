@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+  <button type="button" id="myBtn" onclick="oneFun();">one</button>
+  <button type="button" id="clearBtn" onclick="clearFun();">clearBtn</button>
+
+  <script>
+
+    function oneFun() { //當 onclick事件發生時，執行 oneFun()，停址
+      // 一次，直接下停止的命令
+      setTimeout(function () {
+      });
+    }
+
+    // 重複無限，每一秒重複一次
+    setInterval(function () {
+      console.log('Hello setInterval');
+    }, 1000)
+
+
+
+    // clearInterval關閉重複
+    // https://stackoverflow.com/questions/109086/stop-setinterval-call-in-javascript
+    function fname() {  //設定重複的內容
+      console.log('hello fname');
+    }
+    function clearFun() { //重除重複次數的指令
+      // console.log('clock ok')
+      clearInterval(refreshIntervalId);
+    }
+    let refreshIntervalId = setInterval(fname, 1000); //設定每秒重複一次，重複的內容是hello fram
+    /* later */
+    // clearInterval(refreshIntervalId);
+  </script>
+</body>
+
+</html>
