@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h3>Emotion</h3>
+    <div class="row">
+      <div class="col-12 col-sm-6 mt-3">
+        <input class="form-control" type="text" name="" id="name" placeholder="name?">
+      </div>
+      <div class="col-12 col-sm-6 mt-3">
+        <select name="" id="myOpt" class="form-control">
+          <option value="">--請選擇心情--</option>
+          <option value="happy">快樂</option>
+          <option value="sad">難過</option>
+          <option value="soso">普通</option>
+        </select>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary" type="button" id="myBtn">submit</button>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <span id="mySpan" class="">
+
+        </span>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <script>
+    // 先建立物件中的參數和方法
+    const obj = {
+      name: 'name', //姓名的參數=字串型態 name
+      happyFun: function () { //建立happyFun這個方法 function
+        let result = `Hi ${this.name} 開心中`;//印出 輸出的結果(在方法中呼叫物件的參數，用this.參數)
+        return result;  //將結果 吐出去
+        // console.log('text', text);
+      },    //物件中的多個多法間，用逗號 隔開
+      sadFun: function () {
+        let result = `Hi ${this.name} 有點難過`;
+        return result;
+        // console.log('text', text);
+      },
+      sosoFun: function () {
+        let result = `Hi ${this.name} 還可以`;
+        return result;
+        // console.log('text', text);
+      },
+    }
+
+    // 1.綁定
+    let name = document.getElementById('name'); //從input中吃到的id
+    let myOpt = document.getElementById('myOpt');//select的選擇結果
+    let myBtn = document.getElementById('myBtn');//按鍵的功能
+    let mySpan = document.getElementById('mySpan');//輸出的結果
+
+    // 2.動作
+    myBtn.addEventListener('click', function () { //當它觸發click時，執行以下動作
+
+      let myOptValue = myOpt.value; //從select中取得選擇的值，指定給myOptValue
+      let nameValue = name.value; //從input取得的值指定給nameValue
+
+      console.log('myOptValue', myOptValue);
+
+      obj.name = nameValue; //將nameValue的值，指定給物件中的name
+
+
+      let getResult = "";//宣告 選擇器選擇後的印出的結果
+      switch (myOptValue) {
+        case 'happy': // 當我選happy時執行以下
+          getResult = obj.happyFun();//執行obj物件中的happyFun這個function
+          mySpan.setAttribute('class', 'text-success'); //將mySpan的class，改成 text-success
+          mySpan.innerText = getResult;
+          break;
+        case 'sad':
+          obj.sadFun();
+          getResult = obj.sadFun();
+          mySpan.setAttribute('class', 'text-danger');
+          mySpan.innerText = getResult;
+          break;
+        case 'soso':
+          obj.sosoFun();
+          getResult = obj.sosoFun();
+          mySpan.setAttribute('class', 'text-primary');
+          mySpan.innerText = getResult;
+          break;
+        default:
+          break;
+      }
+
+    })
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container mt-5 center">
+    <h2>今天心情好嗎？</h2>
+    <div class="row">
+      <div class="col-6 col-sm-12  ">
+        <label>今天心情好嗎？
+          <input type="text" id="name" value="">
+         <select id="selectMode">
+          <option value="">請選擇</option>
+          <option value="1">開心</option>
+          <option value="2">難過</option>
+          <option value="3">普通</option>
+        </select>
+      </label>
+        </div>
+        <div class="col-4 col-sm-12">
+          <button type="button" id='change' class="btn btn-lg btn-success mt-5">結果：</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    //首先要綁定 Select 選單，並給一個 change 事件。
+    let name = document.getElementById('name');
+    let select = document.querySelector('#selectMode');
+    select.addEventListener("change", selectFun);
+    let result = document.getElementById('change');
+  //要執行的 function，將要取得的值這個動作寫在函式中，不然無法選到。
+  function selectFun() {
+  const switchValue = select.options[select.selectedIndex].value;
+  switch (switchValue) {
+    case "1":
+      option_01();
+      break;
+    case "2":
+      option_02();
+      break;
+    case "3":
+      option_03();
+      break;
+       default:
+      return;
+  }
+
+  function option_01() {
+  alert(`${name.value}今天很開心`);
+
+}
+
+function option_02() {
+  alert(`${name.value}今天很難過`);
+}
+
+function option_03() {
+  alert(`${name.value}今天很普通`);
+}
+}
+
+
+
+
+
+  
+
+
+   
+
+
+
+  </script>
+</body>
+
+</html>

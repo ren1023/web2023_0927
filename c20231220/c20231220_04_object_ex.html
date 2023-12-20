@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container mt-5 center">
+    <h2>calculator Object</h2>
+    <div class="row">
+      <div class="col-6 col-sm-12  ">
+        <div class="box ">
+          <input type="number" id="num1">
+          <input type="number" class="mt-3 mb-5" id="num2">
+          <br>結果：<p id="result" ></p>
+        </div>
+        <div class="col-4 col-sm-12">
+          <button type="button" id='myBtn' class="btn btn-lg btn-success mt-5">計算</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+
+    //練習 calObj：寫一個物件，輸入2個數字，生成4個方法 + - * /
+    // num1
+    // num2
+    // result
+    //sumFun =
+    //subFun -
+    //MultiFun *
+    //divFun /
+
+
+// 先初始化資料：
+    let calObj = {
+      sumFun: function () {
+         let result= this.num1+this.num2;
+        //  console.log(`num1+num2= ${result}`);
+         return result;
+      },
+      subFun: function () {
+        let result= this.num1-this.num2;
+        //  console.log(`num1-num2= ${result}`);
+         return result;
+      },
+
+      multiFun: function () {
+        let result= this.num1*this.num2;
+        //  console.log(`num1*num2= ${result}`);
+         return result;
+      },
+
+      divFun: function () {
+        let result= this.num1/this.num2;
+        //  console.log(`num1/num2= ${result}`);
+         return result;
+      }
+    
+    }
+
+    //1.綁定：與表單的id連結，宣告js要用的變數
+    const num1 = document.getElementById('num1');
+    const num2 = document.getElementById('num2');
+    const myBtn = document.getElementById('myBtn');
+    const resultElement = document.getElementById('result');
+
+    //2.動作：觸發什麼動作時，執行的程式
+    myBtn.addEventListener('click', function () {
+      console.log('myBtn ok');//確認click動作有吃到
+
+      let num1Value = Number(num1.value);//將接收到的值，轉為數字型態
+      let num2Value = Number(num2.value);
+      calObj.num1=num1Value;// 將值指定給object的變數
+      calObj.num2=num2Value
+
+      let getSum= calObj.sumFun(); //將object的function執行結果，輸出到一個變數中
+      let getSub= calObj.subFun();
+      let getMulti= calObj.multiFun();
+      let getDiv= calObj.divFun();
+      
+      //3．在網頁上輸出結果：
+      resultElement.innerHTML = //要用innerHTML，換行<br>才可以吃得到
+      `加法結果(num1+num2) ：${getSum}<br>
+      減法結果(num1-num2)：${getSub}<br>
+      乘法結果(num1*num2)：${getMulti}<br>
+      除法結果(num1/num2)：${getDiv}
+      `;
+    });
+
+
+   
+
+
+
+  </script>
+</body>
+
+</html>

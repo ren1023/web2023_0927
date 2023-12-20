@@ -13,68 +13,100 @@
 </head>
 
 <body>
-
-  <!-- <table class="table table-striped">
+  <table>
     <tr>
       <td>key</td>
       <td>value</td>
-      <td></td>
     </tr>
     <tr>
       <td id="keyID"></td>
-      <td id="valueID" ></td>
-      <td></td>
+      <td id="valueID"></td>
     </tr>
-  </table> -->
-
-
-
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">key</th>
-        <th scope="col">value</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td id="keyID"></td>
-        <td id="valueID" ></td>
-      </tr>
-    </tbody>
   </table>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-6 mt-3">
+        <input type="text" name="" id="name" class="form-control">
+      </div>
+      <div class="col-6 mt-3">
+        <input type="text" name="" id="mobile" class="form-control">
+      </div>
+      <div class="col-12 mt-3">
+        <input type="text" name="" id="address" class="form-control">
+      </div>
+      <div class="col-12 mt-3">
+        <select name="" id="loves" class="form-control">
+          <option value="value">name</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
   <script>
-
-    let obj={
-      's1':'amy',
-      's2':'Bob',
-      's3':'cat',
+    let obj = {
+      's1': 'amy',
+      's2': 'bob',
+      's3': 'cat',
       'arr': ['a1', 'a2', 'a3']
-    }
+    };
 
-    const keyID=document.getElementById('keyID');
-    const valueID=document.getElementById('valueID');
+    let studentObj = {
+      'name': 'amy',
+      'mobile': '0911-111-111',
+      'address': 'aaaaaaaaa',
+      'love': ['html', 'css', 'js', 'php']
+    };
 
+    const keyID = document.getElementById('keyID');
+    const valueID = document.getElementById('valueID');
 
-    console.log( obj[keyID]);
-    console.log( obj[valueID]);
-
-    keyID.innerHTML='s1';
-    valueID.innerHTML= obj.s1;
-   
-
-    const tbody = document.querySelector('.table tbody');
-
-    for (let key in obj) {
-        let value = obj[key];
-        if (Array.isArray(value)) {
-            value = value.join(", "); // 将数组转换为字符串
-        }
-        tbody.innerHTML += `<tr><td>${key}</td><td>${value}</td></tr>`;
-    }
+    const name = document.getElementById('name');
+    const mobile = document.getElementById('mobile');
+    const address = document.getElementById('address');
+    const loves = document.getElementById('loves');
 
 
+    console.log('obj', obj);
+    console.log('obj["s1"]', obj['s1']);
+    console.log('obj.s1', obj.s1);
+    console.log('obj.arr', obj.arr);
+    // console.log('obj->s1', obj->s1);
+    console.log('obj typeof', typeof (obj));
+    keyID.innerHTML = 's1';
+    valueID.innerHTML = obj.s1;
 
+    console.log('name', name);
+    console.log('mobile', mobile);
+    console.log('address', address);
+    name.value = studentObj.name;
+    mobile.value = studentObj.mobile;
+    address.value = studentObj.address;
+    console.log(studentObj);
+
+    // 建立節點
+    let option = document.createElement("option");
+    // 節點 設定
+    option.text = studentObj.love[0];
+    option.value = studentObj.love[0];
+    // select append
+    loves.appendChild(option);
+
+    // 建立節點
+    let option1 = document.createElement("option");
+    // 節點 設定 attribute
+    option1.text = studentObj.love[1];
+    option1.value = studentObj.love[1];
+    // select append
+    loves.appendChild(option1);
+
+
+    // let option2 = document.createElement("option");
+    // option.text = "Text";
+    // option.value = "myvalue";
+    // loves.appendChild(option2);
+    // mobile
+    // address
 
 
   </script>
