@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .btn{
+
+            background-color: #ffcccf;
+            padding: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- <div onclick="change(this);">原本的內文</div> -->
+    <h3>事件處理的練習</h3>
+    <span class="btn"
+        onmouseover="over(this);"
+        onmouseout="out(this);"
+        onmousedown="down(this);"
+        onmouseup="up(this);"
+
+
+    >點我</span>
+
+
+    <script>
+        function down(elm){
+            elm.style.fontWeight="normal";
+        }
+        function up(elm){
+            elm.style.fontWeight="bold";
+        }
+
+        function over(elm){
+            elm.style.backgroundColor="#cccc";
+        }
+
+        function out(elm){
+            elm.style.backgroundColor="#ffcccc";
+        }
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

@@ -8,5 +8,41 @@
 <body>
     <h1>A heading</h1>
     <a href="#">Link Text</a>
+
+    <div id="content">這是一段文字</div>
+    <span id="keyword">這是一段文字</span>
+    <button onclick="change();">點我</button>
+
+
+    <script>
+        console.log(window);
+        console.log('window.innerHeight：',window.innerHeight,'和','window.innerwidth:',window.innerWidth);
+        console.log(window.screen.height,window.screen.width);
+        console.log(window.location.href);
+        // window.location.href="https://www.google.com/";//跳轉網頁
+        console.log(document.body.innerHTML);
+        // document.body.innerHTML="today is a good day！"
+
+        let divElement=document.querySelector('#content');
+        let spanElement=document.querySelector('#keyword');
+
+        divElement.innerHTML="這是新的字";
+        divElement.className="welcome";
+        divElement.style.fontSize="30px";
+        // divElement.style.color="blue";
+
+        function change(){
+            let divElm=document.querySelector('#content');
+            divElm.innerHTML="這是最新的字";
+            divElm.style.color="blue";
+
+        }
+
+
+
+
+
+
+    </script>
 </body>
 </html>
