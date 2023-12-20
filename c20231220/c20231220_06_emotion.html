@@ -76,11 +76,28 @@
 
     // 2.動作
     myBtn.addEventListener('click', function () { //當它觸發click時，執行以下動作
+      let txt="";
+      if (confirm("Press a button!")) {//警示的功能
+        txt = "You pressed OK!";
+        console.log('text',txt);
+      } else {
+        txt = "You pressed Cancel!";
+        console.log('text',txt);
+        return false;  //如果沒有點，則跳出這個動作
+      }
 
       let myOptValue = myOpt.value; //從select中取得選擇的值，指定給myOptValue
       let nameValue = name.value; //從input取得的值指定給nameValue
 
       console.log('myOptValue', myOptValue);
+
+      if(myOptValue.length <=0){
+        console.log('myOptValue.length',myOptValue.length)
+        alert('請選擇心情狀態');        
+        return false; //強制跳出此 listener
+      }
+
+
 
       obj.name = nameValue; //將nameValue的值，指定給物件中的name
 
