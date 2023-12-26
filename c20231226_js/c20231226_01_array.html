@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>javascript array</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+
+
+
+
+  <script>
+
+    let strArr=['amy','bob','cat'];
+    console.log(strArr);
+    console.log("strArr的長度是：",strArr.length);
+    console.log("它是否為陣列：",Array.isArray(strArr))
+
+    strArr.forEach(function(value,index,array){
+        console.log(value);
+        console.log(index);
+        console.log(array);
+    })
+
+    //Object
+
+    let myObj={
+        's1':'amy',
+        's2':'bob',
+        'S3':'cat'
+    }
+
+    console.log('myObj',myObj);
+    console.log('myObj typeof',typeof(myObj));
+    let resultObj = Array.isArray(myObj);
+    console.log('resultObj 是array嗎？',resultObj);
+
+    // object 無法使用array method
+    // myObj.forEach(function(){
+    //     console.log(value);
+    //     console.log(index);
+    //     console.log(array);
+    // })
+
+
+    //查看Object
+    //使用for in
+    for (const key in myObj) {
+        console.log('使用for in->key',key);
+        console.log('${myObj[key]}：',`${myObj[key]}`);
+    }
+
+    // for of 只能用在array上，不能用在Object上
+
+
+    //Object查看值：將object轉成array
+    Object.keys(myObj).forEach(function(value, index, array){
+        console.log(value);
+        console.log(index);
+        console.log(array);
+    })
+
+
+
+    //一般從資料庫撈出資料型式如下，並用forEach將資料取出
+    let store=[
+        {'name':'台北店',
+          'tel':'0911-111-111'
+        },
+        {'name':'台中店',
+          'tel':'0911-222-222'
+        },
+        {'name':'台南店',
+          'tel':'0911-333-333'
+        }
+    ]
+
+    store.forEach(function(value,key){
+        console.log(key);
+        console.log(value);
+        console.log(value['name']);
+        console.log(value['tel']);
+        if(value['name']=='台北店'){
+            console.log('這是：',value['name'])
+
+        }
+
+    })
+    
+
+  </script>
+</body>
+
+</html>
