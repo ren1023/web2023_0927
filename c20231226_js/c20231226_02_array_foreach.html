@@ -50,7 +50,7 @@
             },
             {
                 'order': 's20231226003',
-                'price': '20000'
+                'price': '2000'
             }
         ];
 
@@ -62,12 +62,12 @@
 
         //2、事件：
         function FsubmitBtn(event) {
-            event.preventDefault();  // 阻止表单的默认提交行为
+            event.preventDefault();  // 取消事件的默認行為
 
-            let orderValue = orderInput.value;  // 获取订单号
-            let priceValue = priceInput.value;  // 获取价格
+            let orderValue = orderInput.value;  //輸入的值，指定給orderValue
+            let priceValue = priceInput.value;  ////輸入的值，指定給priceValue
 
-            // 将新订单添加到drinkStore数组中
+            // 將輸入值，添加到陣列中
             drinkStore.push({
                 'order': orderValue,
                 'price': priceValue
@@ -88,15 +88,11 @@
             console.log("今日營業額為：", sum);
         }
 
-         // 绑定点击事件到提交按钮
+         // 綁定事件給提交按鈕， 並執行FsubmitBtn
          submitBtn.addEventListener("click", FsubmitBtn);
        
 
        
-       
-
-
-
 
 
     </script>
