@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col">
+        <input type="text" id="min">
+        <input type="text" id="max">
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <button id="myBtn" class="btn btn-lg btn-primary rounede-3"> 計算結果 </button>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col">
+        <div id="mySpan" class="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+
+    function for99() {
+
+
+      let resulttext = "";
+      for (let i = 1; i <= num1; i++) {
+        // console.log(`i=${i}`);
+        let result = 0
+        let text = "";
+        for (let j = 1; j <= num2; j++) {
+          // console.log(`j=${j}`);
+          result = i * j;
+          // console.log(`${result}`);
+          // console.log(`${i}*${j}=${result} \t`);
+          let tempI = i.toString().padStart(2, '0');//數字為2位數的，不足之處，前面補零
+          let tempJ = j.toString().padStart(2, '0');
+          let tempResult = result.toString().padStart(2, '0');
+          text += `${tempI}*${tempJ}=${result} |\t`;
+          console.log(text);
+
+        }
+        resulttext += `${text} <br>`;
+
+      }
+      // mySpan.innerHTML = resulttext;
+      mySpan.innerHTML = resulttext;
+
+    }
+
+      
+    
+    let mySpan = document.getElementById('mySpan');//輸出的結果
+    let min = document.getElementById('min');
+    let max = document.getElementById('max');
+    let myBtn = document.getElementById('myBtn');
+
+    let num1=0;
+    let num2=0;
+
+    //九九乘法表
+    //設定兩個變數i,j
+    //i是外圈
+    //j是內圈
+    myBtn.addEventListener('click', function () {
+       num1=Number(min.value);
+       num2=Number(max.value);
+      for99();
+
+    })
+    // for99();
+
+
+    
+
+  </script>
+</body>
+
+</html>

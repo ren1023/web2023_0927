@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>shop store</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container m-5">
+    <!-- <form class="form-control"></form> -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col" class="text-center">品名</th>
+          <th scope="col" class="text-center">單價</th>
+          <th scope="col" class="text-center">數量</th>
+          <th scope="col" class="text-center">總價</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th><img src="https://picsum.photos/id/21/200/300" width="100px" height="100px" alt=""></th>
+          <td><input class="form-control" type="number" name="price" id="price0"></td>
+          <td><input class="form-control" type="number" name="quantity" id="quantity0"></td>
+          <td id="total0"></td>
+        </tr>
+        <tr>
+          <th><img src="https://picsum.photos/id/23/200/300" width="100px" height="100px" alt=""></th>
+
+          <td><input class="form-control" type="number" name="price" id="price1"></td>
+          <td><input class="form-control" type="number" name="quantity" id="quantity1"></td>
+          <td id="total1"></td>
+        </tr>
+        <tr>
+          <th><img src="https://picsum.photos/id/75/200/300" width="100px" height="100px" alt=""></th>
+          <td><input class="form-control" type="number" name="price" id="price2"></td>
+          <td><input class="form-control" type="number" name="quantity" id="quantity2"></td>
+          <td id="total2"></td>
+        </tr>
+        <tr>
+          <th>result</th>
+          <td colspan="2" id="result"></td>
+          <td><button class="submitBtn btn btn-success btn-md">500元/8折</button></td>
+        </tr>
+
+      </tbody>
+    </table>
+    </form>
+  </div>
+
+
+
+
+
+  <script>
+
+    let submitBtn = document.querySelector(".submitBtn");
+    let resultOutput = document.getElementById("result");
+
+
+    function calculateAndDisplayTotal() {
+      // event.preventDefault();  // 取消事件的默认行为
+      let sum = 0; // 总和
+      for (let i = 0; i < 3; i++) {  // 假设有3个产品行
+        let price = document.getElementById(`price${i}`).value;
+        let quantity = document.getElementById(`quantity${i}`).value;
+        let total = Number(price) * Number(quantity);
+        document.getElementById(`total${i}`).textContent = total; // 更新到对应的总价位置
+
+        sum += Number(price) * Number(quantity); // 计算每个产品的总价并累加到总和
+      }
+      console.log("总和：", sum);
+
+      if (sum > 500) {
+        resultOutput.textContent = sum * 0.8;
+      } else {
+        resultOutput.textContent = sum; // 更新总和到页面上的相应位置
+      }
+
+    }
+
+    // submitBtn.addEventListener("click", FsubmitBtn);
+    // 綁定輸入事件到所有單價和數量輸入框
+    for (let i = 0; i < 3; i++) {
+      document.getElementById(`price${i}`).addEventListener("change", calculateAndDisplayTotal);
+      document.getElementById(`quantity${i}`).addEventListener("change", calculateAndDisplayTotal);
+    }
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

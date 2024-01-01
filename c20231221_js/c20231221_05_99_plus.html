@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col ">
+        <div class="div form-control">
+          <input type="text" name="num1" id="min" placeholder="最小值，例如：1">
+          <input type="text" name="num2" id="max" placeholder="最大值，例如：9">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button class="btn btn-lg btn-primary" id="myBtn">
+
+            submit</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div id="result" class="mt-3">
+            <!-- 1*1=1|	1*2=2|	1*3=3|	1*4=4|	1*5=5|	1*6=6|	1*7=7|	1*8=8|	1*9=9|	<br>
+            2*1=2|	2*2=4|	2*3=6|	2*4=8|	2*5=10|	2*6=12|	2*7=14|	2*8=16|	2*9=18|	<br>
+            3*1=3|	3*2=6|	3*3=9|	3*4=12|	3*5=15|	3*6=18|	3*7=21|	3*8=24|	3*9=27|	<br>
+            4*1=4|	4*2=8|	4*3=12|	4*4=16|	4*5=20|	4*6=24|	4*7=28|	4*8=32|	4*9=36|	<br>
+            5*1=5|	5*2=10|	5*3=15|	5*4=20|	5*5=25|	5*6=30|	5*7=35|	5*8=40|	5*9=45|	<br>
+            6*1=6|	6*2=12|	6*3=18|	6*4=24|	6*5=30|	6*6=36|	6*7=42|	6*8=48|	6*9=54|	<br>
+            7*1=7|	7*2=14|	7*3=21|	7*4=28|	7*5=35|	7*6=42|	7*7=49|	7*8=56|	7*9=63|	<br>
+            8*1=8|	8*2=16|	8*3=24|	8*4=32|	8*5=40|	8*6=48|	8*7=56|	8*8=64|	8*9=72|	<br>
+            9*1=9|	9*2=18|	9*3=27|	9*4=36|	9*5=45|	9*6=54|	9*7=63|	9*8=72|	9*9=81|	<br>  -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script>
+
+    //1.綁定
+    const min = document.getElementById('min');
+    const max = document.getElementById('max');
+    const myBtn = document.getElementById('myBtn');
+    const resultDiv = document.getElementById('result');//顯示結果
+    //2．連結動作
+
+    myBtn.addEventListener('click',function(){
+
+      let minValue = Number(min.value);//將接收到的值，轉為數字型態
+      let maxValue = Number(max.value);
+
+      console.log(minValue,maxValue);
+
+      // 建立九九乖法表
+      let result = 0;
+      let content='';
+      for (let i = 1; i <= minValue; i++) {
+        // console.log("i=",i);
+        let text = "";
+        for (let j = 1; j <= maxValue; j++) {
+          // console.log("j=",j);
+          let tempI=i.toString().padStart(2,'0');
+          let tempJ=j.toString().padStart(2,'0');
+          result = i * j;
+          let tempResult=result.toString().padStart(2,'0');
+          text += `${tempI}*${tempJ}= <span class=text-danger>${tempResult}</span>  |  \t`;//將字串相加
+        }
+        //單行
+        content += `${text} <br>`;
+      }
+      resultDiv.innerHTML = content;
+     
+    })
+   
+
+
+  </script>
+</body>
+
+</html>

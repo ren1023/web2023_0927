@@ -16,9 +16,24 @@
 
 
 
+
+
   <script>
-
-
+    // 建立九九乖法表
+    let result = 0;
+    for (let i = 1; i <= 9; i++) {
+      // console.log("i=",i);
+      let text = "";
+      let pip="|";
+      for (let j = 1; j <= 9; j++) {
+        // console.log("j=",j);
+        result = i * j;
+        text += `${i}*${j}=${result}|\t`;//將字串相加
+        
+      }
+      // console.log(i,"*",j,"=",result);
+      console.log(text);
+    }
   </script>
 </body>
 
