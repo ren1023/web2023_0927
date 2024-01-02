@@ -40,7 +40,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     $(document).ready(function(){
-      const myBox=$('#myBox');
+
+      const myBox=$('#myBox'); //使用取得id的方式，取得元件
       const showBtn=$('#showBtn');
       const hideBtn=$('#hideBtn');
 
@@ -50,16 +51,16 @@
       console.log('showBtn',showBtn);
       console.log('hideBtn',hideBtn);
 
-      //做hideBtn click事件
+      //當showBtn執行click事件時
       showBtn.click(function(){
-        myBox.show();
-        console.log('showo ok');
+        myBox.show();  //myBox就會顯示
+        console.log('show ok');
       })
 
+      //當hideBtn執行click事件時
       hideBtn.click(function(){
-        myBox.hide();
+        myBox.hide();//將myBox這個元件隱藏
         console.log('hide ok');
-
       })
 
     });

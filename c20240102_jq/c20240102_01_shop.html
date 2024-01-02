@@ -85,33 +85,30 @@
 
             function sumFun() { 
                 let sum=0;
-                mytotal.each(function (index, element) {
+                mytotal.each(function (index, element) { //使用each的方式，
                     let getValue=Number($(this).val()); //將mytotal元件值，取出
                     sum += getValue; //再進行加總
-
-                   
                 });
                 console.log('sum',sum);
 
-                if(sum >=500){
-                    //總金額大於500打8折
+                if(sum >=500){ //總金額大於500打8折
                     result = sum *0.8
-                    resultText = `恭喜您 打八折 ${result}`;
-                    resultSpan.attr('class','text-danger');//變更class的屬性
+                    resultText = `恭喜您 打八折 ${result}`; //將打完8折的和字串印出
+                    resultSpan.attr('class','text-danger');//變更class的的屬性，將字體顏紅色
                 }else{
-                    resultText = sum;
+                    resultText = sum; //將總和sum指定給 resultText
                     resultSpan.attr('class','');
                 }
-                resultSpan.text(resultText);
+                resultSpan.text(resultText); //在resultSpan這個元件下印文字
              }
             
-            const myprice = $('.my-price');//使用class的方式得到值
+            const myprice = $('.my-price');//使用class的方式得到值，來綁定
             const mynum = $('.my-num');
             const mytotal = $('.my-total');
-            const resultSpan = $('#resultSpan');
+            const resultSpan = $('#resultSpan');//使用id的方式得到值，來綁定
             
             // item1Price.val('123');
-            console.log('item1Price', myprice);
+            console.log('item1Price', myprice); 
             console.log('item1Num', mynum);
             console.log('item1Total', mytotal);
 
@@ -135,20 +132,23 @@
                 // console.log('$(this).parent().parent()',$(this).parent().parent());//找上一層，找到的結果是tr
                 // console.log('$(this).parent().parent().find(".my-price")',$(this).parent().parent().find('.my-price'));//從tr這層往下找
 
+
+                //這個方式在外面很少分享，要記得，因為很實用
                 let trObj = $(this).parent().parent();//宣告在tr這層為物件
-                let nowPrice = trObj.find('.my-price');//tr這層物件，向下尋找.my-price這個price
+                let nowPrice = trObj.find('.my-price');//tr這層物件，向下尋找.my-price這個物件
                 let nowNum = trObj.find('.my-num');
                 let nowTotal = trObj.find('.my-total');
 
+                //在console印出引用的物件是否成功，有取得值表示成功
                 console.log('trObj', trObj);
                 console.log('nowPrice', nowPrice);
                 console.log('nowNum', nowNum);
                 console.log('nowTotal', nowTotal);
 
-                let getPrice = Number(nowPrice.val());
-                let getNum = Number(nowNum.val());
-                let resultTotal = getPrice * getNum;
-                nowTotal.val(resultTotal);
+                let getPrice = Number(nowPrice.val());//取得單價的值，並轉為數字格式
+                let getNum = Number(nowNum.val());//取得數量的值，並轉為數字格式
+                let resultTotal = getPrice * getNum; //總價=單價*數量
+                nowTotal.val(resultTotal); //取得總價的值
 
                 console.log('getPrice', getPrice);
                 console.log('getPrice', getNum);
@@ -163,7 +163,7 @@
                     //     sum += getValue; //再進行加總
                     //     console.log('sum',sum);
                     // });
-                sumFun()
+                sumFun();//執行加總
             });
         });
     </script>

@@ -20,10 +20,7 @@
 
 <body>
 
-  <!-- 做4個button -->
-  <!-- 建四個container的文章 -->
-  <!-- 全關 -->
-  <!-- 開第一個 -->
+ 
 
   <div class="container">
     <div class="row">
@@ -76,22 +73,32 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
+
+// <!-- 做4個button -->
+//   <!-- 建四個container的文章 -->
+//   <!-- 文章預設是全關 -->
+//   <!-- 當按鈕點下後，其它都隱藏 -->
+
+
     $(document).ready(function(){
+
+      //使用id的方式取得以下4個按鈕的元件
       const page1Btn=$('#page1Btn');
       const page2Btn=$('#page2Btn');
       const page3Btn=$('#page3Btn');
       const page4Btn=$('#page4Btn');
 
+      //使用id的方式取得以下4個文章的元件
       const page1=$('.page1');
       const page2=$('.page2');
       const page3=$('.page3');
       const page4=$('.page4');
 
+      //增加一個共同的class，一起呼叫元件
       const pageContainer =$('.pageContainer');
 
 
-      //確認值是否有正確
-
+      //確認值是否有正確引用成功
       console.log('page1Btn',page1Btn);
       console.log('page2Btn',page2Btn);
       console.log('page3Btn',page3Btn);
@@ -106,10 +113,10 @@
       //將所有文章隱藏
       pageContainer.hide();
 
-      //點下page1Btn後，所有文章皆隱藏，page1呈現
+      //點下page1Btn後，所有文章皆隱藏，只有page1的文章呈現
       page1Btn.click(function () { 
-        pageContainer.hide();
-        page1.show();        
+        pageContainer.hide();//將所有文章隱藏
+        page1.show();//只有第一篇文章顯示        
       });
       
       page2Btn.click(function () { 
