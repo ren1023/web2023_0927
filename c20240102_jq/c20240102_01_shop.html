@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid ">
+        <table class="table table-hover align-middle text-center">
+            <thead>
+                <tr>
+                    <th scope="col">品名</th>
+                    <th scope="col">單價</th>
+                    <th scope="col">數量</th>
+                    <th scope="col">總價</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="https://picsum.photos/id/21/160/120">
+                    </td>
+                    <td>
+                        <input type="number" class="form-control my-price" name="" id="item1Price" value="100">
+                    </td>
+                    <td>
+                        <input type="number" class="form-control my-num" name="" id="item1Num" value="1">
+                    </td>
+                    <td>
+                        <input type="number" class="form-control my-total" name="" id="item1Total" value="100"
+                            readyonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://picsum.photos/id/41/160/120">
+                    </td>
+                    <td>
+                        <input type="number" class="form-control my-price" name="" id="item1Price" value="200">
+                    </td>
+                    <td>
+                        <input type="number" class="form-control my-num" name="" id="item1Num" value="1">
+                    </td>
+                    <td>
+                        <input type="number" class="form-control my-total" name="" id="item1Total" value="100"
+                            readyonly>
+                    </td>
+                </tr>
+
+
+                <tr>
+                   
+                    <td colspan="4">
+                        <span id="resultSpan"></span>
+                    </td>
+                    
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+
+    <!-- 載入JQ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+
+            function sumFun() { 
+                let sum=0;
+                mytotal.each(function (index, element) {
+                    let getValue=Number($(this).val()); //將mytotal元件值，取出
+                    sum += getValue; //再進行加總
+
+                   
+                });
+                console.log('sum',sum);
+
+                if(sum >=500){
+                    //總金額大於500打8折
+                    result = sum *0.8
+                    resultText = `恭喜您 打八折 ${result}`;
+                    resultSpan.attr('class','text-danger');//變更class的屬性
+                }else{
+                    resultText = sum;
+                    resultSpan.attr('class','');
+                }
+                resultSpan.text(resultText);
+             }
+            
+            const myprice = $('.my-price');//使用class的方式得到值
+            const mynum = $('.my-num');
+            const mytotal = $('.my-total');
+            const resultSpan = $('#resultSpan');
+            
+            // item1Price.val('123');
+            console.log('item1Price', myprice);
+            console.log('item1Num', mynum);
+            console.log('item1Total', mytotal);
+
+            //先初始化加總這個function;
+            sumFun();
+
+
+
+            //可以打jqchange就會出現以下的字，再套用            
+            mynum.change(function () {  //當有變化時，執行以下程式
+                // let getItem1Price = Number(myprice.val());
+                // let getItem1Num = Number(mynum.val());
+                // let getItem1Total = Number(item1Total.val());
+                // let resultTotal= getItem1Num*getItem1Price
+                // mytotal.val(resultTotal);
+                // console.log('getItem1Price',getItem1Num);
+                // console.log('resultTotal',resultTotal);  
+                // console.log('this',this);
+                // console.log('$(this)',$(this));//轉換成jq
+                // console.log('$(this).parent()',$(this).parent());//找上一層，找到的結果是td
+                // console.log('$(this).parent().parent()',$(this).parent().parent());//找上一層，找到的結果是tr
+                // console.log('$(this).parent().parent().find(".my-price")',$(this).parent().parent().find('.my-price'));//從tr這層往下找
+
+                let trObj = $(this).parent().parent();//宣告在tr這層為物件
+                let nowPrice = trObj.find('.my-price');//tr這層物件，向下尋找.my-price這個price
+                let nowNum = trObj.find('.my-num');
+                let nowTotal = trObj.find('.my-total');
+
+                console.log('trObj', trObj);
+                console.log('nowPrice', nowPrice);
+                console.log('nowNum', nowNum);
+                console.log('nowTotal', nowTotal);
+
+                let getPrice = Number(nowPrice.val());
+                let getNum = Number(nowNum.val());
+                let resultTotal = getPrice * getNum;
+                nowTotal.val(resultTotal);
+
+                console.log('getPrice', getPrice);
+                console.log('getPrice', getNum);
+                console.log('nowTotal.val(resultTotal)', resultTotal);
+                // console.log('getPrice',getPrice);
+
+                // 先進行以下運算，算完確認沒有問題後，再將它改成function
+                    // let sum=0;
+                    // mytotal.each(function (index, element) {
+                    //     // element == this
+                    //     let getValue=Number($(this).val()); //將元件mytotal拉出來
+                    //     sum += getValue; //再進行加總
+                    //     console.log('sum',sum);
+                    // });
+                sumFun()
+            });
+        });
+    </script>
+</body>
+
+</html>
