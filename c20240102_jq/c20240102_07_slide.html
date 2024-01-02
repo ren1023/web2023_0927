@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .box{
+      width: 300px;
+      height: 300px;
+      background-color: lightblue;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 做4個button -->
+  <!-- 建四個container的文章 -->
+  <!-- 全關 -->
+  <!-- 開第一個 -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <button data-page="#page1" id="page1Btn" class="myBtn btn btn-primary mt-5" type="button">page1Btn</button>
+      </div>
+      <div class="col">
+        <button data-page="#page2" id="page2Btn" class="myBtn btn btn-primary mt-5" type="button">page2Btn</button>
+      </div>
+      <div class="col">
+        <button data-page="#page3" id="page3Btn" class="myBtn btn btn-primary mt-5" type="button">page3Btn</button>
+      </div>
+      <div class="col">
+        <button data-page="#page4" id="page4Btn" class="myBtn btn btn-primary mt-5" type="button">page4Btn</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container pageContainer" id="page1">
+    <div class="row">
+      <div class="col">
+        <p> page1 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio illum nemo ab sed dolorum impedit ut tempora itaque alias.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container pageContainer" id="page2">
+    <div class="row">
+      <div class="col">
+        <p> page2 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio illum nemo ab sed dolorum impedit ut tempora itaque alias.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container pageContainer" id="page3">
+    <div class="row">
+      <div class="col">
+        <p> page3 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio illum nemo ab sed dolorum impedit ut tempora itaque alias.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container pageContainer" id="page4">
+    <div class="row">
+      <div class="col">
+        <p> page4 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam optio illum nemo ab sed dolorum impedit ut tempora itaque alias.</p>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $(document).ready(function(){
+      const myBtn=$('.myBtn');
+      const pageContainer =$('.pageContainer');
+
+      //確認值是否有正確
+      console.log('myBtn',myBtn);
+      console.log('pageContainer',pageContainer);
+
+      //將所有文章隱藏
+      pageContainer.hide();
+
+      //點下page1Btn後，所有文章皆隱藏，page1呈現
+     myBtn.click(function(){
+      console.log('this',this);
+      let getDataPage= $(this).attr('data-page');//將自定義的attr為data-page的存起來，重點是上面的按鈕要有這個屬性並與以下4篇文章的id相同，就可以群組起來去對應
+      console.log('getDataPage',getDataPage);
+
+
+      // pageContainer.slideUp(2000);
+      
+      // 過2秒後，再做slideDown
+      setTimeout(function(){
+        $(getDataPage).slideDown(3000);
+      },2000)
+
+
+    
+
+
+     });
+      
+    });
+
+  
+
+
+    
+
+  </script>
+</body>
+
+</html>
