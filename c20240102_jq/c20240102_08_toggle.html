@@ -32,20 +32,18 @@
           myBtn
         </button></div>
     </div>
-  </div>
+  </div> 
 
 
-  
-
-
+  <!-- 載入JQ -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     $(document).ready(function(){
-      const myBtn=$('#myBtn');
-      const myBox=$('#myBox');
+      const myBtn=$('#myBtn');//以id來綁定按鈕
+      const myBox=$('#myBox');//以id來綁定盒子
 
-      myBtn.click(function(){
-        myBox.toggle();
+      myBtn.click(function(){  //myBtn這個按鈕，點下去後會有切換功能
+        myBox.toggle();// 切換功能：開和關
       })
      
       

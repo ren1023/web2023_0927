@@ -65,13 +65,13 @@
   <script>
     $(document).ready(function () {
       
-      const myBtn=$('.myBtn');
+      const myBtn=$('.myBtn');//使用class=myBtn綁定，所以會有3個按鈕被綁定
 
 
-      myBtn.click(function () {
-        console.log('this',this);
-        let getDataAd=$(this).attr('data-ad');
-        let getDataAni=$(this).attr('data-ani');
+      myBtn.click(function () { //myBtn的動作是click時
+        console.log('this',this);//而這裡的this指的是點下去的這個按鈕，toggle Button或fadeToggle Button或slideToggle
+        let getDataAd=$(this).attr('data-ad'); //得到屬性是data-ad,
+        let getDataAni=$(this).attr('data-ani');//得到屬性是data-ani(動作)
         console.log('getDataAd',getDataAd);
         console.log('getDataAni',getDataAni);
         switch(getDataAni){

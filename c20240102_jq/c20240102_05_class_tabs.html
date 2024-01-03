@@ -98,8 +98,8 @@
       let getDataPage= $(this).attr('data-page');//將自定義的attr為data-page的存起來，重點是上面的按鈕要有這個屬性並與以下4篇文章的id相同，就可以群組起來去對應
       console.log('getDataPage',getDataPage);
 
-      pageContainer.hide();
-      $(getDataPage).show();
+      pageContainer.hide();//將所有都隱藏
+      $(getDataPage).show();//點到後，再顯示
      })
       
     });
