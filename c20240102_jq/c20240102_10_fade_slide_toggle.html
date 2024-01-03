@@ -16,14 +16,17 @@
       height: 300px;
       background-color: lightblue;
     }
+    .custom-gap {
+  margin-right: 10px; /* or whatever space you want between columns */
+}
   </style>
 </head>
 
 <body>
 
   <div class="container ">
-    <div class="row ">
-      <div class="col-sm-12 col-lg-4 border mt-5 ">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-lg-3 border custom-gap">
         <div class="d-grid gap-2">
           <button data-ad="#ad1" data-ani="toggle" class="myBtn btn btn-primary mt-3 " type="button">toggle Button</button>
         </div>
@@ -32,7 +35,7 @@
             impedit ut tempora itaque alias.</p>
         </div>
       </div>
-      <div class="col-sm-12 col-lg-4 border mt-5 mr-5">
+      <div class="col-sm-12 col-lg-3 border custom-gap">
         <div class="d-grid gap-2">
           <button data-ad="#ad2" data-ani="fadeToggle" class="myBtn btn btn-primary mt-3" type="button">fadeToggle Button</button>
         </div>
@@ -41,7 +44,7 @@
             impedit ut tempora itaque alias.</p>
         </div>
       </div>
-      <div class="col-sm-12 col-lg-4 border mt-5 mr-5">
+      <div class="col-sm-12 col-lg-3 border custom-gap">
         <div class="d-grid gap-2">
           <button data-ad="#ad3" data-ani="slideToggle" class="myBtn btn btn-primary mt-3" type="button">slideToggle</button>
         </div>
