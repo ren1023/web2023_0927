@@ -70,18 +70,18 @@
 
       myBtn.click(function () { //myBtn的動作是click時
         console.log('this',this);//而這裡的this指的是點下去的這個按鈕，toggle Button或fadeToggle Button或slideToggle
-        let getDataAd=$(this).attr('data-ad'); //得到屬性是data-ad,
-        let getDataAni=$(this).attr('data-ani');//得到屬性是data-ani(動作)
+        let getDataAd=$(this).attr('data-ad'); //button元素的自定義屬性是是data-ad,( data-ad="#ad1"~"#ad4")，它會對應到p元素的id
+        let getDataAni=$(this).attr('data-ani');///button元素的自定義屬性是data-ani(動作)(data-ani="slideToggle")
         console.log('getDataAd',getDataAd);
         console.log('getDataAni',getDataAni);
-        switch(getDataAni){
-          case 'toggle':
+        switch(getDataAni){ 
+          case 'toggle': //當data-ani=toggle，執行toggle(clickon clickoff)歷時3秒
             $(getDataAd).toggle(3000);
             break;
-            case 'fadeToggle':
+            case 'fadeToggle'://當data-ani=fadeToggle，執行fadeToggle(淡入淡出)歷時3秒
             $(getDataAd).fadeToggle(3000);
             break;
-            case 'slideToggle':
+            case 'slideToggle'://當data-ani=fadeToggle，執行slideToggle(滑上滑下)歷時3秒
             $(getDataAd).slideToggle(3000);
             break;
 
