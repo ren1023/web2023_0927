@@ -58,16 +58,11 @@
                             readyonly>
                     </td>
                 </tr>
-
-
                 <tr>
-                   
                     <td colspan="4">
-                        <span id="resultSpan"></span>
+                        <span id="resultSpan"></span> <!-- 總金額的值 -->
                     </td>
-                    
                 </tr>
-
             </tbody>
         </table>
 
@@ -102,10 +97,10 @@
                 resultSpan.text(resultText); //在resultSpan這個元件下印文字
              }
             
-            const myprice = $('.my-price');//使用class的方式得到值，來綁定
-            const mynum = $('.my-num');
-            const mytotal = $('.my-total');
-            const resultSpan = $('#resultSpan');//使用id的方式得到值，來綁定
+            const myprice = $('.my-price');//單價，使用class=my-price的方式得到值，來綁定
+            const mynum = $('.my-num');//數量，使用class="my-num"的值，來綁定
+            const mytotal = $('.my-total');//單品總價，使用class="my-total"的值來綁定
+            const resultSpan = $('#resultSpan');//總金額，使用id的方式得到值，來綁定
             
             // item1Price.val('123');
             console.log('item1Price', myprice); 
@@ -127,17 +122,20 @@
                 // console.log('getItem1Price',getItem1Num);
                 // console.log('resultTotal',resultTotal);  
                 // console.log('this',this);
-                // console.log('$(this)',$(this));//轉換成jq
-                // console.log('$(this).parent()',$(this).parent());//找上一層，找到的結果是td
-                // console.log('$(this).parent().parent()',$(this).parent().parent());//找上一層，找到的結果是tr
-                // console.log('$(this).parent().parent().find(".my-price")',$(this).parent().parent().find('.my-price'));//從tr這層往下找
+                // console.log('$(this)',$(this));//轉換成jq，input這個元素
+                // console.log('$(this).parent()',$(this).parent());//找上一層，找到的結果是td這個元素
+                // console.log('$(this).parent().parent()',$(this).parent().parent());//找上一層，找到的結果是tr這個元素
+                // console.log('$(this).parent().parent().find(".my-price")',$(this).parent().parent().find('.my-price'));//從tr元素這層往下找
 
+
+                // jq parent()找上一層
+                // jq find()往內找第一個
 
                 //這個方式在外面很少分享，要記得，因為很實用
-                let trObj = $(this).parent().parent();//宣告在tr這層為物件
-                let nowPrice = trObj.find('.my-price');//tr這層物件，向下尋找.my-price這個物件
-                let nowNum = trObj.find('.my-num');
-                let nowTotal = trObj.find('.my-total');
+                let trObj = $(this).parent().parent();//宣告在tr元素這層為物件(button的上一層→td的上一層→tr)
+                let nowPrice = trObj.find('.my-price');//tr元素這層物件，向下尋找class-"my-price"這個物件
+                let nowNum = trObj.find('.my-num');//從tr元素這層物件，向下尋找class="my-num"這個物件
+                let nowTotal = trObj.find('.my-total');//從tr元素這層物件，向下尋找class="my-total"這個物件
 
                 //在console印出引用的物件是否成功，有取得值表示成功
                 console.log('trObj', trObj);
@@ -145,10 +143,10 @@
                 console.log('nowNum', nowNum);
                 console.log('nowTotal', nowTotal);
 
-                let getPrice = Number(nowPrice.val());//取得單價的值，並轉為數字格式
-                let getNum = Number(nowNum.val());//取得數量的值，並轉為數字格式
-                let resultTotal = getPrice * getNum; //總價=單價*數量
-                nowTotal.val(resultTotal); //取得總價的值
+                let getPrice = Number(nowPrice.val());//取得單價的值，並轉為數字格式，指定給getPrice
+                let getNum = Number(nowNum.val());//取得數量的值，並轉為數字格式，指定給getNum
+                let resultTotal = getPrice * getNum; //單項總價=單價*數量，指定給resultTotal
+                nowTotal.val(resultTotal); //將得單項總價的值，存給nowTotal的值
 
                 console.log('getPrice', getPrice);
                 console.log('getPrice', getNum);
