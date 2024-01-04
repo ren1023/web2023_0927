@@ -84,6 +84,7 @@
       //使用class的方式引字元件
       const myBtn=$('.myBtn');
       const pageContainer =$('.pageContainer');
+      // const resultSpan =$('.resultSpan');
 
       //確認值是否有正確
       console.log('myBtn',myBtn);
@@ -96,7 +97,8 @@
       myBtn.click(function(){
       console.log('this',this);
       let getDataPage= $(this).attr('data-page');//將自定義的attr為data-page的存起來，重點是上面的按鈕要有這個屬性並與以下4篇文章的id相同，就可以群組起來去對應(button data-page="#page1"~data-page="#page4")， <div class="container pageContainer" id="page1"~ id="page4">
-      console.log('getDataPage',getDataPage);
+      
+        console.log('getDataPage',getDataPage);
 
       pageContainer.hide();//將所有都隱藏
       $(getDataPage).show();//點到後，再顯示

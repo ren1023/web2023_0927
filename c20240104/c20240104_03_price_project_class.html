@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <button data-price="1000" data-level="0.7" data-page="#page1" id="page1Btn" class="myBtn btn btn-primary mt-5" type="button">page1Btn</button>
+      </div>
+      <div class="col">
+        <button data-price="1000" data-level="0.8" data-page="#page2" id="page2Btn" class="myBtn btn btn-primary mt-5" type="button">page2Btn</button>
+      </div>
+
+      <div class="col">
+        <button data-price="1000" data-level="0.9" data-page="#page3" id="page3Btn" class="myBtn btn btn-primary mt-5" type="button">page3Btn</button>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="container pageContainer" id="page1">
+      <div class="row">
+        <div class="col">
+          <span  class="resultSpan">result...</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container pageContainer" id="page2">
+      <div class="row">
+        <div class="col">
+          <span  class="resultSpan">result...</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container pageContainer" id="page3">
+      <div class="row">
+        <div class="col">
+          <span  class="resultSpan">result...</span>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+
+<!-- 引入jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $(document).ready(function(){
+      //jqury程式碼
+      //使用class的方式引字元件
+      const myBtn=$('.myBtn');
+      const pageContainer =$('.pageContainer');
+      // const resultSpan=$(".resultSpan");
+      // let result=0;
+
+      //確認值是否有正確
+      console.log('myBtn',myBtn);
+      console.log('pageContainer',pageContainer);
+
+      pageContainer.hide();
+
+      myBtn.click(function(){
+      console.log('this',this);
+      let getDataPage= $(this).attr('data-page');
+      let getDataPrice =  $(this).attr('data-price');
+      let getDataDis =  $(this).attr('data-level');
+      
+      
+
+      console.log('getDataPage',getDataPage);
+      console.log('getDataPrice',getDataPrice);
+      
+      let result = getDataPrice *getDataDis;
+
+      console.log('result',result);
+      // resultSpan.text(result); 
+      $(getDataPage).find('.resultSpan').text("result: " + result);//因為結構都是container，沒有在階層內，所以在尋找時，都找到第一個resultSpan，所以顯示的位置都一樣。
+      console.log('$(getDataPage).find(".resultSpan")',$(getDataPage).find('.resultSpan'))
+
+      pageContainer.hide();//將所有都隱藏
+      $(getDataPage).show();//點到後，再顯示
+
+     })
+
+
+    });
+
+  
+
+
+    
+
+  </script>
+</body>
+
+</html>
