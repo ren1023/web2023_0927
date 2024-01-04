@@ -9,56 +9,76 @@
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .fixed-div {
+  position: fixed;
+  /* bottom: 0;
+  left: 0; */
+}
+  </style>
 </head>
 
 <body>
 
 
-  <div class="container">
+  <!-- <div class="container">
     <div class="row">
-      <div class="col">
-        <button data-price="1000" data-level="0.7" data-page="#page1" id="page1Btn" class="myBtn btn btn-primary mt-5" type="button">page1Btn</button>
+      <div class="col-3">
+        <button data-price="1000" data-level="A" data-page="#page1" id="page1Btn" class="myBtn btn btn-primary mt-5" type="button">page1Btn</button>
       </div>
-      <div class="col">
-        <button data-price="1000" data-level="0.8" data-page="#page2" id="page2Btn" class="myBtn btn btn-primary mt-5" type="button">page2Btn</button>
+      <div class="col-3">
+        <button data-price="1000" data-level="B" data-page="#page2" id="page2Btn" class="myBtn btn btn-primary mt-5" type="button">page2Btn</button>
       </div>
 
-      <div class="col">
-        <button data-price="1000" data-level="0.9" data-page="#page3" id="page3Btn" class="myBtn btn btn-primary mt-5" type="button">page3Btn</button>
+      <div class="col-3">
+        <button data-price="1000" data-level="C" data-page="#page3" id="page3Btn" class="myBtn btn btn-primary mt-5" type="button">page3Btn</button>
       </div>
     </div>
   </div>
 
 
-    <div class="container pageContainer" id="page1">
+    <div class="container " >
       <div class="row">
-        <div class="col">
-          <span  class="resultSpan">result...</span>
+        <div class="col-3 pageContainer bg-primary" id="page1" >
+          <span id="my-result1" class="resultSpan ">result...</span>
+        </div>
+        <div class="col-3 pageContainer bg-success" id="page2" >
+          <span id="my-result2" class="resultSpan ">result...</span>
+        </div>
+        <div class="col-3 pageContainer bg-warning" id="page3" >
+          <span id="my-result3" class="resultSpan ">result...</span>
         </div>
       </div>
-    </div>
-
-    <div class="container pageContainer" id="page2">
-      <div class="row">
-        <div class="col">
-          <span  class="resultSpan">result...</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="container pageContainer" id="page3">
-      <div class="row">
-        <div class="col">
-          <span  class="resultSpan">result...</span>
-        </div>
-      </div>
-    </div>
-  
+    </div> -->
 
 
+    <table class="table table-borderless w-50">
+      <tbody class="table-group-divider">
+        <tr>
+          <th scope="row"></th>
+          <td><button data-price="1000" data-level="A" data-page="#page1" id="page1Btn" class="myBtn btn btn-primary mt-5" type="button">page1Btn</button></td>
+          <td><button data-price="1000" data-level="B" data-page="#page2" id="page2Btn" class="myBtn btn btn-primary mt-5" type="button">page2Btn</button></td>
+          <td><button data-price="1000" data-level="C" data-page="#page3" id="page3Btn" class="myBtn btn btn-primary mt-5" type="button">page3Btn</button></td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td><div class="col-3 pageContainer bg-primary" id="page1" >
+            <span id="my-result1" class="resultSpan ">result...</span>
+          </div></td>
+          <td><div class="col-3 pageContainer bg-success" id="page2" >
+            <span id="my-result2" class="resultSpan ">result...</span>
+          </div></td>
+          <td><div class="col-3 pageContainer bg-warning" id="page3" >
+            <span id="my-result3" class="resultSpan ">result...</span>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>
 
 
+    
 
+    
 <!-- 引入jquery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
@@ -67,37 +87,38 @@
       //使用class的方式引字元件
       const myBtn=$('.myBtn');
       const pageContainer =$('.pageContainer');
-      // const resultSpan=$(".resultSpan");
-      // let result=0;
+      const levelObj = {
+        'A': 0.7,
+        'B': 0.8,
+        'C': 0.9,
+      };
 
-      //確認值是否有正確
+      //確認值是否有正確收到
       console.log('myBtn',myBtn);
       console.log('pageContainer',pageContainer);
 
       pageContainer.hide();
 
-      myBtn.click(function(){
-      console.log('this',this);
-      let getDataPage= $(this).attr('data-page');
-      let getDataPrice =  $(this).attr('data-price');
-      let getDataDis =  $(this).attr('data-level');
-      
-      
+      myBtn.click(function () {
+        console.log('this', this);//確認為myBtn這個元素
+        let getDataPage = $(this).attr('data-page');
+        let getDataPrice = $(this).attr('data-price');
+        let getDataDis = $(this).attr('data-level');
 
-      console.log('getDataPage',getDataPage);
-      console.log('getDataPrice',getDataPrice);
-      
-      let result = getDataPrice *getDataDis;
+        console.log('getDataPage', getDataPage);
+        console.log('getDataPrice', getDataPrice);
 
-      console.log('result',result);
-      // resultSpan.text(result); 
-      $(getDataPage).find('.resultSpan').text("result: " + result);//因為結構都是container，沒有在階層內，所以在尋找時，都找到第一個resultSpan，所以顯示的位置都一樣。
-      console.log('$(getDataPage).find(".resultSpan")',$(getDataPage).find('.resultSpan'))
+        let result = getDataPrice * levelObj[getDataDis];//計算折扣後的價格
 
-      pageContainer.hide();//將所有都隱藏
-      $(getDataPage).show();//點到後，再顯示
+        console.log('result', result);
+        $(getDataPage).find('span').text("result: " + result);//data-page往下找span這個元素
 
-     })
+        console.log($(getDataPage).find('span').text("result: " + result));
+
+        pageContainer.hide();//將所有都隱藏
+        $(getDataPage).show();//點到後，再顯示
+
+      })
 
 
     });
