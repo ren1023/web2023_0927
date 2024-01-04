@@ -77,23 +77,23 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     $(document).ready(function(){
-      const myBtn=$('.myBtn');
-      const pageContainer =$('.pageContainer');
+      const myBtn=$('.myBtn');//將元件的class屬性是myBtn，指定給常數變數為myBtn, (會有4個button的元素被包含)
+      const pageContainer =$('.pageContainer');//將元件的class屬性是pageContainer，指定給常數變數為pageContainer(會有4估p元素被包含)
 
       //確認值是否有正確
       console.log('myBtn',myBtn);
       console.log('pageContainer',pageContainer);
 
-      //將所有文章隱藏
+      //將所有文章隱藏，共有4個p元素被隱藏
       pageContainer.hide();
 
-      //點下page1Btn後，所有文章皆隱藏，page1呈現
+      //點下屬性為data-page="#page1"後，p元素的id=page1會顯示
      myBtn.click(function(){
       console.log('this',this);
-      let getDataPage= $(this).attr('data-page');//將自定義的attr為data-page的存起來，重點是上面的按鈕要有這個屬性並與以下4篇文章的id相同，就可以群組起來去對應
+      let getDataPage= $(this).attr('data-page');//將自定義的屬性是data-page的存起來(data-page="#page1"~"#page4")，重點是上面的按鈕要有這個屬性並與以下4篇文章的id相同(p元素中的id=page1 ~ 4)，就可以群組起來去對應
       console.log('getDataPage',getDataPage);
 
-      pageContainer.fadeOut(2000);
+      // pageContainer.fadeOut(2000);//fadeo歷時3秒
 
       // pageContainer.slidedown(2000);
       pageContainer.hide();//先全部隱藏

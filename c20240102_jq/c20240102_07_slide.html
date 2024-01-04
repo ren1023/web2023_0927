@@ -77,20 +77,20 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     $(document).ready(function(){
-      const myBtn=$('.myBtn');
-      const pageContainer =$('.pageContainer');
+      const myBtn=$('.myBtn'); //class屬性的值是myBtn的，指定給不能被變更的常數變數為myBtn，共有4個按鈕會被包含在裡面
+      const pageContainer =$('.pageContainer');//class屬性的值等於pageContainer，指定給不能被改變的變數(常數)，共有4個p的內容會被包含在裡面
 
-      //確認值是否有正確
+      //確認宣告的常數變數的值是否有正確被引入
       console.log('myBtn',myBtn);
       console.log('pageContainer',pageContainer);
 
-      //將所有文章隱藏
+      //將所有文章(class="pageContainer")隱藏
       pageContainer.hide();
 
       //點下page1Btn後，所有文章皆隱藏，page1呈現
-     myBtn.click(function(){
+     myBtn.click(function(){//myBtn裡共有4個按扭
       console.log('this',this);
-      let getDataPage= $(this).attr('data-page');//將自定義的attr為data-page的存起來，重點是上面的按鈕要有這個屬性並與以下4篇文章的id相同，就可以群組起來去對應
+      let getDataPage= $(this).attr('data-page');//將自定義的attr為data-page的存起來，重點是上面的按鈕要有這個屬性並與以下4篇文章的id相同，就可以群組起來去對應，例：button 元件的屬性為data-page="#page1" => 對應到 p元件的id屬性="page1"。
       console.log('getDataPage',getDataPage);
 
 
@@ -100,10 +100,6 @@
       setTimeout(function(){
         $(getDataPage).slideDown(3000);//2秒後再slideDown歷時3秒
       },2000)
-
-
-    
-
 
      });
       
