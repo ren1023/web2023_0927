@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 300px;
+            background-color: lightblue;
+            margin:0 auto;
+            text-align: center;
+            margin-top: 30vh;
+            padding-top: 50px;
+        }
+
+        input[type='text'],input[type='password'] {
+            width: 200px;
+            font-size: 24px;
+        }
+
+        input[type='submit'] {
+            width:150px;
+            font-size: 24px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <form action="./" method="post">
+                <p>
+                    <input type="text" name="" id="">
+                </p>
+                <p>
+                    <input type="password" name="" id="">
+                </p>
+                <p>
+                    <input type="submit" value="login">
+                </p>
+            </form>
+
+        </div>
+    </div>
+    
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  $(document).ready(function(){
+    //jqury程式碼
+    $.ajax({
+        type: "method",
+        url: "url",
+        data: "data",
+        dataType: "dataType",
+        success: function (response) {
+            
+        }
+    });
+
+  });
+    
+    // ......
+
+</script>
+</html>

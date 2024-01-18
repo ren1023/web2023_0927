@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP - tween 補間動畫</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css'>
+</head>
+<style>
+    body{
+        padding-bottom: 500px;
+    }
+ h3{
+    margin: 20px 0;
+ }
+
+ .box1,
+ .box2,
+ .box3,
+ .box4,
+ .box5,
+ .box6,
+ .box7,
+ .box8,
+ .box9,
+ .box10,
+ .box11{
+    width: 50px;
+    height: 50px;
+    background: black;
+    margin: 5px;
+ }
+
+ .box2{
+    background-color: red;
+ }
+ .box3{
+    background-color: green;
+ }
+ .box4{
+    background-color: blue;
+ }
+
+</style>
+
+<body>
+
+    <div class="container">
+        <h1>1.擇選擇目標</h1>
+        <div class="box1"></div>
+    
+
+
+    <h1>2.選擇群組使用陣列</h1>
+    <div class="box2"></div>
+    <div class="box2"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box3"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box4"></div>
+    <div class="box4"></div>
+
+    <h1>3.設定css屬性</h1>
+    <div class="box5" style="text-align: center; align-items: center;"> 999
+    </div>
+    <p id="word">走向對你具備授權圖像化台北需求集中，不願意總算生態等等等人允許灌水挑戰藥物由此，對她唱片少女配合能在字體態度食品保證，西部作者，而且怎樣完美一把力道是這樣，腦袋技術，她說很久大戰風景，觀點大大翻譯博。</p>
+
+
+
+    <h1>4.設定動畫屬性</h1>
+    <div class="box6"></div>
+    <button id="play">play</button>
+    <button id="pause">pause</button>
+
+
+</div>
+
+
+
+    <!-- 引入jQuery -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js'></script>
+    <!-- bootstrap -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.js'></script>
+
+    <!-- 引入gsap主程式_動畫用的！ -->
+<script src="./gsap/gsap.js"></script>
+
+
+<script>
+    // ===================1.擇選擇目標===========================
+    //抓目標有三種方式
+    const b1=document.querySelector('.box1');//js
+    const b2=$('box1');//jq
+    //第三種 gsap 推的，使用css規範的選擇器
+    const tween1=gsap.to('.box1',{
+        x:500,
+        duration:3 //動畫的時間是3秒
+    });//
+
+
+
+    // ===================2.擇選擇群組使用陣列===========================
+    const dom1=document.querySelectorAll('.box2')
+    const dom2=document.querySelectorAll('.box3')
+    const dom3=document.querySelectorAll('.box4')
+
+    const jq1=$('.box2')
+    const jq2=$('.box3')
+    const jq3=$('.box4')
+
+    // 使用陣列的方式去選元件
+    // const tween2=gsap.to([dom1,dom2,dom3],{
+    //     x:500,
+    //     duration:3 //動畫的時間是3秒
+    // });//
+
+    // 使用css的選擇器的方式去選元件
+    const tween2=gsap.to('.box2,.box3,.box4',{
+        x:500, //向右移動500px
+        duration:3 //動畫的時間是3秒
+    });//
+
+
+    //3.設定css屬性==========================
+    //css 的屬性都可以使用
+    const tween3=gsap.to('.box5',{
+        x:100,//transLateX
+        y:100,//transLateY
+        // rotation:720,//轉2圈  rotate
+        rotation:360,//轉2圈  rotate
+        scale:2,  //scale
+        width:'100px',
+        height:100,
+        border:'5px solid red',
+        boxShadow:'0 0 10px rgba(255,0,0,1)',//陰影
+        backgroundColor:'transparent', //透明
+        backdropFilter:'blur(2px)',//模糊
+
+    })
+
+    const word=gsap.to('#word',{
+        // color:'red',
+        color:'random([red,greem,blue])',
+        fontWeight:'bold',
+        fontSize:'1.5rem',
+        lineHight:2,
+        letterSpacing:'0.5rem'
+
+    })
+
+    // 4.設定動畫屬性=========================
+    //初始播放一次
+    const tween4=gsap.to('.box6',{
+        x:500,
+        // x:'+=100',//相對位置的寫法
+        // x:'radom(0,100)',//相對位置的寫法
+        duration:3,
+        paused:true,
+        // delay:3,//延遲3秒後開始
+        // repeat:2,//重複2次，所以總共會播放3次
+        repeat:-1,//無限重複
+        // repeatDelay:2,//重複播放的延遲時間
+        // repeatRefresh:true,//重複播放時，會記錄前一次的狀態再執行，需與相對位置, 隨機搭配使用。
+        yoyo:true,//重複播放時，會來回播放
+        // ease:"elastic.out(1,0.3)",//動畫速率
+        ease:"steps(5)",//動畫速率
+    })
+
+    //tween提供方法
+    // https://gsap.com/docs/v3/GSAP/Tween
+    $('#play').on('click',function(){
+        tween4.play()
+
+    })
+
+
+
+
+</script>
+
+    
+</body>
+
+</html>

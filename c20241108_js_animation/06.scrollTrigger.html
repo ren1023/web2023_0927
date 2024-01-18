@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scrollTrigger</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css'>
+    <style>
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        section:nth-child(odd) {
+            background-color: lightcyan;
+        }
+
+        section:nth-child(even) {
+            background-color: lightgray;
+            justify-content: center;
+        }
+
+        section h2 {
+            position: absolute;
+            left: 0;
+            top: 0;
+
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            color: white;
+            font-size: 2rem;
+            background-color: darkmagenta;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .active{
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <section></section>
+
+    <section id="section01">
+        <h2>1.設定 trigger</h2>
+        <div class="box a1">a1</div>
+    </section>
+
+    <section></section>
+
+    <section id="section02">
+        <h2>2.設定 toggleActions</h2>
+        <div class="box b1">b1</div>
+        <div class="box b2 mt-5">b2</div>
+    </section>
+
+
+    <section></section>
+
+    <section id="section03">
+        <h2>3.設定 scrub</h2>
+        <div class="box c1">c1</div>
+    </section>
+
+    <section></section>
+
+    <!-- 引入jQuery -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js'></script>
+    <!-- bootstrap -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.js'></script>
+
+    <!-- 引入gsap主程式_動畫用的！ -->
+    <script src="./gsap/gsap.js"></script>
+    <!-- 引入scrollTrigger -->
+    <script src="./gsap/ScrollTrigger.js"></script>
+
+    <script>
+        // 註冊套件
+        gsap.registerPlugin(ScrollTrigger);
+        /*
+        start 與end
+        1.第一數值為trigger的位置，第二數值為滾動位置
+        2.值可為top 、center、bottom 或是數字(100px,50%)，也可以是 +=100、-=100 這類相對值
+        */
+        const tween1 = gsap.to('.a1', {
+            scrollTrigger: {
+                trigger: '.a1',
+                //預設
+                // start:'top bottom,
+                // end:'bottom top,
+
+                start:'top center', //top：a1盒子位置，50%：scollbar位置
+                end:'bottom top',
+
+                // start: '100px 60%',
+                // end: 'bottom 30%',
+
+
+                // markers:true
+            },
+            x: '85vw',
+            duration: 3,
+            ease: 'none'
+        })
+
+
+
+        //2.設定toggleActions
+        const tween2 = gsap.to('.b1', {
+            scrollTrigger: {
+                trigger: '.b1',
+                start: 'top center',
+                end: 'bottom 20%',
+                /*
+                    值可為 play 、pause 、resume 、reverse、restart、reset、complete、none
+                    onEnter => 第一次綠碰綠 
+                    onLeave => 
+                    onEnterBack => 
+                    onLeaveBack => 
+
+                */
+                toggleActions: 'play pause resume reverse',
+                // toggleClass:{
+                //     targets:['.b2'], // 要加 class 的元素
+                //     className:'active' // 要加 class 名稱
+                // },
+                    onEnter(){
+                        $('.b2').addClass('active')
+
+                    },
+                    onLeave(){
+                        $('.b2').removeClass('active')
+
+                    },
+                    // markers: true
+            },
+            x: '85vw',
+            duration: 3,
+            ease: 'none'
+        })
+
+
+
+        // 3.設定 scrub
+        const tween3 = gsap.to('.c1',{
+            scrollTrigger:{
+                trigger:'.c1',
+                start:'top 80%',
+                end:'bottom 20%',
+                scrub:20,
+                markers: true
+
+
+            },
+            x: '85vw',
+            rotation: 3600,
+            backgroundColor:'red',
+            ease: 'none'
+
+        })
+
+
+    </script>
+
+</body>
+
+</html>
