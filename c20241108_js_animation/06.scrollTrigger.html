@@ -120,14 +120,13 @@
                 trigger: '.b1',
                 start: 'top center',
                 end: 'bottom 20%',
-                /*
-                    值可為 play 、pause 、resume 、reverse、restart、reset、complete、none
-                    onEnter => 第一次綠碰綠 
-                    onLeave => 
-                    onEnterBack => 
-                    onLeaveBack => 
-
-                */
+            /*
+            值可為 play、pause、resume、reverse、restart、reset、complete、none
+            onEnter => 第一次綠碰綠 scroller-start 碰到 start
+            onLeave => 第一次紅碰紅 scroller-end 碰到 end
+            onEnterBack => 往回時紅碰紅 scroller-end 碰到 end
+            onLeaveBack => 往回時綠碰綠 scroller-start 碰到 start
+            */
                 toggleActions: 'play pause resume reverse',
                 // toggleClass:{
                 //     targets:['.b2'], // 要加 class 的元素
