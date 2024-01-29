@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Bootstrap Example</title>
+  <title>parents()</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,10 +18,6 @@
 
     .container * {
       color: #ccc;
-    }
-
-    ul {
-      list-style-type: none;
     }
   </style>
 </head>
@@ -65,35 +61,37 @@
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script>
-    $(document).ready(function () {
-      const mySpan = $('.mySpan');
-      const myB = $('#myB');
+    <script>
+      $(document).ready(function () {
+        // 當文檔加載完畢時，這個函數被調用。
 
-      mySpan.click(function (e) {
-        console.log('mySpan ok');
-        console.log(this, 'this');
-        // console.log($(this), '$(this)');
-        let nowElement = $(this).parent();
-        let nowElementParent = $(this).parent().parent();
-
-        console.log('nowElement', nowElement);
-        // nowElement.addClass('text-danger');
-        let getClassText = nowElement.attr('class');
-        getClassText = getClassText + ' text-danger';
-        console.log('getClassText', getClassText);
-        // nowElement.attr('class', 'mySpan border border-danger p-3 text-danger');
-        nowElement.attr('class', getClassText);
-        nowElementParent.attr('class', 'border border-success p-3 text-warning')
-        // $(this).addClass('text-primary');
-
-
-
+        /**
+         * 這段代碼的主要功能是在點擊具有'class'為'mySpan'的任何元素時，
+         * 改變該元素的所有祖先元素的樣式。它會將這些祖先元素的'class'屬性設置為'border border-primary p-3 text-primary'，
+         * 從而改變它們的邊框、間距和文本顏色。
+         * */
+    
+        const mySpan = $('.mySpan'); // 選擇所有具有'class'為'mySpan'的元素。
+        const myB = $('#myB'); // 選擇具有'ID'為'myB'的元素。
+    
+        mySpan.click(function (e) {
+          // 為所有'mySpan'元素綁定點擊事件。
+    
+          console.log('mySpan ok'); // 當'mySpan'被點擊時，在控制台打印'mySpan ok'。
+          console.log(this, 'this'); // 打印當前被點擊的'mySpan'元素及其描述'this'。
+    
+          // console.log($(this), '$(this)'); // 被注釋的代碼。如果取消注釋，會打印jQuery對象的當前元素。
+    
+          let thisParents = $(this).parents(); // 選擇當前元素的所有祖先元素。
+          thisParents.attr('class', 'border border-primary p-3 text-primary'); 
+          // 為當前元素的所有祖先元素設置class屬性為'border border-primary p-3 text-primary'。
+          // 這將改變這些元素的邊框、間距和文本顏色。
+    
+        });
+    
       });
-
-    });
-
-  </script>
+    </script>
+    
 </body>
 
 </html>

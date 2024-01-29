@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>shop</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid mt-3">
+    <h2>Hover Rows</h2>
+    <p>The .table-hover class enables a hover state (grey background on mouse over) on table rows:</p>
+    <table>
+      <tr>
+        <td data-price="200">
+          花茶
+        </td>
+      </tr>
+      <tr>
+        <td><img src="https://picsum.photos/id/38/160/120"></td>
+      </tr>
+
+    </table>
+    
+    
+    <table class="table table-hover align-middle text-center">
+      <thead>
+        <tr>
+          <th>品名</th>
+          <th>單價</th>
+          <th>數量</th>
+          <th>總價</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <p></p>
+            <img src="https://picsum.photos/id/26/160/120" alt="" srcset="">
+          </td>
+          <td>
+            <input type="number" class="form-control my-price" name="" id="item1Price" value="100">
+          </td>
+          <td>
+            <input type="number" class="form-control my-num" name="" id="item1Num" value="1">
+          </td>
+          <td>
+            <input type="number" class="form-control my-total" name="" id="item1Total" value="100" readonly>
+          </td>
+          <td><button class="myBtn btn btn-danger"><i class="fa-solid fa-trash-can"></i></button></td>
+        </tr>
+        <!-- <tr>
+          <td>
+            <img src="https://picsum.photos/id/25/160/120" alt="" srcset="">
+          </td>
+          <td>
+            <input type="number" class="form-control my-price" name="" id="item1Price" value="200">
+          </td>
+          <td>
+            <input type="number" class="form-control my-num" name="" id="item1Num" value="1">
+          </td>
+          <td>
+            <input type="number" class="form-control my-total" name="" id="item1Total" value="200" readonly>
+          </td>
+          <td><button class="myBtn btn btn-danger"><i class="fa-solid fa-trash-can"></i></button></td>
+
+        </tr> -->
+        <tr>
+          <td>
+            Result
+          </td>
+          <td colspan="3">
+            <span id="resultSpan"></span>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $(document).ready(function () {
+
+
+
+
+      function sumFun() {
+        let sum = 0;
+        myTotal.each(function (index, element) {
+          // console.log('index', index);
+          // console.log('element', element);
+          // console.log('this', this);
+          let getValue = Number($(this).val());
+          // console.log('getValue', getValue);
+          sum += getValue;
+        });
+        // console.log('sum', sum);
+        if (sum >= 500) {
+          result = sum * 0.8;
+          resultText = `恭喜您 打八折 ${result}`;
+          resultSpan.attr('class', 'text-danger');
+        } else {
+          resultText = sum;
+          resultSpan.attr('class','');
+        }
+        resultSpan.text(resultText);
+      }
+
+      const myPrice = $('.my-price');
+      const myNum = $('.my-num');
+      const myTotal = $('.my-total');
+      const resultSpan = $('#resultSpan');
+
+      // item1Price.val('123');
+      console.log('myPrice', myPrice);
+      console.log('myNum', myNum);
+      console.log('myTotal', myTotal);
+      sumFun();
+
+      myNum.change(function () {
+        let trObj = $(this).parent().parent();
+        let nowPrice = trObj.find('.my-price');
+        let nowNum = trObj.find('.my-num');
+        let nowTotal = trObj.find('.my-total');
+
+        // console.log('trObj', trObj);
+        // console.log('nowPrice', nowPrice);
+        // console.log('nowNum', nowNum);
+        // console.log('nowTotal', nowTotal);
+
+        let getPrice = Number(nowPrice.val());
+        let getNum = Number(nowNum.val());
+        let resultTotal = getPrice * getNum;
+        nowTotal.val(resultTotal);
+        sumFun();
+      });
+
+      const myBtn=$('.myBtn');
+      myBtn.click(function(){
+        // console.log('ok')
+        let thisClosest = $(this).closest('tr').children();
+            // console.log(thisClosest,'thisClosest')
+            thisClosest.remove();
+      })
+
+      
+      // 選擇包含"花茶"文本的td元素
+      const huacha = $('td:contains("花茶")');
+
+      // 為"花茶"元素添加點擊事件處理器
+      huacha.click(function () {
+        // 從"data-price"屬性中讀取價格
+        const price = $(this).data('price');
+
+        // 更新id為"item1Price"的元素的value值
+        $('#item1Price').val(price);
+
+        // 調用sumFun函數以更新總計
+        sumFun();
+      });
+
+
+
+
+
+
+    });
+
+  </script>
+</body>
+
+</html>
