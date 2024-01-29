@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .color-change-4x {
+      -webkit-animation: color-change-4x 6s linear infinite alternate both;
+      animation: color-change-4x 6s linear infinite alternate both;
+    }
+
+    @-webkit-keyframes color-change-4x {
+      0% {
+        background: #19dcea;
+      }
+
+      33.3333% {
+        background: #b22cff;
+      }
+
+      66.666% {
+        background: #ea2222;
+      }
+
+      100% {
+        background: #f5be10;
+      }
+    }
+
+    @keyframes color-change-4x {
+      0% {
+        background: #19dcea;
+      }
+
+      33.3333% {
+        background: #b22cff;
+      }
+
+      66.666% {
+        background: #ea2222;
+      }
+
+      100% {
+        background: #f5be10;
+      }
+    }
+  </style>
+</head>
+
+<body class="color-change-4x">
+
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col">
+        <button type="button" class="item btn btn-primary" data-name="咖啡" data-price="100" data-img="36">
+          咖啡
+        </button>
+        <button type="button" class="item btn btn-primary" data-name="花茶" data-price="200" data-img="37">
+          花茶
+        </button>
+        <button type="button" class="item btn btn-primary" data-name="礦泉水" data-price="50" data-img="38">
+          礦泉水
+        </button>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <button type="button" class="item btn btn-success" data-name="手工餅干" data-price="100" data-img="40">
+          手工餅干
+        </button>
+        <button type="button" class="item btn btn-success" data-name="吐司" data-price="200" data-img="41">
+          吐司
+        </button>
+        <button type="button" class="item btn btn-success" data-name="漢堡" data-price="300" data-img="42">
+          漢堡
+        </button>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <table class="table table-dark table-hover align-middle text-center">
+      <thead>
+        <tr>
+          <th width="7%">編號</th>
+          <th width="15%">品名</th>
+          <th width="15%">單價</th>
+          <th width="15%">數量</th>
+          <th width="15%">備註</th>
+          <th width="15%">小計</th>
+          <th width="15%">
+            OPTERATE
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="display: none;">
+          <td>a01</td>
+          <td>
+            <img src="https://picsum.photos/id/100/160/120" alt=""><br>
+            咖啡
+          </td>
+          <td>100</td>
+          <td>
+            <input type="number" class="quantity" class="form-control" value="1" max="10" min="1">
+          </td>
+          <td>
+            <input type="text" class="form-control">
+          </td>
+          <td>100</td>
+          <td>
+            <button class="delBtn btn btn-danger p-1"><i class="fa-solid fa-trash-can"></i>DEL</button>
+            <button class="cloneBtn btn btn-primary p-1"><i class="fa-solid fa-copy"></i>CLONE</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+  <!-- 引入jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $(document).ready(function () {
+
+
+      const thisbutton = $('.item');
+
+      thisbutton.click(function () {
+        // 從按鈕的 data-* 屬性中獲取值
+        const name = $(this).data('name');
+        const price = $(this).data('price');
+        const img = $(this).data('img');
+        const quantity = $('.quantity')
+
+        /**
+         * 創建新的 tr 元素  //完全沒有資料時，可以用這個。
+         */
+        const newTr = `
+          <tr>
+            <td>${img}</td>
+            <td><img class="rounded-circle" src="https://picsum.photos/id/${img}/160/160" alt=""><br>${name}</td>
+            <td class="price">${price}元</td>
+            <td>
+              <input type="number" class="quantity form-control" value="1" max="10" min="1">
+            </td>
+            <td>
+              <input type="text" class="form-control" >
+            </td>
+            <td class="subtotal">${price}</td>
+            <td>
+              <button class="delBtn btn btn-danger btn-space"><i class="fa-solid fa-trash-can"></i>DEL</button>
+              <button class="cloneBtn btn btn-primary btn-space"><i class="fa-solid fa-copy"></i>CLONE</button>
+            </td>
+            </tr>`;
+
+        /** 將新的 tr 元素添加到表格的 tbody 中
+         */
+        $('table tbody').append(newTr);
+      });
+
+
+      /**
+       *  數量更改時計算小計
+       */
+      $('table').on('input', '.quantity', function () {
+        const tr = $(this).closest('tr');
+        // console.log('tr', tr)
+        const price = parseFloat(tr.find('.price').text());
+        // console.log('price', price)
+        const quantity = $(this).val();
+        // console.log('quantity', quantity)
+        tr.find('.subtotal').text((price * quantity).toFixed(0) + '元');
+      });
+
+
+      /** 克隆按鈕事件
+       */
+      $('table').on('click', '.cloneBtn', function () {
+        const clone = $(this).closest('tr').clone(true);
+        clone.find('input').val('1'); // 重置數量
+        clone.find('.subtotal').text(clone.find('.price').text()); // 重置小計
+        $(this).closest('tr').after(clone);
+      });
+
+      /** 刪除按鈕事件
+       */
+      $('table').on('click', '.delBtn', function () {
+        if ($('table tbody tr').length > 1) {
+          $(this).closest('tr').remove();
+        }
+      });
+
+      
+
+
+
+
+    });
+  </script>
+</body>
+
+</html>

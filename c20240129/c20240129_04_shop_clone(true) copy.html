@@ -74,8 +74,6 @@
           <button class="delBtn btn btn-danger ml-1"><i class="fa-solid fa-trash-can"></i>DEL</button>
           <button class="cloneBtn btn btn-primary"><i class="fa-solid fa-copy"></i>CLONE</button>
         </td>
-        
-
       </tr>
     </tbody>
 </table>
@@ -93,27 +91,32 @@
       
       const thisbutton = $('.item');
   
-      // 為所有現有和未來的 .cloneBtn 元素綁定點擊後，新增一整個tr
+      /**
+       * 為所有現有和未來的 .cloneBtn 元素綁定點擊後，新增一整個tr
+       */
       $('table').on('click', '.cloneBtn', function() {
         // $(this).closest('tr').clone(true).appendTo('tbody');//一開始就有一條時，就可以用 ，clone(true)時，按鍵的功能會一起copy ，放在最後一行
         $(this).closest('tr').clone(true).insertAfter($(this).closest('tr'));//一開始就有一條時，就可以用 ，clone(true)時，按鍵的功能會可以直接copy在此tr的下一個 
       });
 
 
-      // 為所有現有和未來的 .delBtn 元素綁定點擊後，移除一整個tr
+      /**
+       * 為所有現有和未來的 .delBtn 元素綁定點擊後，移除一整個tr
+       * 當列數小於2時，不可刪除
+       */
       $('table').on('click', '.delBtn', function () {
-        //抓tr數量
-        //如果tr<=2時，不能刪除
+        /**
+         * 抓tr數量
+         * 如果tr>2時，才能刪除
+         */
 
         //抓tr數量
         let getTrCount = $('tr').length;
-        console.log('length', getTrCount);
-        //如果tr<=2時，不能刪除
+          console.log('length', getTrCount);
+        //如果tr>2時，才能刪除
         if (getTrCount > 2) {
           $(this).closest('tr').remove();
         }
-
-
       });
   
       thisbutton.click(function(){
