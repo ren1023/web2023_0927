@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Shop</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+html {
+  height: 100%;
+  background-color: #f8f8f8;
+}
+
+body {
+  /* overflow: hidden; */
+  height: 100%;
+  /* width: 600px; */
+  margin: 0px auto;
+  /* background-color: #ffffff; */
+  font-family: "Roboto", sans-serif;
+  color: #555555;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* $menu_WIDTH: 150px; */
+
+.menu {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-title {
+  display: block;
+  width: 150px;
+  height: 60px;
+  padding: 12px 0 0;
+  background: #9dc852;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s background-color;
+}
+
+.menu-title:before {
+  content: "";
+  display: block;
+  height: 0;
+  border-top: 5px solid #9dc852;
+  border-left: (150px / 2) solid transparent;
+  border-right: (150px / 2) solid transparent;
+  border-bottom: 0 solid #dddddd;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 101;
+  transition: 0.2s 0.2s border-top ease-out, 0.3s border-top-color;
+}
+
+.menu-title:hover {
+  background: #8db842;
+}
+.menu-title:hover:before {
+  border-top-color: #8db842;
+}
+
+.menu:hover > .menu-title:before {
+  border-top-width: 0;
+  transition: 0.2s border-top-width ease-in, 0.3s border-top-color;
+}
+
+.menu-title:after {
+  content: "";
+  display: block;
+  height: 0;
+  border-left: (150px / 2) solid transparent;
+  border-right: (150px / 2) solid transparent;
+  border-bottom: 0 solid #ebebeb;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 101;
+  transition: 0.2s border-bottom ease-in;
+}
+
+.menu:hover > .menu-title:after {
+  border-bottom-width: 5px;
+  transition: 0.2s 0.2s border-bottom-width ease-out;
+}
+
+.menu-title_2nd {
+  background: #4e96b3;
+}
+.menu-title_2nd:hover {
+  background: #3e86a3;
+}
+.menu-title_2nd:before {
+  border-top-color: #4e96b3;
+}
+.menu-title_2nd:hover:before {
+  border-top-color: #3e86a3;
+}
+
+.menu-title_3rd {
+  background: #c97676;
+}
+.menu-title_3rd:hover {
+  background: #b96666;
+}
+.menu-title_3rd:before {
+  border-top-color: #c97676;
+}
+.menu-title_3rd:hover:before {
+  border-top-color: #b96666;
+}
+
+.menu-title_4th {
+  background: #dbab58;
+}
+.menu-title_4th:hover {
+  background: #cb9b48;
+}
+.menu-title_4th:before {
+  border-top-color: #dbab58;
+}
+.menu-title_4th:hover:before {
+  border-top-color: #cb9b48;
+}
+
+.menu-dropdown {
+  min-width: 100%;
+  padding: 15px 0;
+  position: absolute;
+  background: #ebebeb;
+  z-index: 100;
+  transition: 0.5s padding, 0.5s background;
+}
+
+.menu-dropdown:after {
+  content: "";
+  display: block;
+  height: 0;
+  border-top: 5px solid #ebebeb;
+  border-left: (150px / 2) solid transparent;
+  border-right: (150px / 2) solid transparent;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 101;
+  transition: 0.5s border-top;
+}
+
+.menu:not(:hover) > .menu-dropdown {
+  padding: 4px 0;
+  background: #dddddd;
+  z-index: 99;
+}
+
+.menu:not(:hover) > .menu-dropdown:after {
+  border-top-color: #dddddd;
+}
+
+.menu:not(:hover) > .menu-title:after {
+  border-bottom-color: #dddddd;
+}
+
+.menu-dropdown > * {
+  overflow: hidden;
+  height: 30px;
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0);
+  white-space: nowrap;
+  transition: 0.5s height cubic-bezier(0.73, 0.32, 0.34, 1.5),
+    0.5s padding cubic-bezier(0.73, 0.32, 0.34, 1.5),
+    0.5s margin cubic-bezier(0.73, 0.32, 0.34, 1.5), 0.5s 0.2s color,
+    0.2s background-color;
+}
+
+.menu-dropdown > *:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.menu:not(:hover) > .menu-dropdown > * {
+  visibility: hidden;
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+  color: rgba(25, 25, 25, 0);
+  transition: 0.5s 0.1s height, 0.5s 0.1s padding, 0.5s 0.1s margin, 0.3s color,
+    0.6s visibility;
+  z-index: 99;
+}
+
+ul.hList {
+  list-style-type: none;
+}
+
+.hList {
+  /* overflow: hidden; */
+}
+
+.hList > * {
+  float: left;
+}
+
+.hList > * + * {
+  margin-left: 0;
+}
+
+    .color-change-4x {
+      -webkit-animation: color-change-4x 6s linear infinite alternate both;
+      animation: color-change-4x 6s linear infinite alternate both;
+    }
+
+    @-webkit-keyframes color-change-4x {
+  0% {
+    background: rgba(25, 220, 234, 0.5);
+  }
+
+  33.3333% {
+    background: rgba(178, 44, 255, 0.5);
+  }
+
+  66.666% {
+    background: rgba(234, 34, 34, 0.5);
+  }
+
+  100% {
+    background: rgba(245, 190, 16, 0.5);
+  }
+}
+
+@keyframes color-change-4x {
+  0% {
+    background: rgba(25, 220, 234, 0.5);
+  }
+
+  33.3333% {
+    background: rgba(178, 44, 255, 0.5);
+  }
+
+  66.666% {
+    background: rgba(234, 34, 34, 0.5);
+  }
+
+  100% {
+    background: rgba(245, 190, 16, 0.5);
+  }
+}
+
+  </style>
+</head>
+
+<body class="color-change-4x">
+
+  
+
+  <div class="container">
+    <div class="row text-center">
+      <div class="col m-3">
+        <ul class="hList" >
+          <li>
+            <a href="#click" class="menu">
+              <h2 class="menu-title">Drinks</h2>
+              <ul class="menu-dropdown">
+                <li class="item " data-name="咖啡" data-price="100" data-img="36" data-imagname="coffee">
+                  咖啡
+                </li>
+                <li class="item " data-name="花茶" data-price="200" data-img="37" data-imagname="hot-drink">
+                  花茶
+                </li>
+                <li class="item " data-name="礦泉水" data-price="50" data-img="38" data-imagname="water">
+                  礦泉水
+                </li>
+              </ul>
+            </a>
+          </li>
+          <li>
+            <a href="#click" class="menu">
+              <h2 class="menu-title menu-title_2nd">Foots</h2>
+              <ul class="menu-dropdown">
+                <li  class="item " data-name="手工餅干" data-price="100" data-img="40" data-imagname="cookie">
+                  手工餅干
+                </li>
+                <li  class="item " data-name="吐司" data-price="200" data-img="41" data-imagname="toast">
+                  吐司
+                </li>
+                <li  class="item " data-name="漢堡" data-price="300" data-img="42" data-imagname="burger">
+                  漢堡
+                </li>
+              </ul>
+            </a>
+          </li>
+          <!-- <li>
+            <a href="#click" class="menu">
+              <h2 class="menu-title menu-title_3rd">things</h2>
+              <ul class="menu-dropdown">
+                <li>bench</li>
+                <li>pizza</li>
+                <li>Honda CB125</li>
+                <li>space</li>
+                <li>black matter</li>
+                <li>apple</li>
+                <li>philodendron</li>
+                <li>liver</li>
+                <li>brass</li>
+              </ul>
+            </a>
+          </li> -->
+          <!-- <li>
+            <a href="#click" class="menu">
+              <h2 class="menu-title menu-title_4th">Movies</h2>
+              <ul class="menu-dropdown">
+                <li>Godzilla</li>
+                <li>Man on Wire</li>
+                <li>Spirited Away</li>
+                <li>Interstellar</li>
+              </ul>
+            </a>
+          </li> -->
+        </ul>  
+      </div>
+    </div>
+  </div>
+
+
+  <hr>
+  <div class="container">
+    <table class="table table-dark table-hover align-middle text-center">
+      <thead>
+        <tr>
+          <th width="7%">編號</th>
+          <th width="15%">品名</th>
+          <th width="15%">單價</th>
+          <th width="15%">數量</th>
+          <th width="15%">備註</th>
+          <th width="15%">小計</th>
+          <th width="15%">
+            OPTERATE
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="display: none;">
+          <td>a01</td>
+          <td>
+            <img src="https://picsum.photos/id/100/160/120" alt=""><br>
+            咖啡
+          </td>
+          <td>100</td>
+          <td>
+            <input type="number" class="quantity" class="form-control" value="1" max="10" min="1">
+          </td>
+          <td>
+            <input type="text" class="form-control">
+          </td>
+          <td>100</td>
+          <td>
+            <button class="delBtn btn btn-danger p-1"><i class="fa-solid fa-trash-can"></i>DEL</button>
+            <button class="cloneBtn btn btn-primary p-1"><i class="fa-solid fa-copy"></i>CLONE</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="box">
+          <div class="text-center">
+            合計 : <span id="mySum" class="display-4">0</span> NT.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- 引入jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $(document).ready(function () {
+
+
+      const thisbutton = $('.item');
+      const mySum=$('#mySum');
+      console.log('mySum',mySum);
+
+      thisbutton.click(function () {
+        // 從按鈕的 data-* 屬性中獲取值
+        const name = $(this).data('name');
+        const price = $(this).data('price');
+        const img = $(this).data('img');
+        const imagname = $(this).data('imagname');
+        const quantity = $('.quantity')
+
+        /**
+         * 創建新的 tr 元素  //完全沒有資料時，可以用這個。
+         */
+        const newTr = `
+          <tr>
+            <td>${img}</td>
+            <td><img class="rounded-circle" src="./images/${imagname}.png" style="width:100px;heigh:80px;"><br>${name}</td>
+            <td class="price">${price}元</td>
+            <td>
+              <input type="number" class="quantity form-control" value="1" max="10" min="1">
+            </td>
+            <td>
+              <input type="text" class="form-control" >
+            </td>
+            <td class="subtotal">${price}</td>
+            <td>
+              <button class="delBtn btn btn-danger btn-space"><i class="fa-solid fa-trash-can"></i>DEL</button>
+              <button class="cloneBtn btn btn-primary btn-space"><i class="fa-solid fa-copy"></i>CLONE</button>
+            </td>
+            </tr>`;
+
+        /** 將新的 tr 元素添加到表格的 tbody 中
+         */
+        $('table tbody').append(newTr);
+        calculateTotalSum();
+      });
+
+
+      /**
+       *  數量更改時計算小計
+       */
+      $('table').on('input', '.quantity', function () {
+        const tr = $(this).closest('tr');
+        // console.log('tr', tr)
+        const price = parseFloat(tr.find('.price').text());
+        // console.log('price', price)
+        const quantity = $(this).val();
+        // console.log('quantity', quantity)
+        tr.find('.subtotal').text((price * quantity).toFixed(0) + '元');
+        calculateTotalSum();
+        
+      });
+
+
+      /** 克隆按鈕事件
+       */
+      $('table').on('click', '.cloneBtn', function () {
+        const clone = $(this).closest('tr').clone(true);
+        clone.find('input').val('1'); // 重置數量
+        clone.find('.subtotal').text(clone.find('.price').text()); // 重置小計
+        $(this).closest('tr').after(clone);
+        calculateTotalSum();
+      });
+
+      /** 刪除按鈕事件
+       */
+      $('table').on('click', '.delBtn', function () {
+        if ($('table tbody tr').length > 1) {
+          $(this).closest('tr').remove();
+          calculateTotalSum();
+        }
+      });
+
+
+
+      /**
+     * 計算所有小計的總和
+     */
+    function calculateTotalSum() {
+      let totalSum = 0;
+      $('.subtotal').each(function() {
+        let subtotal = parseFloat($(this).text());
+        if (!isNaN(subtotal)) {
+          totalSum += subtotal;
+        }
+      });
+      $('#mySum').text(totalSum.toFixed(0) + '元');
+      console.log($('#mySum').text(totalSum.toFixed(0) + '元'))
+      
+    }
+   });
+  </script>
+</body>
+
+</html>
