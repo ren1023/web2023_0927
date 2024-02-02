@@ -30,8 +30,8 @@
       </tr>
 
     </table>
-    
-    
+
+
     <table class="table table-hover align-middle text-center">
       <thead>
         <tr>
@@ -95,10 +95,6 @@
 
   <script>
     $(document).ready(function () {
-
-
-
-
       function sumFun() {
         let sum = 0;
         myTotal.each(function (index, element) {
@@ -116,7 +112,7 @@
           resultSpan.attr('class', 'text-danger');
         } else {
           resultText = sum;
-          resultSpan.attr('class','');
+          resultSpan.attr('class', '');
         }
         resultSpan.text(resultText);
       }
@@ -134,31 +130,31 @@
 
       myNum.change(function () {
         let trObj = $(this).parent().parent();
-        let nowPrice = trObj.find('.my-price');
-        let nowNum = trObj.find('.my-num');
-        let nowTotal = trObj.find('.my-total');
+        let nowPrice = trObj.find('.my-price');//單價
+        let nowNum = trObj.find('.my-num');//數量
+        let nowTotal = trObj.find('.my-total');//單項總價
 
         // console.log('trObj', trObj);
         // console.log('nowPrice', nowPrice);
         // console.log('nowNum', nowNum);
         // console.log('nowTotal', nowTotal);
 
-        let getPrice = Number(nowPrice.val());
-        let getNum = Number(nowNum.val());
-        let resultTotal = getPrice * getNum;
+        let getPrice = Number(nowPrice.val());//將單價的值改為數字格式
+        let getNum = Number(nowNum.val());//將數量的值轉為數字格式
+        let resultTotal = getPrice * getNum;//項數總價=數量*單價
         nowTotal.val(resultTotal);
-        sumFun();
+        sumFun();//項目單價的總合
       });
 
-      const myBtn=$('.myBtn');
-      myBtn.click(function(){
+      const myBtn = $('.myBtn');
+      myBtn.click(function () {
         // console.log('ok')
         let thisClosest = $(this).closest('tr').children();
-            // console.log(thisClosest,'thisClosest')
-            thisClosest.remove();
+        // console.log(thisClosest,'thisClosest')
+        thisClosest.remove();
       })
 
-      
+
       // 選擇包含"花茶"文本的td元素
       const huacha = $('td:contains("花茶")');
 

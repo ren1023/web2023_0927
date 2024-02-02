@@ -121,9 +121,9 @@
   
       thisbutton.click(function(){
         // 從按鈕的 data-* 屬性中獲取值
-        const name = $(this).data('name');
-        const price = $(this).data('price');
-        const img = $(this).data('img');
+        const name = $(this).attr('data-name');
+        const price = $(this).attr('data-price');
+        const img = $(this).attr('data-img');
         
         // 創建新的 tr 元素  //完全沒有資料時，可以用這個。
         const newTr = `

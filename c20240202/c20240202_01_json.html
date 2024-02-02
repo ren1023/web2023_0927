@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>siblings()_兄弟姐妹元素_class</title>
+  <title>json</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,21 +13,6 @@
 
 <body>
 
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <ul id="myUl">
-          <li class="myLi">11</li>
-          <li class="myLi">22</li>
-          <li class="myLi">33</li>
-          <li class="myLi">44</li>
-          <li class="myLi">55</li>
-        </ul>
-        
-      </div>
-    </div>
-  </div>
-
 
 
 
@@ -37,15 +22,38 @@
     $(document).ready(function(){
       //jqury程式碼
 
-      const myLi=$('.myLi');
-      console.log('myList_',myLi);
+      const obj={
+        's1':'amy',
+        's2':'bob',
+        's3':'cat'
+      }
+
+      console.log('obj',obj);
+
+      const storeArr=[
+        {
+            'name':'台北店',
+            'mobile':'0911-111-111'
+        },
+        {
+            'name':'台中店',
+            'mobile':'0922-111-111'
+        },
+        {
+            'name':'台南店',
+            'mobile':'0933-111-111'
+        },
+      ]
+
+      console.log('storeArr',storeArr);
+
+
+        storeArr.forEach(element => {
+            console.log('element',element);
+            
+        });
       
-      myLi.click(function(){
-        myLi.attr('class','myLi text-danger');
-        let myLiothers=$(this).siblings();//宣告同層級的其它元素
-        console.log('myLiothers',myLiothers);
-        myLiothers.attr('class','myLi text-primary');//變更同層級的其它元素的class
-      })
+
 
     });
 
