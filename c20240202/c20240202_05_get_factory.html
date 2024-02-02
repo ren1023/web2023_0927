@@ -38,8 +38,8 @@
 
 
   </div>
-<a href="./c20240202_03_ajaxData.php"></a>
-<a href="./data/factory.json"></a>
+  <a href="./c20240202_03_ajaxData.php"></a>
+  <a href="./data/factory.json"></a>
 
   <!-- <form action="./s20240202_03_ajaxData_php.php"></form> -->
 
@@ -61,14 +61,14 @@
         dataType: "json",
         success: function (res) {
 
-          console.log('res',res);
-          console.log('res[12]',res[12]);
-          console.log('res[12].id',res[12].id);
-          console.log('res[12].area',res[12].area);
-          console.log('res[12].city',res[12].city);
-          console.log('res[12].name',res[12].name);
-          console.log('res[12].location',res[12].location);
-          console.log('res[12].web',res[12].web);
+          console.log('res', res);
+          console.log('res[12]', res[12]);
+          console.log('res[12].id', res[12].id);
+          console.log('res[12].area', res[12].area);
+          console.log('res[12].city', res[12].city);
+          console.log('res[12].name', res[12].name);
+          console.log('res[12].location', res[12].location);
+          console.log('res[12].web', res[12].web);
 
 
 
@@ -103,37 +103,36 @@
             console.log('value.name', value.name);
             console.log('value.location', value.location);
             console.log('value.web', value.web);
-            let locationString = value.location.toString();
 
             let content = `
-            <div class="row">
-              <div class="col-2">
-                ${value.id}
-              </div>
-              <div class="col-2">
-                ${value.area}
-              </div>
-              <div class="col-2">
-                ${value.city}
-              </div>
-              <div class="col-2">
-                ${value.name}
-              </div>
-              <div class="col-2">
-                ${value.location}
-              </div>
-              <div class="col-2">
-                ${value.web}
-              </div>
-            </div>
-          `;
+                          <div class="row">
+                            <div class="col-2">
+                              ${value.id}
+                            </div>
+                            <div class="col-2">
+                              ${value.area}
+                            </div>
+                            <div class="col-2">
+                              ${value.city}
+                            </div>
+                            <div class="col-2">
+                              ${value.name}
+                            </div>
+                            <div class="col-2">
+                              ${value.location}
+                            </div>
+                            <div class="col-2">
+                              ${value.web}
+                            </div>
+                          </div>
+                        `;
 
             myContainer.append(content);
 
           });
-         
+
         }
-        
+
       });
 
 
