@@ -3,46 +3,47 @@ function dd($data)
 {
     echo "<pre>";
     print_r($data);
-
     echo "</pre>";
 }
 
-$mobileArr=[
+
+
+
+$mobileArr = [
     [
-        'Type' => 'iphone10',
+        'id' => 1,
+        'name' => 'iphone10',
         'price' => 10000,
-        'stores' => ['台北']
-      ],
-    
-      [
-        'Type' => 'iphone11',
+        'location' => ['台北', '台中']
+    ],
+    [
+        'id' => 2,
+        'name' => 'iphone11',
         'price' => 20000,
-        'stores' => ['台北', '台中']
-      ],
-    
-      [
-        'Type' => 'iphone12',
+        'location' => ['台北', '台中']
+    ],
+    [
+        'id' => 3,
+        'name' => 'iphone12',
         'price' => 30000,
-        'stores' => ['高雄']
-      ],
-    
-      [
-        'Type' => 'iphone13',
+        'location' => ['台北',]
+    ],
+    [
+        'id' => 4,
+        'name' => 'iphone13',
         'price' => 40000,
-        'stores' => ['台北', '台中', '高雄']
-      ]
+        'location' => ['台北', '台中', '高雄']
+    ],
 
 ];
 
-// $mobileStores=[
-//     's1'=>'amy',
-//     's2'=>'bob',
-//     's3'=>'cat',
+// $mobileArr = [
+//     's1' => 'amy',
+//     's2' => 'bob',
+//     's3' => 'cat',
 // ];
 
-
+// print_r($mobileArr);
 // dd($mobileArr);
 
 echo json_encode($mobileArr);
-
-?>
