@@ -30,32 +30,41 @@
 
       console.log('obj',obj);
 
-      const storeArr=[
+      const mobileStore=[
         {
-            'name':'台北店',
-            'mobile':'0911-111-111'
+            'Type':'iphone10',
+            'price':'10000',
+            'stores':['台北']
         },
         {
-            'name':'台中店',
-            'mobile':'0922-111-111'
+          'Type':'iphone11',
+            'price':'20000',
+            'stores':['台北','台中']
         },
         {
-            'name':'台南店',
-            'mobile':'0933-111-111'
+          'Type':'iphone12',
+            'price':'30000',
+            'stores':['高雄']
         },
+        {
+          'Type':'iphone13',
+            'price':'40000',
+            'stores':['台北','台中','高雄']
+        }
       ]
 
-      console.log('storeArr',storeArr);
-
-      storeArr.forEach(element => {
+      console.log('mobileStore',mobileStore);
+      
+        $(mobileStore).each(function (index, element) {
+            // element == this
+            console.log('index',index);
             console.log('element',element);
             
         });
-      
-        $(selector).each(function (index, element) {
-            // element == this
-            
-        });
+
+
+
+        
 
 
     });
