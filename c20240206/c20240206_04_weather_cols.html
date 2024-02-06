@@ -25,7 +25,9 @@
     <thead>
         <tr>
             <th>id</th>
-            <th>name</th>
+            <th>city</th>
+            <th>desc</th>
+            <th>value</th>
         </tr>
     </thead>
     <tbody>
@@ -36,7 +38,7 @@
     </tbody>
 </table>
 
-
+<!-- <img src="./images/01.svg" alt=""> -->
 
 
 <!-- 引入jquery -->
@@ -68,11 +70,22 @@
                     console.log('res.records.datasetDescription', res['records']['datasetDescription']);
                     console.log('nowLocation',res.records.location);
                     let nowLocation=res.records.location;
+                    // console.log('nowLocationMaxT',weatherElement[4]['time'][0]['parameter']['parameterName'])
+
                     // jq each array
 
                     $.each(nowLocation, function (key, value) {
                         console.log('key', key);
                         console.log('value.locationName', value.locationName);
+                        console.log('value.locationName', value.locationName);
+
+                        let nowLocationMaxT = value.weatherElement[4]['time'][0]['parameter']['parameterName'];                   
+                        let nowLocationMinT = value.weatherElement[2]['time'][0]['parameter']['parameterName'];                   
+                        let nowLocationIcon = value.weatherElement[0]['time'][0]['parameter']['parameterName'];                   
+                        let nowLocationNum = value.weatherElement[0]['time'][0]['parameter']['parameterValue'];                   
+                        let picNum=nowLocationNum.toString().padStart(2,"0");
+
+
                         let nowLocationName=value.locationName;
                         let nowID=key+1;
                         let stringID=nowID.toString().padStart(2,"0");
@@ -83,6 +96,11 @@
                         <tr>
                             <td>${stringID}</td>
                             <td>${nowLocationName}</td>
+                            <td >${nowLocationMinT}-${nowLocationMaxT} °C </td>
+                            <td>
+                              <img src="https://www.cwa.gov.tw/V8/assets/img/weather_icons/weathers/svg_icon/day/${picNum}.svg" alt="${nowLocationIcon}" title="${nowLocationIcon}"
+                              
+                            </td>
                         </tr>
                         `;
 

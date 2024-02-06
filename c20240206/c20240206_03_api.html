@@ -21,6 +21,8 @@
     <li>111</li> -->
 </ol>
 
+<h2>氣象站每日紫外線指數最大值</h2>
+
 <table class="display" id="myTable">
     <thead>
         <tr>
@@ -49,7 +51,7 @@
       //jqury程式碼
 
       const tbody = $('tbody')
-      let url = weatherUrl;
+      let url = shinUrl;
 
     let myOl=$('#myOl')
 
@@ -64,16 +66,22 @@
                     // .xxx() ['xx']()  ->xxx():method function action (方法)
 
                     console.log('res', res);
-                    console.log('res.records.datasetDescription', res.records.datasetDescription);
-                    console.log('res.records.datasetDescription', res['records']['datasetDescription']);
-                    console.log('nowLocation',res.records.location);
-                    let nowLocation=res.records.location;
+                    console.log('res.records.weatherElement', res.records.weatherElement);
+                    console.log('res.records.weatherElement', res['records']['weatherElement']);
+                    console.log('nowLocation',res.records.weatherElement.location);
+                    let nowLocation=res.records.weatherElement.location;
                     // jq each array
+                    let name= res.records.weatherElement;
+                    // 创建<h2>标签并设置内容为'name'
+                    let h2 = $('<h2>').text(name);
+
+                      // 将<h2>标签添加到<body>的最前面
+                    // $('body').append(h2);
 
                     $.each(nowLocation, function (key, value) {
                         console.log('key', key);
-                        console.log('value.locationName', value.locationName);
-                        let nowLocationName=value.locationName;
+                        console.log('value.locationName', value.StationID);
+                        let nowLocationName=value.StationID;
                         let nowID=key+1;
                         let stringID=nowID.toString().padStart(2,"0");
                         // let content=`
@@ -87,33 +95,33 @@
                         `;
 
                         tbody.append(content);
-                                            });
+                    });
 
                     $('#myTable').DataTable({
-                        language: {
-                            "sProcessing": "處理中...",
-                            "sLengthMenu": "顯示 _MENU_ 項結果",
-                            "sZeroRecords": "查無結果",
-                            "sInfo": "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 項",
-                            "sInfoEmpty": "顯示第 0 至 0 項結果，共 0 項",
-                            "sInfoFiltered": "(由 _MAX_ 項結果過濾)",
-                            "sInfoPostFix": "",
-                            "sSearch": "搜索:",
-                            "sUrl": "",
-                            "sEmptyTable": "表中數據為空",
-                            "sLoadingRecords": "載入中...",
-                            "sInfoThousands": ",",
-                            "oPaginate": {
-                                "sFirst": "首頁",
-                                "sPrevious": "上頁",
-                                "sNext": "下頁",
-                                "sLast": "末頁"
-                            },
-                            "oAria": {
-                                "sSortAscending": ": 以升序排列此列",
-                                "sSortDescending": ": 以降序排列此列"
-                            }
-                        }
+                        // language: {
+                        //     "sProcessing": "處理中...",
+                        //     "sLengthMenu": "顯示 _MENU_ 項結果",
+                        //     "sZeroRecords": "查無結果",
+                        //     "sInfo": "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 項",
+                        //     "sInfoEmpty": "顯示第 0 至 0 項結果，共 0 項",
+                        //     "sInfoFiltered": "(由 _MAX_ 項結果過濾)",
+                        //     "sInfoPostFix": "",
+                        //     "sSearch": "搜索:",
+                        //     "sUrl": "",
+                        //     "sEmptyTable": "表中數據為空",
+                        //     "sLoadingRecords": "載入中...",
+                        //     "sInfoThousands": ",",
+                        //     "oPaginate": {
+                        //         "sFirst": "首頁",
+                        //         "sPrevious": "上頁",
+                        //         "sNext": "下頁",
+                        //         "sLast": "末頁"
+                        //     },
+                        //     "oAria": {
+                        //         "sSortAscending": ": 以升序排列此列",
+                        //         "sSortDescending": ": 以降序排列此列"
+                        //     }
+                        // }
                     });
                 }
             
