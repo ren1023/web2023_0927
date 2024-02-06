@@ -38,7 +38,7 @@
     </tbody>
 </table>
 
-<!-- <img src="./images/01.svg" alt=""> -->
+<img src="./images/day/01.svg" alt="">
 
 
 <!-- 引入jquery -->
@@ -79,10 +79,10 @@
                         console.log('value.locationName', value.locationName);
                         console.log('value.locationName', value.locationName);
 
-                        let nowLocationMaxT = value.weatherElement[4]['time'][0]['parameter']['parameterName'];                   
-                        let nowLocationMinT = value.weatherElement[2]['time'][0]['parameter']['parameterName'];                   
-                        let nowLocationIcon = value.weatherElement[0]['time'][0]['parameter']['parameterName'];                   
-                        let nowLocationNum = value.weatherElement[0]['time'][0]['parameter']['parameterValue'];                   
+                        let nowLocationMaxT = value.weatherElement[4]['time'][0]['parameter']['parameterName'];
+                        let nowLocationMinT = value.weatherElement[2]['time'][0]['parameter']['parameterName'];
+                        let nowLocationIcon = value.weatherElement[0]['time'][0]['parameter']['parameterName'];
+                        let nowLocationNum = value.weatherElement[0]['time'][0]['parameter']['parameterValue'];
                         let picNum=nowLocationNum.toString().padStart(2,"0");
 
 
@@ -96,8 +96,10 @@
                         <tr>
                             <td>${stringID}</td>
                             <td>${nowLocationName}</td>
-                            <td >${nowLocationMinT}-${nowLocationMaxT} °C </td>
+                            <td >${nowLocationMinT}-${nowLocationMaxT} °C ${nowLocationIcon}  <img src="./images/day/${picNum}.svg" alt="${nowLocationIcon}" > </td>
                             <td>
+                              ${nowLocationIcon}
+                              <br>
                               <img src="https://www.cwa.gov.tw/V8/assets/img/weather_icons/weathers/svg_icon/day/${picNum}.svg" alt="${nowLocationIcon}" title="${nowLocationIcon}"
                               
                             </td>
