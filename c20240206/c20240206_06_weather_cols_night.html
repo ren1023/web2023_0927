@@ -22,15 +22,15 @@
 </ol>
 
 <table class="display" id="myTable">
-    <thead>
-        <tr>
+    <thead id="myThead">
+        <!-- <tr>
             <th>id</th>
             <th>city</th>
             <th>12:00~18:00</th>
             <th>18:00~06:00</th>
             <th>06:00~18:00</th>
             <th>value</th>
-        </tr>
+        </tr> -->
     </thead>
     <tbody>
         <!-- <tr>
@@ -40,12 +40,13 @@
     </tbody>
 </table>
 
-<img src="./images/day/01.svg" alt="">
+<!-- <img src="./images/day/01.svg" alt=""> -->
 
 
 <!-- 引入jquery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="../ignore_test/js.js"></script>
+
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
 
   <script>
@@ -53,9 +54,10 @@
       //jqury程式碼
 
       const tbody = $('tbody')
+      const myThead=$('#myThead')
       let url = weatherUrl;
 
-    let myOl=$('#myOl')
+      let myOl=$('#myOl')
 
 
       $.ajax({
@@ -72,23 +74,98 @@
                     console.log('res.records.datasetDescription', res['records']['datasetDescription']);
                     console.log('nowLocation',res.records.location);
                     let nowLocation=res.records.location;
-                    // console.log('nowLocationMaxT',weatherElement[4]['time'][0]['parameter']['parameterName'])
+                    console.log('nowLocationMaxT',res.records.location[0].weatherElement[0]['time'][0]['startTime'])
+                    
+
+
+
+
+
+                    //myThead
+                    let title12Text =nowLocation[0].weatherElement[2]['time'][0]['startTime'] 
+                    let title24Text =nowLocation[0].weatherElement[2]['time'][1]['startTime'] 
+                    let title36Text =nowLocation[0].weatherElement[2]['time'][2]['startTime']
+
+                    console.log('title12Text',typeof(title12Text))
+                    let time12 = new Date(title12Text);
+                    let time24 = new Date(title24Text);
+                    let time36 = new Date(title36Text);
+                    console.log('time12',time12)
+                    console.log('time24',time24)
+                    console.log('time36',time36)
+
+                    let time12Hour=time12.getHours();
+                    let time24Hour=time24.getHours();
+                    let time36Hour=time36.getHours();
+
+                    console.log('time12Hour',time12Hour);
+                    console.log('time24Hour',time24Hour);
+                    console.log('time36Hour',time36Hour);
+
+
+                    let dayNight_12='day';
+                    let dayNight_24='day';
+                    let dayNight_36='day';
+                    switch (time12Hour){
+                      case 18:
+                      dayNight_12 = 'night'
+                      break;
+
+                      default:
+                        break;
+
+                    }
+
+                    switch (time24Hour){
+                      case 6:
+                      dayNight_24 = 'day'
+                      break;
+
+                      default:
+                        break;
+                    }
+
+                    switch (time36Hour){
+                      case 18:
+                      dayNight_36 = 'night'
+                      break;
+
+                      default:
+                        break;
+                    }
+
+
+
+                    let myTheadConten=`
+                    <tr>
+                        <th>id</th>
+                        <th>city</th>
+                        <th>${title12Text}</th>
+                        <th>${title24Text}</th>
+                        <th>${title36Text}</th>
+                    </tr>
+
+                    `;
+
+                    myThead.append(myTheadConten);
+
+
 
                     // jq each array
 
                     $.each(nowLocation, function (key, value) {
                         console.log('key', key);
                         console.log('value.locationName', value.locationName);
-                        console.log('value.locationName', value.locationName);
+                        
 
 
 
                         //starttime 12:00
                         let nowLocationMaxT12 = value.weatherElement[4]['time'][0]['parameter']['parameterName'];
                         let nowLocationMinT12 = value.weatherElement[2]['time'][0]['parameter']['parameterName'];
-                        let nowLocationIcon12 = value.weatherElement[0]['time'][0]['parameter']['parameterName'];
-                        let nowLocationNum12 = value.weatherElement[0]['time'][0]['parameter']['parameterValue'];
-                        let picNum12=nowLocationNum12.toString().padStart(2,"0");
+                        let nowLocationIcon12 = value.weatherElement[0]['time'][0]['parameter']['parameterName'];//'晴時多雲'
+                        let nowLocationNum12 = value.weatherElement[0]['time'][0]['parameter']['parameterValue'];//'2'
+                        let picNum12=nowLocationNum12.toString().padStart(2,"0");//2位數
 
                         //starttime 18:00
                         let nowLocationMaxT18 = value.weatherElement[4]['time'][1]['parameter']['parameterName'];
@@ -116,13 +193,12 @@
                         <tr>
                             <td>${stringID}</td>
                             <td>${nowLocationName}</td>
-                            <td >${nowLocationMinT12}-${nowLocationMaxT12} °C ${nowLocationIcon12}  <img src="./images/day/${picNum12}.svg" alt="${nowLocationIcon12}" > </td>
-                            <td >${nowLocationMinT18}-${nowLocationMaxT18} °C ${nowLocationIcon18}  <img src="./images/day/${picNum18}.svg" alt="${nowLocationIcon18}" > </td>
-                            <td >${nowLocationMinT06}-${nowLocationMaxT06} °C ${nowLocationIcon06}  <img src="./images/day/${picNum06}.svg" alt="${nowLocationIcon06}" > </td>
+                            <td >${nowLocationMinT12}-${nowLocationMaxT12} °C ${nowLocationIcon12}  <img src="./images/${dayNight_12}/${picNum12}.svg" alt="${nowLocationIcon12}" > </td>
+                            <td >${nowLocationMinT18}-${nowLocationMaxT18} °C ${nowLocationIcon18}  <img src="./images/${dayNight_24}/${picNum18}.svg" alt="${nowLocationIcon18}" > </td>
+                            <td >${nowLocationMinT06}-${nowLocationMaxT06} °C ${nowLocationIcon06}  <img src="./images/${dayNight_36}/${picNum06}.svg" alt="${nowLocationIcon06}" > </td>
                             
                         </tr>
                         `;
-
                         tbody.append(content);
                                             });
 
