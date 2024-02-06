@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Weather Api</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+
+</head>
+
+<body>
+
+<ol id="myOl">
+    <!-- <li>111</li>
+    <li>111</li>
+    <li>111</li> -->
+</ol>
+
+<table class="display" id="myTable">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>city</th>
+            <th>12:00~18:00</th>
+            <th>18:00~06:00</th>
+            <th>06:00~18:00</th>
+            <th>value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <tr>
+            <td>11</td>
+            <td>22</td>
+        </tr> -->
+    </tbody>
+</table>
+
+<img src="./images/day/01.svg" alt="">
+
+
+<!-- 引入jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../ignore_test/js.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      //jqury程式碼
+
+      const tbody = $('tbody')
+      let url = weatherUrl;
+
+    let myOl=$('#myOl')
+
+
+      $.ajax({
+                type: "get",
+                url: url,
+                data: "data",
+                dataType: "json",
+                success: function (res) {
+                    // . [] -> : property variable(變數)
+                    // .xxx() ['xx']()  ->xxx():method function action (方法)
+
+                    console.log('res', res);
+                    console.log('res.records.datasetDescription', res.records.datasetDescription);
+                    console.log('res.records.datasetDescription', res['records']['datasetDescription']);
+                    console.log('nowLocation',res.records.location);
+                    let nowLocation=res.records.location;
+                    // console.log('nowLocationMaxT',weatherElement[4]['time'][0]['parameter']['parameterName'])
+
+                    // jq each array
+
+                    $.each(nowLocation, function (key, value) {
+                        console.log('key', key);
+                        console.log('value.locationName', value.locationName);
+                        console.log('value.locationName', value.locationName);
+
+
+
+                        //starttime 12:00
+                        let nowLocationMaxT12 = value.weatherElement[4]['time'][0]['parameter']['parameterName'];
+                        let nowLocationMinT12 = value.weatherElement[2]['time'][0]['parameter']['parameterName'];
+                        let nowLocationIcon12 = value.weatherElement[0]['time'][0]['parameter']['parameterName'];
+                        let nowLocationNum12 = value.weatherElement[0]['time'][0]['parameter']['parameterValue'];
+                        let picNum12=nowLocationNum12.toString().padStart(2,"0");
+
+                        //starttime 18:00
+                        let nowLocationMaxT18 = value.weatherElement[4]['time'][1]['parameter']['parameterName'];
+                        let nowLocationMinT18 = value.weatherElement[2]['time'][1]['parameter']['parameterName'];
+                        let nowLocationIcon18 = value.weatherElement[0]['time'][1]['parameter']['parameterName'];
+                        let nowLocationNum18 = value.weatherElement[0]['time'][1]['parameter']['parameterValue'];
+                        let picNum18=nowLocationNum18.toString().padStart(2,"0");
+
+
+                        //starttime06:00
+                        let nowLocationMaxT06 = value.weatherElement[4]['time'][2]['parameter']['parameterName'];
+                        let nowLocationMinT06 = value.weatherElement[2]['time'][2]['parameter']['parameterName'];
+                        let nowLocationIcon06 = value.weatherElement[0]['time'][2]['parameter']['parameterName'];
+                        let nowLocationNum06 = value.weatherElement[0]['time'][2]['parameter']['parameterValue'];
+                        let picNum06=nowLocationNum06.toString().padStart(2,"0");
+
+
+                        let nowLocationName=value.locationName;
+                        let nowID=key+1;
+                        let stringID=nowID.toString().padStart(2,"0");
+                        // let content=`
+                        //     <li>${nowLocationName}</li>
+                        // `;
+                        let content=`
+                        <tr>
+                            <td>${stringID}</td>
+                            <td>${nowLocationName}</td>
+                            <td >${nowLocationMinT12}-${nowLocationMaxT12} °C ${nowLocationIcon12}  <img src="./images/day/${picNum12}.svg" alt="${nowLocationIcon12}" > </td>
+                            <td >${nowLocationMinT18}-${nowLocationMaxT18} °C ${nowLocationIcon18}  <img src="./images/day/${picNum18}.svg" alt="${nowLocationIcon18}" > </td>
+                            <td >${nowLocationMinT06}-${nowLocationMaxT06} °C ${nowLocationIcon06}  <img src="./images/day/${picNum06}.svg" alt="${nowLocationIcon06}" > </td>
+                            
+                        </tr>
+                        `;
+
+                        tbody.append(content);
+                                            });
+
+                    $('#myTable').DataTable({
+                        language: {
+                            "sProcessing": "處理中...",
+                            "sLengthMenu": "顯示 _MENU_ 項結果",
+                            "sZeroRecords": "查無結果",
+                            "sInfo": "顯示第 _START_ 至 _END_ 項結果，共 _TOTAL_ 項",
+                            "sInfoEmpty": "顯示第 0 至 0 項結果，共 0 項",
+                            "sInfoFiltered": "(由 _MAX_ 項結果過濾)",
+                            "sInfoPostFix": "",
+                            "sSearch": "搜索:",
+                            "sUrl": "",
+                            "sEmptyTable": "表中數據為空",
+                            "sLoadingRecords": "載入中...",
+                            "sInfoThousands": ",",
+                            "oPaginate": {
+                                "sFirst": "首頁",
+                                "sPrevious": "上頁",
+                                "sNext": "下頁",
+                                "sLast": "末頁"
+                            },
+                            "oAria": {
+                                "sSortAscending": ": 以升序排列此列",
+                                "sSortDescending": ": 以降序排列此列"
+                            }
+                        }
+                    });
+                }
+            
+            });
+    });
+  </script>
+</body>
+
+</html>
